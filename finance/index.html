@@ -238,6 +238,16 @@
       animation: fadeUp 0.9s 0.3s ease both;
     }
 
+    .achievements {
+      margin: 12px 0;
+      padding-left: 20px;
+      font-size: 15px;
+    }
+    .achievements li {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
     .exp-item {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -245,8 +255,8 @@
       padding: 20px 0;
       border-bottom: 1px solid var(--border);
       align-items: start;
+      transition: background-color 0.2s ease;
     }
-
     .exp-item:first-child { border-top: 1px solid var(--border); }
 
     .exp-role {
@@ -556,6 +566,92 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── EDUCATION STYLES ── */
+    /* ── EDUCATION STYLES ── */
+    .education h2, .education h3 {
+      font-family: var(--font-display);
+      color: var(--ink);
+    }
+    
+    .education h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    
+    /* Ensure education details use correct font */
+    .education p {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--warm-grey);
+      margin: 0;
+    }
+    
+    /* Remove bullets from education timeline */
+    .education .timeline {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    /* Ensure work experience bullets use correct font */
+    .experience .achievements {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 12px 0 0 0;
+      color: var(--warm-grey);
+    }
+    
+    .experience .achievements li {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    
+    .experience .achievements li strong {
+      font-weight: 500;
+    }
+    }
+@@ Update work experience bullets @@
+    .experience .achievements {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 12px 0 0 0;
+      color: var(--warm-grey);
+    }
+    
+    .experience .achievements li {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    
+    .experience .achievements li strong {
+      font-weight: 500;
+    }
+      margin: 8px 0 4px 0;
+    }
+    
+    .education p {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--warm-grey);
+      margin: 0;
+    }
+    
+    .education .timeline li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .education .timeline li:last-child {
+      border-bottom: none;
+    }
+
     /* ── BACK LINK ── */
     .back-home {
       position: fixed;
@@ -822,10 +918,33 @@
     </div>
   </header>
 
-  <p class="summary" data-i18n="summary">
+  <div class="summary" data-i18n="summary">
     Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. 
     Based in Geneva — fluent in five languages, bridging quantitative rigour with cross-border communication.
-  </p>
+  </div>
+
+  <a href="/assets/CV_Pablo_Pérez_Fraile.pdf" class="btn-download-cv" download>
+    📄 Descargar CV
+  </a>
+
+  <style>
+    .btn-download-cv {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .btn-download-cv:hover {
+      background: #333;
+    }
+  </style>
+
+
 
   <div class="divider"><span data-i18n="expertise">Expertise</span></div>
   <div class="expertise">
@@ -867,26 +986,83 @@
     </div>
   </div>
 
-  <div class="divider"><span data-i18n="experience">Experience</span></div>
+<section class="section education">
+  <h2>🎓 Educación</h2>
+  <ul class="timeline">
+    <li>
+      <h3>Máster en Finanzas y Ciencia de Datos</h3>
+      <p>EAE Business School, Madrid | 2020 – 2021</p>
+    </li>
+    <li>
+      <h3>Grado en Ingeniería Industrial</h3>
+      <p>Universidad Pontificia Comillas, Madrid | 2015 – 2021</p>
+    </li>
+    <li>
+      <h3>Programa Anglo-Chino</h3>
+      <p>Universidad Normal Capital (Beijing), China | 2009 – 2010</p>
+    </li>
+  </ul>
+
+  <style>
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .badge {
+      background: #e0e0e0;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  </style>
+</section>
+
+<section class="section">
+  <h2>🏅 Especialización Técnica</h2>
+  <div class="badges">
+    <span class="badge">FINMA/Basel</span>
+    <span class="badge">IFRS 9</span>
+    <span class="badge">ICAAP</span>
+    <span class="badge">ILAAP</span>
+    <span class="badge">KYC/AML</span>
+    <span class="badge">ESG Risk</span>
+  </div>
+</section>
   <div class="experience">
     <div class="exp-item">
       <div>
-        <div class="exp-role" data-i18n="job1role">Finance &amp; FinTech Instructor</div>
+        <div class="exp-role" data-i18n="job1role">Finance & FinTech Instructor</div>
         <div class="exp-company">IBERONEX — Remote</div>
+        <ul class="achievements">
+          <li><strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.</li>
+          <li><strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.</li>
+        </ul>
       </div>
       <div class="exp-period" data-i18n="job1period">2026 — Present</div>
     </div>
     <div class="exp-item">
       <div>
         <div class="exp-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
-        <div class="exp-company">Ernst &amp; Young — Zurich</div>
+        <div class="exp-company">Ernst & Young — Zurich</div>
+        <ul class="achievements">
+          <li><strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.</li>
+          <li><strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.</li>
+        </ul>
       </div>
       <div class="exp-period">2025 — 2026</div>
     </div>
     <div class="exp-item">
       <div>
-        <div class="exp-role" data-i18n="job3role">Crisis &amp; Regulatory Affairs Analyst</div>
+        <div class="exp-role" data-i18n="job3role">Crisis & Regulatory Affairs Analyst</div>
         <div class="exp-company">Santander Bank — Madrid</div>
+        <ul class="achievements">
+          <li><strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.</li>
+          <li><strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.</li>
+        </ul>
       </div>
       <div class="exp-period">2021 — 2025</div>
     </div>
@@ -897,7 +1073,6 @@
       </div>
       <div class="exp-period">2020 — 2021</div>
     </div>
-  </div>
 
   <div class="divider"><span data-i18n="languages">Languages</span></div>
   <div class="languages">
