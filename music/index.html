@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pablo Pérez Fraile — Música</title>
+  <meta name="description" content="Pablo Pérez Fraile — Multiinstrumentista. Guitarra, piano, acordeón, saxofón, trompeta, contrabajo y más." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F2ED;
+      --ink: #1A1714;
+      --warm-grey: #8C8680;
+      --accent: #B8935A;
+      --accent-light: #D4B483;
+      --accent-pale: #EDE3D4;
+      --border: rgba(26,23,20,0.1);
+      --border-strong: rgba(26,23,20,0.18);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACK LINK ── */
+    .back-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      text-decoration: none;
+      background: rgba(245,242,237,0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .back-home:hover { color: var(--accent); border-color: var(--accent-light); }
+    .back-home::before { content: '←'; font-size: 11px; }
+
+    /* ── LANGUAGE SELECTOR ── */
+    .lang-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 4px;
+      background: rgba(245,242,237,0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+    }
+    .lang-btn {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--warm-grey);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 3px 5px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+    .lang-btn:hover { color: var(--ink); }
+    .lang-btn.active { color: var(--accent); font-weight: 700; }
+
+    /* ── HEADER ── */
+    header {
+      padding: 100px 48px 48px;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--warm-grey);
+    }
+
+    .title-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .title-line::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .role {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--warm-grey);
+      text-transform: uppercase;
+    }
+    .summary {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 3vw, 19px);
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-top: 28px;
+      animation: fadeUp 0.9s 0.15s ease both;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 48px;
+    }
+    .divider span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 48px 32px;
+      animation: fadeUp 0.9s 0.15s ease both;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .filter-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      min-width: 52px;
+    }
+
+    .filter-btn {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--warm-grey);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 5px 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { color: var(--ink); border-color: var(--border-strong); }
+    .filter-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+    /* ── RESULTS BAR ── */
+    .results-bar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 48px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .results-count {
+      font-size: 11px;
+      color: var(--warm-grey);
+      letter-spacing: 0.06em;
+    }
+    .results-line { flex: 1; height: 1px; background: var(--border); }
+
+    /* ── GRID ── */
+    .grid {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 48px 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    /* ── VIDEO CARD ── */
+    .video-card {
+      background: rgba(255,255,255,0.3);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-card:hover {
+      background: rgba(255,255,255,0.7);
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+      z-index: 1;
+    }
+    .video-card.hidden { display: none; }
+
+    .thumb-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--ink);
+      overflow: hidden;
+    }
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.25s ease;
+    }
+    .video-card:hover .thumb-wrap img { opacity: 1; }
+
+    .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26,23,20,0.25);
+      transition: background 0.25s ease;
+    }
+    .video-card:hover .play-btn { background: rgba(26,23,20,0.1); }
+    .play-circle {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid rgba(255,255,255,0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .play-circle svg { width: 14px; height: 14px; fill: white; margin-left: 2px; }
+
+    .card-body {
+      padding: 16px 18px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .card-instruments {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    .card-context {
+      font-size: 11px;
+      color: var(--warm-grey);
+      margin-top: auto;
+      padding-top: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26,23,20,0.88);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-inner {
+      width: 100%;
+      max-width: 800px;
+      background: var(--cream);
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.3s ease;
+    }
+    .modal-overlay.open .modal-inner { transform: translateY(0); }
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: var(--font-body);
+      padding: 4px 0;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-close:hover { color: white; }
+    .modal-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--ink);
+    }
+    .modal-video iframe { width: 100%; height: 100%; border: none; display: block; }
+    .modal-info {
+      padding: 20px 24px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+    .modal-meta { text-align: right; flex-shrink: 0; }
+    .modal-instruments {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .modal-context { font-size: 12px; color: var(--warm-grey); }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 48px 0;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 24px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.4);
+      transition: all 0.3s ease;
+    }
+    .contact-link:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .contact-link .c-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-link .c-icon svg { width: 18px; height: 18px; fill: currentColor; }
+    .contact-link .c-text strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .contact-link .c-text span { font-size: 12px; opacity: 0.65; }
+
+    /* ── CONTACT FORM ── */
+    .contact-form {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.4);
+      padding: 28px 24px;
+      margin-bottom: 0;
+    }
+    .contact-form .form-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.7);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s ease;
+      resize: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--accent); background: white; }
+    .form-group textarea { height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      margin-top: 6px;
+      background: var(--ink);
+      color: var(--cream);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+    .form-submit:hover { background: var(--accent); }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      font-family: var(--font-display);
+      font-size: 17px;
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 64px;
+      padding: 24px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeUp 0.9s 0.4s ease both;
+    }
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--warm-grey);
+    }
+    .footer-domain {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      header, .filter-section, .results-bar, .grid, .contact-section, .divider { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 72px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-label { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+      .modal-info { flex-direction: column; }
+      .modal-meta { text-align: left; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 20px 16px; }
+    }
+    @media (max-width: 520px) {
+      .lang-selector { top: 12px; right: 12px; padding: 5px 6px; }
+      .lang-btn { font-size: 9px; padding: 2px 4px; }
+      .back-home { top: 12px; left: 12px; font-size: 9px; padding: 5px 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+  <script defer src="https://umami-three-xi.vercel.app/script.js" data-website-id="028e9b2b-0fa7-4711-87af-77608200b323"></script>
+</head>
+<body>
+
+<a class="back-home" href="../">fraile.ch</a>
+
+<div class="lang-selector">
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
+</div>
+
+<header>
+  <span class="eyebrow">fraile.ch &nbsp;·&nbsp; Geneva, Switzerland</span>
+  <h1>Pablo<br><em>Pérez Fraile</em></h1>
+  <div class="title-line">
+    <span class="role" id="role-label">Multiinstrumentista</span>
+  </div>
+  <p class="summary" id="music-summary">Músico con una pasión de toda la vida por las tradiciones musicales más diversas, tocando instrumentos de cuerda, viento, teclado y voz. Su repertorio abarca estilos clásicos, folclóricos, jazz y contemporáneos — desde las cuerdas pulsadas del Renacimiento hasta el conjunto de viento-metal, del saxofón jazz al acordeón.<br><br>Instrumentos: guitarra, piano, acordeón, bandurria, laúd español, mandolina, contrabajo, saxofón alto y tenor, trompeta, bombardino, arpa.</p>
+</header>
+
+<!-- VIDEOS DIVIDER -->
+<div class="divider"><span id="div-videos">Vídeos</span></div>
+
+<!-- FILTERS -->
+<section class="filter-section" aria-label="Filtros">
+  <div class="filter-group">
+    <span class="filter-label" id="fl-context">Contexto</span>
+    <button class="filter-btn active" data-filter-group="context" data-filter="all-context" id="f-all-context">Todos</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="solo">Solo</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="duo-dubod">Dúo Dubod</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="txp">TXP</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="tuna">Tuna</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="coro">Coro</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="duo-chloe">Dúo Chloé</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="gaspar-sanz">Gaspar Sanz</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="juglaresca">Juglaresca</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="giigegugge">Giigegugge</button>
+    <button class="filter-btn" data-filter-group="context" data-filter="concertino">Concertino</button>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label" id="fl-family">Familia</span>
+    <button class="filter-btn active" data-filter-group="family" data-filter="all-family" id="f-all-family">Todos</button>
+    <button class="filter-btn" data-filter-group="family" data-filter="cuerda" id="f-cuerda">Cuerda</button>
+    <button class="filter-btn" data-filter-group="family" data-filter="viento" id="f-viento">Viento</button>
+    <button class="filter-btn" data-filter-group="family" data-filter="teclado" id="f-teclado">Teclado</button>
+    <button class="filter-btn" data-filter-group="family" data-filter="voz" id="f-voz">Voz</button>
+  </div>
+</section>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <span class="results-count" id="results-count">19 vídeos</span>
+  <div class="results-line"></div>
+</div>
+
+<!-- GRID -->
+<main class="grid" id="video-grid" role="main"></main>
+
+<!-- CONTACT -->
+<div class="divider" style="margin-top:16px;"><span id="div-contact">Contacto</span></div>
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <a class="contact-link" href="https://www.instagram.com/pablopf17/" target="_blank" rel="noopener">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </div>
+      <div class="c-text">
+        <strong id="lbl-instagram">Instagram</strong>
+        <span>@pablopf17</span>
+      </div>
+    </a>
+
+    <a class="contact-link" href="https://www.youtube.com/channel/UCfsuwWMp2kFk33mpaspl_hA/" target="_blank" rel="noopener">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </div>
+      <div class="c-text">
+        <strong id="lbl-youtube">YouTube</strong>
+        <span>Pablo Pérez Fraile</span>
+      </div>
+    </a>
+
+    <a class="contact-link" href="mailto:pablo@fraile.ch">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="c-text">
+        <strong id="lbl-email">Email</strong>
+        <span>pablo@fraile.ch</span>
+      </div>
+    </a>
+
+    <a class="contact-link" href="https://fraile.ch" target="_blank" rel="noopener">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="c-text">
+        <strong id="lbl-web">Web</strong>
+        <span>fraile.ch</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="contact-form">
+    <p class="form-title" id="form-title">Enviar un mensaje</p>
+    <div id="form-success" class="form-success">✓ &nbsp;Mensaje enviado — me pondré en contacto pronto.</div>
+    <form id="contact-form" action="https://formspree.io/f/xpqerjgd" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" id="lbl-name">Nombre</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email" id="lbl-email-field">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject" id="lbl-subject">Asunto</label>
+        <input type="text" id="subject" name="subject" placeholder="¿En qué puedo ayudarte?" />
+      </div>
+      <div class="form-group">
+        <label for="message" id="lbl-message">Mensaje</label>
+        <textarea id="message" name="message" placeholder="Tu mensaje..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="form-submit-btn">Enviar mensaje →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Pablo Pérez Fraile</span>
+  <span class="footer-domain">fraile.ch</span>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-inner">
+    <button class="modal-close" id="modal-close">✕ &nbsp;<span id="modal-close-label">Cerrar</span></button>
+    <div class="modal-video" id="modal-video-wrap">
+      <iframe id="modal-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="modal-info">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-meta">
+        <span class="modal-instruments" id="modal-instruments"></span>
+        <span class="modal-context" id="modal-context"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── VIDEO DATA ──
+const VIDEOS = [
+  { id: 'L_wxdwW2xdo', title: 'Summertime', instruments: 'Trompeta, Saxo & Bombardino', context: 'Dúo Dubod', context_key: 'duo-dubod', family: ['viento'] },
+  { id: 'sGNOUL3e-0A', title: 'Time Is Running Out', instruments: 'Saxo Tenor', context: 'TXP', context_key: 'txp', family: ['viento'] },
+  { id: 'uq9mXzM6WIU', title: "Tom's Diner", instruments: 'Piano', context: 'Solo', context_key: 'solo', family: ['teclado'] },
+  { id: 'o5YU93vPau0', title: 'Todos los Besos', instruments: 'Bandurria', context: 'Tuna Industriales', context_key: 'tuna', family: ['cuerda'] },
+  { id: 'ptJZh2ghxGE', title: 'Tico Tico', instruments: 'Guitarra', context: 'Solo', context_key: 'solo', family: ['cuerda'] },
+  { id: 'iDHRl9KgbkM', title: 'Tango (Albéniz) — Gaspar Sanz', instruments: 'Bandurria', context: 'Solo', context_key: 'gaspar-sanz', family: ['cuerda'] },
+  { id: 'K0ekU64xbWk', title: 'Stand by Me', instruments: 'Contrabajo', context: 'Dúo Dubod', context_key: 'duo-dubod', family: ['cuerda'] },
+  { id: 'KYwww-BNWTY', title: 'Shape of You', instruments: 'Contrabajo', context: 'Dúo Dubod', context_key: 'duo-dubod', family: ['cuerda'] },
+  { id: 'faqpbMC3zq8', title: 'Recuerdos de la Alhambra', instruments: 'Guitarra', context: 'Solo', context_key: 'solo', family: ['cuerda'] },
+  { id: 'Q6lYTd2zP5Q', title: "Canzone d'Amore", instruments: 'Piano', context: 'Dúo Chloé', context_key: 'duo-chloe', family: ['teclado'] },
+  { id: 'ODt0w0YVPWA', title: 'Coco', instruments: 'Saxo Tenor', context: 'TXP', context_key: 'txp', family: ['viento'] },
+  { id: 'wWRRz7zCnwc', title: 'Autumn Leaves', instruments: 'Saxo Alto', context: 'Dúo Dubod', context_key: 'duo-dubod', family: ['viento'] },
+  { id: '_7KWTGsURNc', title: 'Varios', instruments: 'Bandurria, Saxo & Guitarra', context: 'Dúo Dubod', context_key: 'duo-dubod', family: ['cuerda', 'viento'] },
+  { id: 'BQS1cgg9odw', title: 'Tarantella Napoletana', instruments: 'Mandolina', context: 'Solo', context_key: 'solo', family: ['cuerda'] },
+  { id: 'xDBVaJewmV4', title: 'Yesterday', instruments: 'Bandurria, Laúd & Guitarra', context: 'Solo', context_key: 'solo', family: ['cuerda'] },
+  { id: 'arI0jxwHBVY', title: 'Xekina Mja Psaropula', instruments: 'Contrabajo', context: 'Giigegugge Züri', context_key: 'giigegugge', family: ['cuerda'] },
+  { id: '_SSOgpXLaJs', title: 'Danny Boy', instruments: 'Bombardino', context: 'Solo', context_key: 'solo', family: ['viento'] },
+  { id: 'fALj1FZJn-U', title: 'Jealous', instruments: 'Canto', context: 'Coro Santander', context_key: 'coro', family: ['voz'] },
+  { id: 'Brf2HkpwMbM', title: 'Il Boccalino', instruments: 'Saxo Alto', context: 'Concertino di Ravecchia', context_key: 'concertino', family: ['viento'] },
+  { id: 'VO0dr1wf1_4', title: 'Bésame Mucho', instruments: 'Bandurria, Laúd & Guitarra', context: 'Solo', context_key: 'solo', family: ['cuerda'] },
+  { id: 'V9lmr0c26qg', title: 'La Linda Tapada', instruments: 'Acordeón', context: 'Tuna Industriales', context_key: 'tuna', family: ['teclado'] },
+  { id: 'UADXF2m4yDY', title: 'María la Portuguesa', instruments: 'Bandurria', context: 'Juglaresca Ensemble', context_key: 'juglaresca', family: ['cuerda'] }
+];
+
+// ── I18N ──
+const T = {
+  es: {
+    role: 'Multiinstrumentista', videos: 'Vídeos', contact: 'Contacto',
+    summary: 'Músico con una pasión de toda la vida por las tradiciones musicales más diversas, tocando instrumentos de cuerda, viento, teclado y voz. Su repertorio abarca estilos clásicos, folclóricos, jazz y contemporáneos — desde las cuerdas pulsadas del Renacimiento hasta el conjunto de viento-metal, del saxofón jazz al acordeón.\n\nInstrumentos: guitarra, piano, acordeón, bandurria, laúd español, mandolina, contrabajo, saxofón alto y tenor, trompeta, bombardino, arpa.',
+    ctxLabel: 'Contexto', famLabel: 'Familia',
+    allCtx: 'Todos', allFam: 'Todos', cuerda: 'Cuerda', viento: 'Viento', teclado: 'Teclado', voz: 'Voz',
+    instagram: 'Instagram', youtube: 'YouTube', email: 'Email', web: 'Web',
+    formTitle: 'Enviar un mensaje', namelabel: 'Nombre', emaillabel: 'Email',
+    subjectlabel: 'Asunto', msglabel: 'Mensaje',
+    nameph: 'Tu nombre', emailph: 'tu@email.com', subjectph: '¿En qué puedo ayudarte?', msgph: 'Tu mensaje...',
+    sendbtn: 'Enviar mensaje →', formsuccess: '✓ &nbsp;Mensaje enviado — me pondré en contacto pronto.',
+    closeModal: 'Cerrar', of: 'de', videos_label: 'vídeos'
+  },
+  en: {
+    role: 'Multi-instrumentalist', videos: 'Videos', contact: 'Contact',
+    summary: 'Musician with a lifelong passion for diverse musical traditions, playing across string, wind, keyboard and voice. His repertoire spans classical, folk, jazz and contemporary styles — from Renaissance plucked strings to brass ensemble, from jazz saxophone to accordion.\n\nInstruments: guitar, piano, accordion, bandurria, Spanish lute, mandolin, double bass, alto & tenor saxophone, trumpet, euphonium, harp.',
+    ctxLabel: 'Context', famLabel: 'Family',
+    allCtx: 'All', allFam: 'All', cuerda: 'Strings', viento: 'Winds', teclado: 'Keys', voz: 'Voice',
+    instagram: 'Instagram', youtube: 'YouTube', email: 'Email', web: 'Web',
+    formTitle: 'Send a message', namelabel: 'Name', emaillabel: 'Email',
+    subjectlabel: 'Subject', msglabel: 'Message',
+    nameph: 'Your name', emailph: 'your@email.com', subjectph: 'How can I help?', msgph: 'Your message...',
+    sendbtn: 'Send message →', formsuccess: '✓ &nbsp;Message sent — I\'ll be in touch soon.',
+    closeModal: 'Close', of: 'of', videos_label: 'videos'
+  },
+  fr: {
+    role: 'Multi-instrumentiste', videos: 'Vidéos', contact: 'Contact',
+    summary: 'Musicien passionné depuis toujours par les traditions musicales les plus diverses, jouant des cordes, des vents, des claviers et de la voix. Son répertoire embrasse les styles classique, folk, jazz et contemporain — des cordes pincées de la Renaissance aux ensembles de cuivres, du saxophone jazz à l\'accordéon.\n\nInstruments : guitare, piano, accordéon, bandurria, luth espagnol, mandoline, contrebasse, saxophone alto et ténor, trompette, euphonium, harpe.',
+    ctxLabel: 'Contexte', famLabel: 'Famille',
+    allCtx: 'Tous', allFam: 'Tous', cuerda: 'Cordes', viento: 'Vents', teclado: 'Touches', voz: 'Voix',
+    instagram: 'Instagram', youtube: 'YouTube', email: 'Email', web: 'Site web',
+    formTitle: 'Envoyer un message', namelabel: 'Nom', emaillabel: 'Email',
+    subjectlabel: 'Sujet', msglabel: 'Message',
+    nameph: 'Votre nom', emailph: 'votre@email.com', subjectph: 'Comment puis-je vous aider ?', msgph: 'Votre message...',
+    sendbtn: 'Envoyer →', formsuccess: '✓ &nbsp;Message envoyé — je vous recontacterai bientôt.',
+    closeModal: 'Fermer', of: 'sur', videos_label: 'vidéos'
+  },
+  de: {
+    role: 'Multiinstrumentalist', videos: 'Videos', contact: 'Kontakt',
+    summary: 'Musiker mit einer lebenslangen Leidenschaft für vielfältige Musiktraditionen, der Saiten-, Blas-, Tasten- und Vokalinstrumente spielt. Sein Repertoire umfasst klassische, Folk-, Jazz- und zeitgenössische Stile — von Renaissance-Zupfinstrumenten bis zum Blechbläserensemble, vom Jazzsaxophon bis zum Akkordeon.\n\nInstrumente: Gitarre, Klavier, Akkordeon, Bandurria, Spanische Laute, Mandoline, Kontrabass, Alt- und Tenorsaxophon, Trompete, Euphonium, Harfe.',
+    ctxLabel: 'Kontext', famLabel: 'Familie',
+    allCtx: 'Alle', allFam: 'Alle', cuerda: 'Streicher', viento: 'Bläser', teclado: 'Tasten', voz: 'Gesang',
+    instagram: 'Instagram', youtube: 'YouTube', email: 'E-Mail', web: 'Webseite',
+    formTitle: 'Nachricht senden', namelabel: 'Name', emaillabel: 'E-Mail',
+    subjectlabel: 'Betreff', msglabel: 'Nachricht',
+    nameph: 'Ihr Name', emailph: 'ihre@email.com', subjectph: 'Wie kann ich helfen?', msgph: 'Ihre Nachricht...',
+    sendbtn: 'Nachricht senden →', formsuccess: '✓ &nbsp;Nachricht gesendet — ich melde mich bald.',
+    closeModal: 'Schließen', of: 'von', videos_label: 'Videos'
+  },
+  it: {
+    role: 'Multistrumentista', videos: 'Video', contact: 'Contatti',
+    summary: 'Musicista con una passione di lunga data per le tradizioni musicali più diverse, suonando strumenti a corda, a fiato, a tastiera e voce. Il suo repertorio spazia dagli stili classici, folk, jazz e contemporanei — dalle corde pizzicate del Rinascimento agli ensemble di ottoni, dal sassofono jazz alla fisarmonica.\n\nStrumenti: chitarra, pianoforte, fisarmonica, bandurria, liuto spagnolo, mandolino, contrabbasso, sassofono contralto e tenore, tromba, eufonio, arpa.',
+    ctxLabel: 'Contesto', famLabel: 'Famiglia',
+    allCtx: 'Tutti', allFam: 'Tutti', cuerda: 'Archi', viento: 'Fiati', teclado: 'Tastiere', voz: 'Voce',
+    instagram: 'Instagram', youtube: 'YouTube', email: 'Email', web: 'Sito web',
+    formTitle: 'Invia un messaggio', namelabel: 'Nome', emaillabel: 'Email',
+    subjectlabel: 'Oggetto', msglabel: 'Messaggio',
+    nameph: 'Il tuo nome', emailph: 'tua@email.com', subjectph: 'Come posso aiutarti?', msgph: 'Il tuo messaggio...',
+    sendbtn: 'Invia messaggio →', formsuccess: '✓ &nbsp;Messaggio inviato — ti risponderò presto.',
+    closeModal: 'Chiudi', of: 'di', videos_label: 'video'
+  },
+  zh: {
+    role: '多乐器演奏家', videos: '视频', contact: '联系方式',
+    summary: '音乐家，对多元音乐传统充满毕生热情，演奏弦乐、管乐、键盘乐器及声乐。其曲目横跨古典、民间、爵士和当代风格——从文艺复兴时期的拨弦乐器到铜管合奏，从爵士萨克斯到手风琴。\n\n乐器：吉他、钢琴、手风琴、班杜里亚琴、西班牙琉特琴、曼陀林、低音提琴、中音与次中音萨克斯、小号、次中音号、竖琴。',
+    ctxLabel: '背景', famLabel: '乐器族',
+    allCtx: '全部', allFam: '全部', cuerda: '弦乐', viento: '管乐', teclado: '键盘', voz: '声乐',
+    instagram: 'Instagram', youtube: 'YouTube', email: '电子邮件', web: '网站',
+    formTitle: '发送消息', namelabel: '姓名', emaillabel: '电子邮件',
+    subjectlabel: '主题', msglabel: '消息',
+    nameph: '您的姓名', emailph: '您的邮箱', subjectph: '我能帮您什么？', msgph: '您的消息...',
+    sendbtn: '发送消息 →', formsuccess: '✓ &nbsp;消息已发送 — 我会尽快与您联系。',
+    closeModal: '关闭', of: '/', videos_label: '个视频'
+  }
+};
+
+let activeContext = 'all-context';
+let activeFamily  = 'all-family';
+let currentLang   = 'es';
+
+// ── BUILD GRID ──
+function buildGrid() {
+  const grid = document.getElementById('video-grid');
+  grid.innerHTML = '';
+  VIDEOS.forEach((v, i) => {
+    const card = document.createElement('div');
+    card.className = 'video-card';
+    card.dataset.index = i;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', v.title);
+    card.innerHTML = `
+      <div class="thumb-wrap">
+        <img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy" />
+        <div class="play-btn"><div class="play-circle"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></div></div>
+      </div>
+      <div class="card-body">
+        <span class="card-instruments">${v.instruments}</span>
+        <div class="card-title">${v.title}</div>
+        <div class="card-context">${v.context}</div>
+      </div>`;
+    card.addEventListener('click', () => openModal(i));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(i); });
+    grid.appendChild(card);
+  });
+  applyFilters();
+}
+
+// ── FILTERS ──
+function applyFilters() {
+  const t = T[currentLang];
+  const cards = document.querySelectorAll('.video-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const v = VIDEOS[+card.dataset.index];
+    const contextOk = activeContext === 'all-context' || v.context_key === activeContext;
+    const familyOk  = activeFamily  === 'all-family'  || v.family.includes(activeFamily);
+    const show = contextOk && familyOk;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  const total = VIDEOS.length;
+  document.getElementById('results-count').textContent =
+    visible === total
+      ? `${total} ${t.videos_label}`
+      : `${visible} ${t.of} ${total} ${t.videos_label}`;
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const group  = btn.dataset.filterGroup;
+    const filter = btn.dataset.filter;
+    if (group === 'context') activeContext = filter;
+    if (group === 'family')  activeFamily  = filter;
+    document.querySelectorAll(`[data-filter-group="${group}"]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  });
+});
+
+// ── MODAL ──
+const modal       = document.getElementById('modal');
+const modalIframe = document.getElementById('modal-iframe');
+const modalTitle  = document.getElementById('modal-title');
+const modalInstr  = document.getElementById('modal-instruments');
+const modalCtx    = document.getElementById('modal-context');
+
+function openModal(index) {
+  const v = VIDEOS[index];
+  modalIframe.src     = `https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0`;
+  modalTitle.textContent = v.title;
+  modalInstr.textContent = v.instruments;
+  modalCtx.textContent   = v.context;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  modalIframe.src = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── I18N ──
+function setLang(lang) {
+  const t = T[lang];
+  if (!t) return;
+  currentLang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh' : lang;
+
+  document.getElementById('role-label').textContent      = t.role;
+  document.getElementById('music-summary').innerHTML     = t.summary.replace(/\n/g, '<br>');
+  document.getElementById('div-videos').textContent      = t.videos;
+  document.getElementById('div-contact').textContent     = t.contact;
+  document.getElementById('fl-context').textContent      = t.ctxLabel;
+  document.getElementById('fl-family').textContent       = t.famLabel;
+  document.getElementById('f-all-context').textContent   = t.allCtx;
+  document.getElementById('f-all-family').textContent    = t.allFam;
+  document.getElementById('f-cuerda').textContent        = t.cuerda;
+  document.getElementById('f-viento').textContent        = t.viento;
+  document.getElementById('f-teclado').textContent       = t.teclado;
+  document.getElementById('f-voz').textContent           = t.voz;
+  document.getElementById('lbl-instagram').textContent   = t.instagram;
+  document.getElementById('lbl-youtube').textContent     = t.youtube;
+  document.getElementById('lbl-email').textContent       = t.email;
+  document.getElementById('lbl-web').textContent         = t.web;
+  document.getElementById('form-title').textContent      = t.formTitle;
+  document.getElementById('lbl-name').textContent        = t.namelabel;
+  document.getElementById('lbl-email-field').textContent = t.emaillabel;
+  document.getElementById('lbl-subject').textContent     = t.subjectlabel;
+  document.getElementById('lbl-message').textContent     = t.msglabel;
+  document.getElementById('name').placeholder            = t.nameph;
+  document.getElementById('email').placeholder           = t.emailph;
+  document.getElementById('subject').placeholder         = t.subjectph;
+  document.getElementById('message').placeholder         = t.msgph;
+  document.getElementById('form-submit-btn').textContent = t.sendbtn;
+  document.getElementById('form-success').innerHTML      = t.formsuccess;
+  document.getElementById('modal-close-label').textContent = t.closeModal;
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active',
+      b.textContent === lang.toUpperCase() ||
+      (lang === 'zh' && b.textContent === '中文'));
+  });
+
+  applyFilters();
+  localStorage.setItem('ppf-music-lang', lang);
+}
+
+// ── FORM ──
+const form    = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+  const response = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+  if (response.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+});
+
+// ── INIT ──
+buildGrid();
+(function() {
+  const saved   = localStorage.getItem('ppf-music-lang');
+  const browser = (navigator.language || 'es').split('-')[0];
+  const supported = ['en', 'es', 'fr', 'de', 'it', 'zh'];
+  setLang(saved || (supported.includes(browser) ? browser : 'es'));
+})();
+</script>
+</body>
+</html>
