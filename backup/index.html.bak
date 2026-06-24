@@ -238,16 +238,6 @@
       animation: fadeUp 0.9s 0.3s ease both;
     }
 
-    .achievements {
-      margin: 12px 0;
-      padding-left: 20px;
-      font-size: 15px;
-    }
-    .achievements li {
-      margin: 8px 0;
-      line-height: 1.5;
-    }
-
     .exp-item {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -255,10 +245,9 @@
       padding: 20px 0;
       border-bottom: 1px solid var(--border);
       align-items: start;
-      transition: background-color 0.2s ease;
     }
-    .exp-item:first-child { border-top: none; }  
-    
+
+    .exp-item:first-child { border-top: 1px solid var(--border); }
 
     .exp-role {
       font-family: var(--font-display);
@@ -567,92 +556,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── EDUCATION STYLES ── */
-    /* ── EDUCATION STYLES ── */
-    .education h2, .education h3 {
-      font-family: var(--font-display);
-      color: var(--ink);
-    }
-    
-    .education h2 {
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-    
-    /* Ensure education details use correct font */
-    .education p {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--warm-grey);
-      margin: 0;
-    }
-    
-    /* Remove bullets from education timeline */
-    .education .timeline {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    /* Ensure work experience bullets use correct font */
-    .experience .achievements {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 12px 0 0 0;
-      color: var(--warm-grey);
-    }
-    
-    .experience .achievements li {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-    
-    .experience .achievements li strong {
-      font-weight: 500;
-    }
-    }
-@@ Update work experience bullets @@
-    .experience .achievements {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 12px 0 0 0;
-      color: var(--warm-grey);
-    }
-    
-    .experience .achievements li {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-    
-    .experience .achievements li strong {
-      font-weight: 500;
-    }
-      margin: 8px 0 4px 0;
-    }
-    
-    .education p {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--warm-grey);
-      margin: 0;
-    }
-    
-    .education .timeline li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .education .timeline li:last-child {
-      border-bottom: none;
-    }
-
     /* ── BACK LINK ── */
     .back-home {
       position: fixed;
@@ -919,33 +822,10 @@
     </div>
   </header>
 
-  <div class="summary" data-i18n="summary">
+  <p class="summary" data-i18n="summary">
     Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. 
-    Based in Geneva - fluent in five languages, bridging quantitative rigour with cross-border communication.
-  </div>
-
-  <a href="/docs/CV-Pablo-Pérez.pdf" class="btn-download-cv" download>
-    📄 Descargar CV
-  </a>
-
-  <style>
-    .btn-download-cv {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 12px 24px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-    }
-    .btn-download-cv:hover {
-      background: #333;
-    }
-  </style>
-
-
+    Based in Geneva — fluent in five languages, bridging quantitative rigour with cross-border communication.
+  </p>
 
   <div class="divider"><span data-i18n="expertise">Expertise</span></div>
   <div class="expertise">
@@ -961,7 +841,7 @@
     <div class="expertise-item">
       <span class="icon">⚙️</span>
       <strong data-i18n="e2title">Process Automation</strong>
-      <p data-i18n="e2desc">Power BI, Power Automate, VBA, Python - up to 40% workload reduction</p>
+      <p data-i18n="e2desc">Power BI, Power Automate, VBA, Python — up to 40% workload reduction</p>
       <div class="tooltip">
         <span class="t-label" data-i18n="e2label">At Santander Bank</span>
         <span class="t-text" data-i18n="e2tip">Designed automated reporting tools that reduced manual workload by 40%. Built a Power Automate JIRA workflow and automated audit processes with VBA, cutting data extraction time significantly.</span>
@@ -987,96 +867,39 @@
     </div>
   </div>
 
-<section class="section education">
-  <h2 data-i18n="eduTitle">🎓 Educación</h2>
-  <ul class="timeline">
-    <li>
-      <h3 data-i18n="edu1title">Máster en Finanzas y Ciencia de Datos</h3>
-      <p>EAE Business School, Madrid | 2020 – 2021</p>
-    </li>
-    <li>
-      <h3 data-i18n="edu2title">Grado en Ingeniería Industrial</h3>
-      <p>Universidad Pontificia Comillas, Madrid | 2015 – 2021</p>
-    </li>
-    <li>
-      <h3 data-i18n="edu3title">Programa Anglo-Chino</h3>
-      <p>Universidad Normal Capital (Beijing), China | 2009 – 2010</p>
-    </li>
-  </ul>
-
-  <style>
-    .badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .badge {
-      background: #e0e0e0;
-      color: #333;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-  </style>
-</section>
-
-<section class="section" style="margin: 64px 0;">
-  <h2 data-i18n="techSpecTitle" style="font-family: var(--font-display); font-size: 18px; margin-bottom: 20px; color: var(--ink);">🏅 Especialización Técnica</h2>
-  <div class="badges" style="margin-bottom: 8px;">
-    <span class="badge">FINMA/Basel</span>
-    <span class="badge">IFRS 9</span>
-    <span class="badge">ICAAP</span>
-    <span class="badge">ILAAP</span>
-    <span class="badge">KYC/AML</span>
-    <span class="badge">ESG Risk</span>
-  </div>
-</section>
   <div class="divider"><span data-i18n="experience">Experience</span></div>
   <div class="experience">
     <div class="exp-item">
       <div>
-        <div class="exp-role" data-i18n="job1role">Finance & FinTech Instructor</div>
-        <div class="exp-company">IBERONEX - Remote</div>
-        <ul class="achievements">
-          <li data-i18n="job1bullet1"><strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.</li>
-          <li data-i18n="job1bullet2"><strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.</li>
-        </ul>
+        <div class="exp-role" data-i18n="job1role">Finance &amp; FinTech Instructor</div>
+        <div class="exp-company">IBERONEX — Remote</div>
       </div>
-      <div class="exp-period" data-i18n="job1period">2026 - Present</div>
+      <div class="exp-period" data-i18n="job1period">2026 — Present</div>
     </div>
     <div class="exp-item">
       <div>
         <div class="exp-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
-        <div class="exp-company">Ernst & Young - Zurich</div>
-        <ul class="achievements">
-          <li data-i18n="job2bullet1"><strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.</li>
-          <li data-i18n="job2bullet2"><strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.</li>
-        </ul>
+        <div class="exp-company">Ernst &amp; Young — Zurich</div>
       </div>
-      <div class="exp-period">2025 - 2026</div>
+      <div class="exp-period">2025 — 2026</div>
     </div>
     <div class="exp-item">
       <div>
-        <div class="exp-role" data-i18n="job3role">Crisis & Regulatory Affairs Analyst</div>
-        <div class="exp-company">Santander Bank - Madrid</div>
-        <ul class="achievements">
-          <li data-i18n="job3bullet1"><strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.</li>
-          <li data-i18n="job3bullet2"><strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.</li>
-        </ul>
+        <div class="exp-role" data-i18n="job3role">Crisis &amp; Regulatory Affairs Analyst</div>
+        <div class="exp-company">Santander Bank — Madrid</div>
       </div>
-      <div class="exp-period">2021 - 2025</div>
+      <div class="exp-period">2021 — 2025</div>
     </div>
-    <div class="exp-item" style="border-bottom: none;">
+    <div class="exp-item">
       <div>
         <div class="exp-role" data-i18n="job4role">Enterprise Risk Management Intern</div>
-        <div class="exp-company">Santander Bank - Madrid</div>
+        <div class="exp-company">Santander Bank — Madrid</div>
       </div>
-      <div class="exp-period">2020 - 2021</div>
+      <div class="exp-period">2020 — 2021</div>
     </div>
+  </div>
 
-    <div class="divider"><span data-i18n="languages">Languages</span></div>
+  <div class="divider"><span data-i18n="languages">Languages</span></div>
   <div class="languages">
     <span class="lang-tag">Spanish <span class="level">Native</span></span>
     <span class="lang-tag">English <span class="level">Fluent</span></span>
@@ -1166,7 +989,7 @@
 
     <div class="contact-form">
       <p class="form-title">Send a message</p>
-      <div id="form-success" class="form-success">✓ &nbsp;Message sent - I'll be in touch soon.</div>
+      <div id="form-success" class="form-success">✓ &nbsp;Message sent — I'll be in touch soon.</div>
       <form id="contact-form" action="https://formspree.io/f/xpqerjgd" method="POST">
         <div class="form-row">
           <div class="form-group">
@@ -1212,135 +1035,91 @@
 const translations = {
   en: {
     role: "Finance & Risk Professional",
-    summary: "Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. Based in Geneva - fluent in five languages, bridging quantitative rigour with cross-border communication.",
+    summary: "Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. Based in Geneva — fluent in five languages, bridging quantitative rigour with cross-border communication.",
     expertise: "Expertise", experience: "Experience", languages: "Languages", contact: "Contact",
     e1title: "Financial Risk", e1desc: "Liquidity & credit risk, FINMA/Basel compliance, regulatory audit at EY Zurich",
     e1label: "At EY Zurich", e1tip: "Conducted liquidity and credit risk regulatory reviews for major Swiss banks, ensuring FINMA and Basel compliance. Processed large datasets in Python to support TBTF reporting reviews.",
-    e2title: "Process Automation", e2desc: "Power BI, Power Automate, VBA, Python - up to 40% workload reduction",
+    e2title: "Process Automation", e2desc: "Power BI, Power Automate, VBA, Python — up to 40% workload reduction",
     e2label: "At Santander Bank", e2tip: "Designed automated reporting tools that reduced manual workload by 40%. Built a Power Automate JIRA workflow and automated audit processes with VBA, cutting data extraction time significantly.",
     e3title: "Crisis & Continuity", e3desc: "Business continuity plans, Everbridge rollout, cross-border coordination",
     e3label: "At Santander Bank", e3tip: "Led the global rollout of the Everbridge crisis management platform across 3+ business units. Coordinated war games and recovery exercises across Europe, South America and North America.",
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, Gen AI integration, Finance & FinTech instructor",
     e4label: "At IBERONEX", e4tip: "Designed and delivered advanced lectures on blockchain, DeFi and tokenization. Built an AI-enhanced reference mapping tool at EY that ensured error-free updates to the audit work plan.",
-    job1role: "Finance & FinTech Instructor", job1period: "2026 - Present",
+    job1role: "Finance & FinTech Instructor", job1period: "2026 — Present",
     job2role: "Financial Risk Regulatory Audit Consultant",
     job3role: "Crisis & Regulatory Affairs Analyst",
     job4role: "Enterprise Risk Management Intern",
     savecontact: "Save Contact", sendmsg: "Send a message", caltitle: "Schedule a call", calsub: "30 min · Video call",
     namelabel: "Name", emaillabel: "Email", subjectlabel: "Subject", msglabel: "Message",
     nameph: "Your name", emailph: "your@email.com", subjectph: "How can I help?", msgph: "Your message...",
-    sendbtn: "Send message →", formsuccess: "✓  Message sent - I'll be in touch soon.",
-    linkedin: "LinkedIn", email: "Email", phone: "Phone", web: "Web",
-    eduTitle: "🎓 Education",
-    edu1title: "Master in Finance and Data Science",
-    edu2title: "Bachelor in Industrial Engineering",
-    edu3title: "Anglo-Chinese Programme",
-    techSpecTitle: "🏅 Technical Specialisation",
-    job1bullet1: "<strong>FinTech Training:</strong> Delivered advanced lectures on blockchain, DeFi and Web3 to university students.",
-    job1bullet2: "<strong>Regulatory Knowledge:</strong> Designed and taught regulatory frameworks applied to the digital environment.",
-    job2bullet1: "<strong>Regulatory Optimisation:</strong> Developed an AI-based tool for audit plans, improving consistency and reducing manual time.",
-    job2bullet2: "<strong>Data Management:</strong> Processed large volumes of financial/banking data via Python and advanced Excel, contributing to liquidity and credit risk reviews.",
-    job3bullet1: "<strong>Regulatory Automation:</strong> Developed a Power Platform solution that significantly reduced manual workload in internal processes.",
-    job3bullet2: "<strong>Audit Experience:</strong> Carried out 50+ enhanced reports and participated in 5+ key regulatory projects."
+    sendbtn: "Send message →", formsuccess: "✓  Message sent — I'll be in touch soon.",
+    linkedin: "LinkedIn", email: "Email", phone: "Phone", web: "Web"
   },
   es: {
     role: "Profesional en Finanzas y Riesgos",
-    summary: "Profesional multilingüe en finanzas con más de 5 años en gestión de riesgos, auditoría regulatoria y automatización de procesos. Basado en Ginebra - fluido en cinco idiomas, combinando rigor cuantitativo con comunicación transfronteriza.",
+    summary: "Profesional multilingüe en finanzas con más de 5 años en gestión de riesgos, auditoría regulatoria y automatización de procesos. Basado en Ginebra — fluido en cinco idiomas, combinando rigor cuantitativo con comunicación transfronteriza.",
     expertise: "Especialización", experience: "Experiencia", languages: "Idiomas", contact: "Contacto",
     e1title: "Riesgo Financiero", e1desc: "Riesgo de liquidez y crédito, cumplimiento FINMA/Basilea, auditoría regulatoria en EY Zúrich",
     e1label: "En EY Zúrich", e1tip: "Realicé revisiones regulatorias de riesgo de liquidez y crédito para grandes bancos suizos, garantizando el cumplimiento de FINMA y Basilea. Procesé grandes conjuntos de datos en Python para análisis TBTF.",
-    e2title: "Automatización de Procesos", e2desc: "Power BI, Power Automate, VBA, Python - hasta 40% de reducción de carga de trabajo",
+    e2title: "Automatización de Procesos", e2desc: "Power BI, Power Automate, VBA, Python — hasta 40% de reducción de carga de trabajo",
     e2label: "En Santander Bank", e2tip: "Diseñé herramientas de reporting automatizado que redujeron la carga manual en un 40%. Construí flujos JIRA con Power Automate y automaticé auditorías con VBA.",
     e3title: "Crisis y Continuidad", e3desc: "Planes de continuidad de negocio, despliegue de Everbridge, coordinación internacional",
     e3label: "En Santander Bank", e3tip: "Lideré el despliegue global de la plataforma Everbridge en más de 3 unidades de negocio. Coordiné ejercicios de recuperación en Europa, América del Sur y América del Norte.",
     e4title: "FinTech e IA", e4desc: "Blockchain, DeFi, integración de IA generativa, instructor de Finanzas y FinTech",
     e4label: "En IBERONEX", e4tip: "Diseñé e impartí clases avanzadas sobre blockchain, DeFi y tokenización. Desarrollé una herramienta de mapeo de referencias con IA en EY para actualizaciones sin errores del plan de auditoría.",
-    job1role: "Instructor de Finanzas y FinTech", job1period: "2026 - Presente",
+    job1role: "Instructor de Finanzas y FinTech", job1period: "2026 — Presente",
     job2role: "Consultor de Auditoría Regulatoria de Riesgo Financiero",
     job3role: "Analista de Crisis y Asuntos Regulatorios",
     job4role: "Becario de Gestión de Riesgos Empresariales",
     savecontact: "Guardar Contacto", sendmsg: "Enviar un mensaje", caltitle: "Agendar una llamada", calsub: "30 min · Videollamada",
     namelabel: "Nombre", emaillabel: "Email", subjectlabel: "Asunto", msglabel: "Mensaje",
     nameph: "Tu nombre", emailph: "tu@email.com", subjectph: "¿En qué puedo ayudarte?", msgph: "Tu mensaje...",
-    sendbtn: "Enviar mensaje →", formsuccess: "✓  Mensaje enviado - me pondré en contacto pronto.",
-    linkedin: "LinkedIn", email: "Email", phone: "Teléfono", web: "Web",
-    eduTitle: "🎓 Educación",
-    edu1title: "Máster en Finanzas y Ciencia de Datos",
-    edu2title: "Grado en Ingeniería Industrial",
-    edu3title: "Programa Anglo-Chino",
-    techSpecTitle: "🏅 Especialización Técnica",
-    job1bullet1: "<strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.",
-    job1bullet2: "<strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.",
-    job2bullet1: "<strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.",
-    job2bullet2: "<strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.",
-    job3bullet1: "<strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.",
-    job3bullet2: "<strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave."
+    sendbtn: "Enviar mensaje →", formsuccess: "✓  Mensaje enviado — me pondré en contacto pronto.",
+    linkedin: "LinkedIn", email: "Email", phone: "Teléfono", web: "Web"
   },
   fr: {
     role: "Professionnel en Finance & Risques",
-    summary: "Professionnel multilingue en finance avec plus de 5 ans d'expérience en gestion des risques, audit réglementaire et automatisation des processus. Basé à Genève - maîtrise de cinq langues, alliant rigueur quantitative et communication transfrontalière.",
+    summary: "Professionnel multilingue en finance avec plus de 5 ans d'expérience en gestion des risques, audit réglementaire et automatisation des processus. Basé à Genève — maîtrise de cinq langues, alliant rigueur quantitative et communication transfrontalière.",
     expertise: "Expertise", experience: "Expérience", languages: "Langues", contact: "Contact",
     e1title: "Risque Financier", e1desc: "Risque de liquidité et de crédit, conformité FINMA/Bâle, audit réglementaire chez EY Zurich",
     e1label: "Chez EY Zurich", e1tip: "Réalisé des revues réglementaires de risque de liquidité et de crédit pour les grandes banques suisses, en garantissant la conformité FINMA et Bâle. Traitement de grands ensembles de données en Python.",
-    e2title: "Automatisation des Processus", e2desc: "Power BI, Power Automate, VBA, Python - jusqu'à 40% de réduction de charge",
+    e2title: "Automatisation des Processus", e2desc: "Power BI, Power Automate, VBA, Python — jusqu'à 40% de réduction de charge",
     e2label: "Chez Santander Bank", e2tip: "Conçu des outils de reporting automatisés réduisant la charge manuelle de 40%. Développé des flux JIRA avec Power Automate et automatisé des audits avec VBA.",
     e3title: "Crise & Continuité", e3desc: "Plans de continuité d'activité, déploiement Everbridge, coordination internationale",
     e3label: "Chez Santander Bank", e3tip: "Piloté le déploiement mondial de la plateforme Everbridge dans plus de 3 unités. Coordonné des exercices de simulation de crise en Europe, Amérique du Sud et Amérique du Nord.",
     e4title: "FinTech & IA", e4desc: "Blockchain, DeFi, intégration IA générative, formateur Finance & FinTech",
     e4label: "Chez IBERONEX", e4tip: "Conçu et dispensé des cours avancés sur la blockchain, la DeFi et la tokenisation. Développé un outil de cartographie de références basé sur l'IA chez EY.",
-    job1role: "Formateur Finance & FinTech", job1period: "2026 - Présent",
+    job1role: "Formateur Finance & FinTech", job1period: "2026 — Présent",
     job2role: "Consultant en Audit Réglementaire du Risque Financier",
     job3role: "Analyste Affaires Réglementaires & Gestion de Crise",
     job4role: "Stagiaire Gestion des Risques d'Entreprise",
     savecontact: "Enregistrer le contact", sendmsg: "Envoyer un message", caltitle: "Planifier un appel", calsub: "30 min · Appel vidéo",
     namelabel: "Nom", emaillabel: "Email", subjectlabel: "Sujet", msglabel: "Message",
     nameph: "Votre nom", emailph: "votre@email.com", subjectph: "Comment puis-je vous aider ?", msgph: "Votre message...",
-    sendbtn: "Envoyer →", formsuccess: "✓  Message envoyé - je vous recontacterai bientôt.",
-    linkedin: "LinkedIn", email: "Email", phone: "Téléphone", web: "Site web",
-    eduTitle: "🎓 Formation",
-    edu1title: "Master en Finance et Science des Données",
-    edu2title: "Licence en Génie Industriel",
-    edu3title: "Programme Anglo-Chinois",
-    techSpecTitle: "🏅 Spécialisation Technique",
-    job1bullet1: "<strong>Formation FinTech :</strong> Dispensé des cours avancés sur la blockchain, la DeFi et le Web3 à des étudiants universitaires.",
-    job1bullet2: "<strong>Connaissance Réglementaire :</strong> Conçu et enseigné des cadres réglementaires appliqués à l'environnement numérique.",
-    job2bullet1: "<strong>Optimisation Réglementaire :</strong> Développé un outil basé sur l'IA pour les plans d'audit, améliorant la cohérence et réduisant les délais manuels.",
-    job2bullet2: "<strong>Gestion des Données :</strong> Traité de grands volumes de données financières via Python et Excel avancé, contribuant aux revues de risque de liquidité et de crédit.",
-    job3bullet1: "<strong>Automatisation Réglementaire :</strong> Développé une solution Power Platform réduisant significativement la charge manuelle dans les processus internes.",
-    job3bullet2: "<strong>Expérience d'Audit :</strong> Réalisé plus de 50 rapports améliorés et participé à 5+ projets réglementaires clés."
+    sendbtn: "Envoyer →", formsuccess: "✓  Message envoyé — je vous recontacterai bientôt.",
+    linkedin: "LinkedIn", email: "Email", phone: "Téléphone", web: "Site web"
   },
   de: {
     role: "Finanz- & Risikoprofi",
-    summary: "Mehrsprachiger Finanzprofi mit über 5 Jahren Erfahrung in Risikomanagement, regulatorischer Prüfung und Prozessautomatisierung. Ansässig in Genf - fließend in fünf Sprachen, Verbindung von quantitativer Strenge und grenzüberschreitender Kommunikation.",
+    summary: "Mehrsprachiger Finanzprofi mit über 5 Jahren Erfahrung in Risikomanagement, regulatorischer Prüfung und Prozessautomatisierung. Ansässig in Genf — fließend in fünf Sprachen, Verbindung von quantitativer Strenge und grenzüberschreitender Kommunikation.",
     expertise: "Fachgebiete", experience: "Erfahrung", languages: "Sprachen", contact: "Kontakt",
     e1title: "Finanzrisiko", e1desc: "Liquiditäts- und Kreditrisiko, FINMA/Basel-Konformität, regulatorische Prüfung bei EY Zürich",
     e1label: "Bei EY Zürich", e1tip: "Regulatorische Prüfungen von Liquiditäts- und Kreditrisiken für Schweizer Großbanken durchgeführt. Verarbeitung großer Datensätze in Python für TBTF-Analysen.",
-    e2title: "Prozessautomatisierung", e2desc: "Power BI, Power Automate, VBA, Python - bis zu 40% Arbeitsreduktion",
+    e2title: "Prozessautomatisierung", e2desc: "Power BI, Power Automate, VBA, Python — bis zu 40% Arbeitsreduktion",
     e2label: "Bei Santander Bank", e2tip: "Automatisierte Reporting-Tools entwickelt, die den manuellen Aufwand um 40% reduzierten. JIRA-Workflows mit Power Automate und VBA-Automatisierungen für Audits erstellt.",
     e3title: "Krisen & Kontinuität", e3desc: "Geschäftskontinuitätspläne, Everbridge-Einführung, grenzüberschreitende Koordination",
     e3label: "Bei Santander Bank", e3tip: "Globale Einführung der Everbridge-Krisenmanagementplattform in über 3 Einheiten geleitet. Übungen in Europa, Südamerika und Nordamerika koordiniert.",
     e4title: "FinTech & KI", e4desc: "Blockchain, DeFi, generative KI-Integration, Dozent für Finanzen & FinTech",
     e4label: "Bei IBERONEX", e4tip: "Fortgeschrittene Vorlesungen über Blockchain, DeFi und Tokenisierung entwickelt und gehalten. KI-gestütztes Referenz-Mapping-Tool bei EY entwickelt.",
-    job1role: "Dozent für Finanzen & FinTech", job1period: "2026 - Heute",
+    job1role: "Dozent für Finanzen & FinTech", job1period: "2026 — Heute",
     job2role: "Berater für regulatorische Finanzrisikoprüfung",
     job3role: "Analyst für Krisen- und Regulierungsangelegenheiten",
     job4role: "Praktikant Unternehmensweites Risikomanagement",
     savecontact: "Kontakt speichern", sendmsg: "Nachricht senden", caltitle: "Gespräch vereinbaren", calsub: "30 Min · Videoanruf",
     namelabel: "Name", emaillabel: "E-Mail", subjectlabel: "Betreff", msglabel: "Nachricht",
     nameph: "Ihr Name", emailph: "ihre@email.com", subjectph: "Wie kann ich helfen?", msgph: "Ihre Nachricht...",
-    sendbtn: "Nachricht senden →", formsuccess: "✓  Nachricht gesendet - ich melde mich bald.",
-    linkedin: "LinkedIn", email: "E-Mail", phone: "Telefon", web: "Webseite",
-    eduTitle: "🎓 Ausbildung",
-    edu1title: "Master in Finanzen und Datenwissenschaft",
-    edu2title: "Bachelor in Wirtschaftsingenieurwesen",
-    edu3title: "Anglo-Chinesisches Programm",
-    techSpecTitle: "🏅 Technische Spezialisierung",
-    job1bullet1: "<strong>FinTech-Schulung:</strong> Fortgeschrittene Vorlesungen über Blockchain, DeFi und Web3 an Universitätsstudenten gehalten.",
-    job1bullet2: "<strong>Regulatorisches Wissen:</strong> Regulatorische Rahmenbedingungen für das digitale Umfeld entwickelt und gelehrt.",
-    job2bullet1: "<strong>Regulatorische Optimierung:</strong> KI-basiertes Tool für Prüfungspläne entwickelt, das Konsistenz verbessert und manuelle Zeit reduziert.",
-    job2bullet2: "<strong>Datenmanagement:</strong> Große Mengen an Finanz- und Bankdaten über Python und Excel verarbeitet; Beitrag zu Liquiditäts- und Kreditrisikoprüfungen.",
-    job3bullet1: "<strong>Regulatorische Automatisierung:</strong> Power Platform-Lösung entwickelt, die den manuellen Aufwand in internen Prozessen deutlich reduziert.",
-    job3bullet2: "<strong>Prüfungserfahrung:</strong> Über 50 verbesserte Berichte erstellt und an 5+ wichtigen regulatorischen Projekten mitgewirkt."
+    sendbtn: "Nachricht senden →", formsuccess: "✓  Nachricht gesendet — ich melde mich bald.",
+    linkedin: "LinkedIn", email: "E-Mail", phone: "Telefon", web: "Webseite"
   },
   zh: {
     role: "金融与风险管理专业人士",
@@ -1348,65 +1127,43 @@ const translations = {
     expertise: "专业领域", experience: "工作经历", languages: "语言能力", contact: "联系方式",
     e1title: "金融风险", e1desc: "流动性与信用风险、FINMA/巴塞尔合规、EY苏黎世监管审计",
     e1label: "在EY苏黎世", e1tip: "为瑞士主要银行开展流动性和信用风险监管审查，确保符合FINMA和巴塞尔标准。使用Python处理大型数据集，支持TBTF报告审查。",
-    e2title: "流程自动化", e2desc: "Power BI、Power Automate、VBA、Python - 工作量减少40%",
+    e2title: "流程自动化", e2desc: "Power BI、Power Automate、VBA、Python — 工作量减少40%",
     e2label: "在桑坦德银行", e2tip: "设计自动化报告工具，将手动工作量减少40%。使用Power Automate构建JIRA工作流，并使用VBA自动化审计流程。",
     e3title: "危机与业务连续性", e3desc: "业务连续性计划、Everbridge部署、跨境协调",
     e3label: "在桑坦德银行", e3tip: "领导Everbridge危机管理平台在3个以上业务单元的全球推广。协调欧洲、南美和北美的恢复演练。",
     e4title: "金融科技与AI", e4desc: "区块链、DeFi、生成式AI整合、金融与金融科技讲师",
     e4label: "在IBERONEX", e4tip: "设计并讲授区块链、DeFi和通证化高级课程。在EY开发了AI增强参考映射工具，确保审计计划无误更新。",
-    job1role: "金融与金融科技讲师", job1period: "2026 - 至今",
+    job1role: "金融与金融科技讲师", job1period: "2026 — 至今",
     job2role: "金融风险监管审计顾问",
     job3role: "危机与监管事务分析师",
     job4role: "企业风险管理实习生",
     savecontact: "保存联系人", sendmsg: "发送消息", caltitle: "预约通话", calsub: "30分钟 · 视频通话",
     namelabel: "姓名", emaillabel: "电子邮件", subjectlabel: "主题", msglabel: "消息",
     nameph: "您的姓名", emailph: "您的邮箱", subjectph: "我能帮您什么？", msgph: "您的消息...",
-    sendbtn: "发送消息 →", formsuccess: "✓  消息已发送 - 我会尽快与您联系。",
-    linkedin: "领英", email: "电子邮件", phone: "电话", web: "网站",
-    eduTitle: "🎓 教育背景",
-    edu1title: "金融与数据科学硕士",
-    edu2title: "工业工程学士",
-    edu3title: "英汉双语项目",
-    techSpecTitle: "🏅 技术专长",
-    job1bullet1: "<strong>金融科技培训：</strong>为大学生讲授区块链、DeFi和Web3高级课程。",
-    job1bullet2: "<strong>监管知识：</strong>设计并讲授应用于数字环境的监管框架。",
-    job2bullet1: "<strong>监管优化：</strong>开发了基于AI的审计计划工具，提高一致性并减少手动时间。",
-    job2bullet2: "<strong>数据管理：</strong>通过Python和高级Excel处理大量金融/银行数据，为流动性和信用风险审查做出贡献。",
-    job3bullet1: "<strong>监管自动化：</strong>开发了Power Platform解决方案，显著减少了内部流程中的手动工作量。",
-    job3bullet2: "<strong>审计经验：</strong>完成50+份增强报告，参与5+个关键监管项目。"
+    sendbtn: "发送消息 →", formsuccess: "✓  消息已发送 — 我会尽快与您联系。",
+    linkedin: "领英", email: "电子邮件", phone: "电话", web: "网站"
   },
   it: {
     role: "Professionista in Finanza & Rischi",
-    summary: "Professionista multilingue in finanza con oltre 5 anni di esperienza in gestione del rischio, audit regolatorio e automazione dei processi. Basato a Ginevra - fluente in cinque lingue, unendo rigore quantitativo e comunicazione transfrontaliera.",
+    summary: "Professionista multilingue in finanza con oltre 5 anni di esperienza in gestione del rischio, audit regolatorio e automazione dei processi. Basato a Ginevra — fluente in cinque lingue, unendo rigore quantitativo e comunicazione transfrontaliera.",
     expertise: "Competenze", experience: "Esperienza", languages: "Lingue", contact: "Contatti",
     e1title: "Rischio Finanziario", e1desc: "Rischio di liquidità e credito, conformità FINMA/Basilea, audit regolatorio presso EY Zurigo",
     e1label: "In EY Zurigo", e1tip: "Revisioni regolamentari del rischio di liquidità e credito per le principali banche svizzere, garantendo la conformità a FINMA e Basilea. Elaborazione di grandi dataset in Python.",
-    e2title: "Automazione dei Processi", e2desc: "Power BI, Power Automate, VBA, Python - fino al 40% di riduzione del carico",
+    e2title: "Automazione dei Processi", e2desc: "Power BI, Power Automate, VBA, Python — fino al 40% di riduzione del carico",
     e2label: "In Santander Bank", e2tip: "Progettato strumenti di reporting automatizzati che hanno ridotto il carico manuale del 40%. Creato flussi JIRA con Power Automate e automatizzato audit con VBA.",
     e3title: "Crisi & Continuità", e3desc: "Piani di continuità operativa, rollout Everbridge, coordinamento internazionale",
     e3label: "In Santander Bank", e3tip: "Guidato il rollout globale della piattaforma Everbridge in oltre 3 unità aziendali. Coordinato esercitazioni di crisi in Europa, Sud America e Nord America.",
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, integrazione AI generativa, docente di Finanza & FinTech",
     e4label: "In IBERONEX", e4tip: "Progettato e tenuto lezioni avanzate su blockchain, DeFi e tokenizzazione. Sviluppato uno strumento di mappatura di riferimento basato su AI presso EY.",
-    job1role: "Docente di Finanza & FinTech", job1period: "2026 - Presente",
+    job1role: "Docente di Finanza & FinTech", job1period: "2026 — Presente",
     job2role: "Consulente di Audit Regolatorio del Rischio Finanziario",
     job3role: "Analista di Crisi e Affari Regolatori",
     job4role: "Stagista Gestione del Rischio Aziendale",
     savecontact: "Salva Contatto", sendmsg: "Invia un messaggio", caltitle: "Prenota una chiamata", calsub: "30 min · Videochiamata",
     namelabel: "Nome", emaillabel: "Email", subjectlabel: "Oggetto", msglabel: "Messaggio",
     nameph: "Il tuo nome", emailph: "tua@email.com", subjectph: "Come posso aiutarti?", msgph: "Il tuo messaggio...",
-    sendbtn: "Invia messaggio →", formsuccess: "✓  Messaggio inviato - ti risponderò presto.",
-    linkedin: "LinkedIn", email: "Email", phone: "Telefono", web: "Sito web",
-    eduTitle: "🎓 Istruzione",
-    edu1title: "Master in Finanza e Data Science",
-    edu2title: "Laurea in Ingegneria Industriale",
-    edu3title: "Programma Anglo-Cinese",
-    techSpecTitle: "🏅 Specializzazione Tecnica",
-    job1bullet1: "<strong>Formazione FinTech:</strong> Tenuto lezioni avanzate su blockchain, DeFi e Web3 a studenti universitari.",
-    job1bullet2: "<strong>Conoscenza Normativa:</strong> Progettato e insegnato framework normativi applicati all'ambiente digitale.",
-    job2bullet1: "<strong>Ottimizzazione Normativa:</strong> Sviluppato strumento basato su AI per piani di audit, migliorando la coerenza e riducendo i tempi manuali.",
-    job2bullet2: "<strong>Gestione dei Dati:</strong> Elaborato grandi volumi di dati finanziari/bancari tramite Python ed Excel avanzato, contribuendo a revisioni del rischio di liquidità e credito.",
-    job3bullet1: "<strong>Automazione Normativa:</strong> Sviluppato soluzione Power Platform che ha ridotto significativamente il carico manuale nei processi interni.",
-    job3bullet2: "<strong>Esperienza di Audit:</strong> Condotto oltre 50 report migliorati e partecipato a 5+ progetti normativi chiave."
+    sendbtn: "Invia messaggio →", formsuccess: "✓  Messaggio inviato — ti risponderò presto.",
+    linkedin: "LinkedIn", email: "Email", phone: "Telefono", web: "Sito web"
   }
 };
 
