@@ -404,6 +404,33 @@
       fill: white;
     }
 
+    .btn-download-cv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 18px;
+      margin-bottom: 40px;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-download-cv:hover { background: var(--accent); }
+
+    .btn-download-cv svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
     /* ── SAVE + QR ROW ── */
     .save-qr-row {
       display: flex;
@@ -903,11 +930,11 @@
 
 <div class="lang-selector">
   <button class="lang-btn" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('de')">DE</button>
-  <button class="lang-btn" onclick="setLang('zh')">中文</button>
   <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
 <div class="page">
 
@@ -924,31 +951,10 @@
     Based in Geneva - fluent in five languages, bridging quantitative rigour with cross-border communication.
   </div>
 
-  <a href="/docs/CV-Pablo-Pérez.pdf" class="btn-download-cv" download data-i18n="download_cv"></a>
-
-  <style>
-    .btn-download-cv {
-      display: inline-block;
-      margin: 30px 0;
-      padding: 20px 32px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: 700;
-      transition: all 0.2s ease;
-    }
-    
-    .btn-download-cv:hover {
-      background: #333;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
-    .btn-download-cv:hover {
-      background: #333;
-    }
-  </style>
+  <a href="/docs/CV-Pablo-Pérez.pdf" class="btn-download-cv" download>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
+    <span data-i18n="download_cv">Download CV</span>
+  </a>
 
 
 
@@ -1251,6 +1257,7 @@ const translations = {
     e3label: "At Santander Bank", e3tip: "Led the global rollout of the Everbridge crisis management platform across 3+ business units. Coordinated war games and recovery exercises across Europe, South America and North America.",
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, Gen AI integration, Finance & FinTech instructor",
     e4label: "At IBERONEX", e4tip: "Designed and delivered advanced lectures on blockchain, DeFi and tokenization. Built an AI-enhanced reference mapping tool at EY that ensured error-free updates to the audit work plan.",
+    download_cv: "Download CV",
     job1role: "Finance & FinTech Instructor", job1period: "2026 - Present",
     job2role: "Financial Risk Regulatory Audit Consultant",
     job3role: "Crisis & Regulatory Affairs Analyst",
@@ -1284,6 +1291,7 @@ const translations = {
     e3label: "En Santander Bank", e3tip: "Lideré el despliegue global de la plataforma Everbridge en más de 3 unidades de negocio. Coordiné ejercicios de recuperación en Europa, América del Sur y América del Norte.",
     e4title: "FinTech e IA", e4desc: "Blockchain, DeFi, integración de IA generativa, instructor de Finanzas y FinTech",
     e4label: "En IBERONEX", e4tip: "Diseñé e impartí clases avanzadas sobre blockchain, DeFi y tokenización. Desarrollé una herramienta de mapeo de referencias con IA en EY para actualizaciones sin errores del plan de auditoría.",
+    download_cv: "Descargar CV",
     job1role: "Instructor de Finanzas y FinTech", job1period: "2026 - Presente",
     job2role: "Consultor de Auditoría Regulatoria de Riesgo Financiero",
     job3role: "Analista de Crisis y Asuntos Regulatorios",
@@ -1317,6 +1325,7 @@ const translations = {
     e3label: "Chez Santander Bank", e3tip: "Piloté le déploiement mondial de la plateforme Everbridge dans plus de 3 unités. Coordonné des exercices de simulation de crise en Europe, Amérique du Sud et Amérique du Nord.",
     e4title: "FinTech & IA", e4desc: "Blockchain, DeFi, intégration IA générative, formateur Finance & FinTech",
     e4label: "Chez IBERONEX", e4tip: "Conçu et dispensé des cours avancés sur la blockchain, la DeFi et la tokenisation. Développé un outil de cartographie de références basé sur l'IA chez EY.",
+    download_cv: "Télécharger CV",
     job1role: "Formateur Finance & FinTech", job1period: "2026 - Présent",
     job2role: "Consultant en Audit Réglementaire du Risque Financier",
     job3role: "Analyste Affaires Réglementaires & Gestion de Crise",
@@ -1350,6 +1359,7 @@ const translations = {
     e3label: "Bei Santander Bank", e3tip: "Globale Einführung der Everbridge-Krisenmanagementplattform in über 3 Einheiten geleitet. Übungen in Europa, Südamerika und Nordamerika koordiniert.",
     e4title: "FinTech & KI", e4desc: "Blockchain, DeFi, generative KI-Integration, Dozent für Finanzen & FinTech",
     e4label: "Bei IBERONEX", e4tip: "Fortgeschrittene Vorlesungen über Blockchain, DeFi und Tokenisierung entwickelt und gehalten. KI-gestütztes Referenz-Mapping-Tool bei EY entwickelt.",
+    download_cv: "Lebenslauf herunterladen",
     job1role: "Dozent für Finanzen & FinTech", job1period: "2026 - Heute",
     job2role: "Berater für regulatorische Finanzrisikoprüfung",
     job3role: "Analyst für Krisen- und Regulierungsangelegenheiten",
@@ -1383,6 +1393,7 @@ const translations = {
     e3label: "在桑坦德银行", e3tip: "领导Everbridge危机管理平台在3个以上业务单元的全球推广。协调欧洲、南美和北美的恢复演练。",
     e4title: "金融科技与AI", e4desc: "区块链、DeFi、生成式AI整合、金融与金融科技讲师",
     e4label: "在IBERONEX", e4tip: "设计并讲授区块链、DeFi和通证化高级课程。在EY开发了AI增强参考映射工具，确保审计计划无误更新。",
+    download_cv: "下载简历",
     job1role: "金融与金融科技讲师", job1period: "2026 - 至今",
     job2role: "金融风险监管审计顾问",
     job3role: "危机与监管事务分析师",
@@ -1416,6 +1427,7 @@ const translations = {
     e3label: "In Santander Bank", e3tip: "Guidato il rollout globale della piattaforma Everbridge in oltre 3 unità aziendali. Coordinato esercitazioni di crisi in Europa, Sud America e Nord America.",
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, integrazione AI generativa, docente di Finanza & FinTech",
     e4label: "In IBERONEX", e4tip: "Progettato e tenuto lezioni avanzate su blockchain, DeFi e tokenizzazione. Sviluppato uno strumento di mappatura di riferimento basato su AI presso EY.",
+    download_cv: "Scarica CV",
     job1role: "Docente di Finanza & FinTech", job1period: "2026 - Presente",
     job2role: "Consulente di Audit Regolatorio del Rischio Finanziario",
     job3role: "Analista di Crisi e Affari Regolatori",
@@ -1484,7 +1496,7 @@ function setLang(lang) {
 (function() {
   const saved = localStorage.getItem('lang');
   const browser = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
-  const supported = ['en', 'es', 'fr', 'de', 'zh', 'it'];
+  const supported = ['en', 'fr', 'es', 'de', 'it', 'zh'];
   const lang = saved || (supported.includes(browser) ? browser : 'en');
   setLang(lang);
 })();

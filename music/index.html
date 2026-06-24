@@ -595,11 +595,11 @@
 
 <div class="lang-selector">
   <button class="lang-btn" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('de')">DE</button>
-  <button class="lang-btn" onclick="setLang('zh')">中文</button>
   <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
 
 <header>
@@ -998,7 +998,7 @@ buildGrid();
 (function() {
   const saved   = localStorage.getItem('ppf-music-lang');
   const browser = (navigator.language || 'es').split('-')[0];
-  const supported = ['en', 'es', 'fr', 'de', 'it', 'zh'];
+  const supported = ['en', 'fr', 'es', 'de', 'it', 'zh'];
   setLang(saved || (supported.includes(browser) ? browser : 'es'));
 })();
 </script>

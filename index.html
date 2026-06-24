@@ -292,11 +292,11 @@
 <!-- Fixed language selector (top-right) -->
 <div class="lang-selector">
   <button class="lang-btn" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
   <button class="lang-btn" onclick="setLang('de')">DE</button>
-  <button class="lang-btn" onclick="setLang('zh')">中文</button>
   <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
 
 <!-- Main content -->
@@ -407,7 +407,7 @@ function setLang(lang) {
 (function () {
   const saved   = localStorage.getItem('ppf-lang');
   const browser = (navigator.language || 'en').split('-')[0];
-  const supported = ['en', 'es', 'fr', 'de', 'it', 'zh'];
+  const supported = ['en', 'fr', 'es', 'de', 'it', 'zh'];
   const lang = saved || (supported.includes(browser) ? browser : 'en');
   setLang(lang);
 })();
