@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pablo Pérez Fraile </title>
+  <title>Pablo Pérez Fraile</title>
+  <meta name="description" content="Pablo Pérez Fraile - Finance & Risk Professional. Based in Geneva, Switzerland." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,6 +18,7 @@
       --accent: #B8935A;
       --accent-light: #D4B483;
       --border: rgba(26,23,20,0.1);
+      --border-strong: rgba(26,23,20,0.18);
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', sans-serif;
     }
@@ -40,8 +42,10 @@
       padding: 80px 32px 60px;
     }
 
+    /* ── HEADER (centered / editorial) ── */
     header {
-      margin-bottom: 64px;
+      margin-bottom: 40px;
+      text-align: center;
       animation: fadeUp 0.9s ease both;
     }
 
@@ -57,11 +61,11 @@
 
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(48px, 10vw, 72px);
+      font-size: clamp(46px, 9vw, 66px);
       font-weight: 300;
       line-height: 1.0;
-      letter-spacing: -0.01em;
-      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
     }
 
     h1 em {
@@ -69,29 +73,15 @@
       color: var(--warm-grey);
     }
 
-    .title-line {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .title-line::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
     .role {
+      display: inline-block;
       font-family: var(--font-body);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.16em;
       color: var(--warm-grey);
       text-transform: uppercase;
+      margin-top: 18px;
     }
 
     .summary {
@@ -100,15 +90,18 @@
       font-weight: 300;
       line-height: 1.65;
       color: var(--ink);
-      margin-bottom: 56px;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 40px;
       animation: fadeUp 0.9s 0.15s ease both;
     }
 
+    /* ── DIVIDER (line — label — line) ── */
     .divider {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
     .divider span {
       font-size: 10px;
@@ -125,32 +118,66 @@
       background: var(--border);
     }
 
+    /* ── CENTERED SECTION LABEL (V3) ── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: center;
+      margin: 56px 0 32px;
+    }
+
+    /* ── NUMBERED SECTION HEADER (V2 ledger) ── */
+    .ledger-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 56px 0 18px;
+    }
+    .ledger-head .num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--accent);
+    }
+    .ledger-head .lbl {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .ledger-head .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border-strong);
+      align-self: center;
+    }
+
+    /* ── EXPERTISE ── */
     .expertise {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      margin-bottom: 56px;
+      margin-bottom: 8px;
       animation: fadeUp 0.9s 0.25s ease both;
     }
-
     .expertise-item {
       padding: 20px 24px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.4);
       transition: background 0.3s ease, border-color 0.3s ease;
+      position: relative;
     }
-
     .expertise-item:hover {
       background: rgba(255,255,255,0.7);
       border-color: var(--accent-light);
     }
-
-    .expertise-item .icon {
-      font-size: 18px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
+    .expertise-item .icon { font-size: 18px; margin-bottom: 10px; display: block; }
     .expertise-item strong {
       display: block;
       font-size: 12px;
@@ -160,17 +187,7 @@
       color: var(--ink);
       margin-bottom: 4px;
     }
-
-    .expertise-item p {
-      font-size: 12px;
-      color: var(--warm-grey);
-      line-height: 1.5;
-    }
-
-    /* ── TOOLTIP ── */
-    .expertise-item {
-      position: relative;
-    }
+    .expertise-item p { font-size: 12px; color: var(--warm-grey); line-height: 1.5; }
 
     .tooltip {
       display: none;
@@ -187,7 +204,6 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.18);
       pointer-events: none;
     }
-
     .tooltip::after {
       content: '';
       position: absolute;
@@ -197,7 +213,6 @@
       border: 6px solid transparent;
       border-top-color: var(--ink);
     }
-
     .tooltip .t-label {
       font-size: 9px;
       font-weight: 500;
@@ -207,7 +222,6 @@
       margin-bottom: 8px;
       display: block;
     }
-
     .tooltip .t-text {
       font-family: var(--font-display);
       font-size: 14px;
@@ -215,83 +229,135 @@
       line-height: 1.6;
       color: var(--cream);
     }
-
-    .expertise-item:hover .tooltip {
-      display: block;
-      animation: fadeUp 0.2s ease both;
-    }
+    .expertise-item:hover .tooltip { display: block; animation: fadeUp 0.2s ease both; }
 
     @media (max-width: 520px) {
-      .tooltip {
-        left: 0;
-        transform: none;
-        width: 220px;
-      }
-      .tooltip::after {
-        left: 24px;
-        transform: none;
-      }
+      .tooltip { left: 0; transform: none; width: 220px; }
+      .tooltip::after { left: 24px; transform: none; }
     }
 
-    .experience {
-      margin-bottom: 56px;
+    /* ── CAREER TIMELINE (V3 centered spine) ── */
+    .timeline {
+      position: relative;
+      padding: 4px 0;
       animation: fadeUp 0.9s 0.3s ease both;
     }
-
-    .achievements {
-      margin: 12px 0;
-      padding-left: 20px;
-      font-size: 15px;
+    .timeline .spine {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(184,147,90,0.35);
+      transform: translateX(-50%);
     }
-    .achievements li {
-      margin: 8px 0;
-      line-height: 1.5;
-    }
-
-    .exp-item {
+    .tl-row {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: 1fr 24px 1fr;
       align-items: start;
-      transition: background-color 0.2s ease;
+      margin-bottom: 28px;
     }
-    .exp-item:first-child { border-top: none; }  
-    
-
-    .exp-role {
+    .tl-row:last-child { margin-bottom: 0; }
+    .tl-node { display: flex; justify-content: center; padding-top: 4px; }
+    .tl-node span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--cream);
+    }
+    .tl-node.hollow span { background: var(--cream); border: 1.5px solid var(--accent); }
+    .tl-period {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+    .tl-role {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 19px;
       font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 2px;
+      line-height: 1.2;
     }
-
-    .exp-company {
+    .tl-company {
+      font-family: var(--font-body);
       font-size: 12px;
       color: var(--warm-grey);
-      letter-spacing: 0.03em;
+      margin-top: 2px;
     }
+    .tl-left { text-align: right; padding-right: 6px; }
+    .tl-right { text-align: left; padding-left: 6px; }
 
-    .exp-period {
-      font-size: 11px;
+    /* ── SELECTED WORK (V3 feature cards) ── */
+    .work {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+    .work-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 26px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.45);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .work-card:hover { background: rgba(255,255,255,0.75); border-color: var(--accent-light); }
+    .work-metric { flex-shrink: 0; width: 96px; text-align: center; }
+    .work-metric .num {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 300;
       color: var(--accent);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-align: right;
-      white-space: nowrap;
-      padding-top: 3px;
+      line-height: 1;
     }
+    .work-metric .unit {
+      font-family: var(--font-body);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      margin-top: 4px;
+    }
+    .work-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; line-height: 1.2; }
+    .work-desc { font-family: var(--font-body); font-size: 12.5px; color: var(--warm-grey); margin-top: 4px; line-height: 1.55; }
 
+    /* ── EDUCATION (V2 ledger) ── */
+    .edu-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      align-items: baseline;
+      gap: 4px 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-row:last-child { border-bottom: none; }
+    .edu-row .yr { font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--accent); }
+    .edu-row .deg { font-family: var(--font-display); font-size: 17px; font-weight: 400; }
+    .edu-row .sch { font-family: var(--font-body); font-size: 12px; color: var(--warm-grey); margin-top: 2px; }
+
+    /* ── TECH SPEC (V2 inline) ── */
+    .tech-line {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 2.0;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .tech-line .tools { color: var(--warm-grey); font-weight: 300; }
+
+    /* ── LANGUAGES ── */
     .languages {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 56px;
       animation: fadeUp 0.9s 0.35s ease both;
     }
-
     .lang-tag {
       padding: 6px 14px;
       border: 1px solid var(--border);
@@ -303,32 +369,36 @@
       background: rgba(255,255,255,0.4);
       transition: all 0.25s ease;
     }
-
-    .lang-tag:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .lang-tag .level {
-      color: var(--warm-grey);
-      font-weight: 300;
-      margin-left: 4px;
-    }
-
+    .lang-tag:hover { background: var(--accent); color: white; border-color: var(--accent); }
+    .lang-tag .level { color: var(--warm-grey); font-weight: 300; margin-left: 4px; }
     .lang-tag:hover .level { color: rgba(255,255,255,0.7); }
 
-    .contact {
-      animation: fadeUp 0.9s 0.4s ease both;
+    /* ── CV BUTTON ── */
+    .btn-download-cv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 8px;
+      padding: 16px;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
+    .btn-download-cv:hover { background: var(--accent); }
+    .btn-download-cv svg { width: 16px; height: 16px; fill: currentColor; }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      margin-bottom: 24px;
-    }
-
+    /* ── CONTACT ── */
+    .contact { animation: fadeUp 0.9s 0.4s ease both; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 24px; }
     .contact-link {
       display: flex;
       align-items: center;
@@ -340,28 +410,9 @@
       background: rgba(255,255,255,0.4);
       transition: all 0.3s ease;
     }
-
-    .contact-link:hover {
-      background: var(--ink);
-      color: var(--cream);
-      border-color: var(--ink);
-    }
-
-    .contact-link .c-icon {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-link .c-icon svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
+    .contact-link:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .contact-link .c-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-link .c-icon svg { width: 18px; height: 18px; fill: currentColor; }
     .contact-link .c-text strong {
       display: block;
       font-size: 11px;
@@ -370,11 +421,7 @@
       text-transform: uppercase;
       margin-bottom: 2px;
     }
-
-    .contact-link .c-text span {
-      font-size: 12px;
-      opacity: 0.65;
-    }
+    .contact-link .c-text span { font-size: 12px; opacity: 0.65; }
 
     .save-btn {
       display: flex;
@@ -395,49 +442,10 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
     .save-btn:hover { background: var(--ink); }
+    .save-btn svg { width: 16px; height: 16px; fill: white; }
 
-    .save-btn svg {
-      width: 16px;
-      height: 16px;
-      fill: white;
-    }
-
-    .btn-download-cv {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 18px;
-      margin-bottom: 40px;
-      background: var(--ink);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .btn-download-cv:hover { background: var(--accent); }
-
-    .btn-download-cv svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
-
-    /* ── SAVE + QR ROW ── */
-    .save-qr-row {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
+    .save-qr-row { display: flex; flex-direction: column; gap: 2px; }
     .qr-block {
       background: white;
       border: 1px solid var(--border);
@@ -451,43 +459,15 @@
       transition: border-color 0.2s ease;
     }
     .qr-block:hover { border-color: var(--accent-light); }
+    .qr-block canvas { display: block; }
+    .qr-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm-grey); }
 
-    .qr-block canvas {
-      display: block;
-    }
-
-    .qr-label {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-    }
-
-    @media (max-width: 380px) {
-      .qr-block { padding: 10px 14px; }
-    }
+    @media (max-width: 380px) { .qr-block { padding: 10px 14px; } }
 
     /* ── CONTACT FORM ── */
-    .contact-form {
-      margin-top: 24px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.4);
-      padding: 28px 24px;
-    }
-
-    .contact-form .form-title {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: var(--ink);
-    }
-
-    .form-group {
-      margin-bottom: 14px;
-    }
-
+    .contact-form { margin-top: 24px; border: 1px solid var(--border); background: rgba(255,255,255,0.4); padding: 28px 24px; }
+    .contact-form .form-title { font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; color: var(--ink); }
+    .form-group { margin-bottom: 14px; }
     .form-group label {
       display: block;
       font-size: 10px;
@@ -497,9 +477,7 @@
       color: var(--warm-grey);
       margin-bottom: 6px;
     }
-
-    .form-group input,
-    .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 12px 14px;
       border: 1px solid var(--border);
@@ -514,21 +492,9 @@
       border-radius: 0;
       -webkit-appearance: none;
     }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      background: white;
-    }
-
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); background: white; }
     .form-group textarea { height: 100px; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .form-submit {
       display: flex;
       align-items: center;
@@ -548,23 +514,15 @@
       text-transform: uppercase;
       transition: background 0.3s ease;
     }
-
     .form-submit:hover { background: var(--accent); }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 20px;
-      font-family: var(--font-display);
-      font-size: 17px;
-      color: var(--accent);
-    }
+    .form-success { display: none; text-align: center; padding: 20px; font-family: var(--font-display); font-size: 17px; color: var(--accent); }
 
     @media (max-width: 520px) {
       .form-row { grid-template-columns: 1fr; }
       .contact-form { padding: 20px 16px; }
     }
 
+    /* ── FOOTER ── */
     footer {
       margin-top: 64px;
       padding-top: 24px;
@@ -574,110 +532,12 @@
       align-items: center;
       animation: fadeUp 0.9s 0.5s ease both;
     }
-
-    .footer-name {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-style: italic;
-      color: var(--warm-grey);
-    }
-
-    .footer-domain {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-    }
+    .footer-name { font-family: var(--font-display); font-size: 13px; font-style: italic; color: var(--warm-grey); }
+    .footer-domain { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-grey); }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── EDUCATION STYLES ── */
-    /* ── EDUCATION STYLES ── */
-    .education h2, .education h3 {
-      font-family: var(--font-display);
-      color: var(--ink);
-    }
-    
-    .education h2 {
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-    
-    /* Ensure education details use correct font */
-    .education p {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--warm-grey);
-      margin: 0;
-    }
-    
-    /* Remove bullets from education timeline */
-    .education .timeline {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    /* Ensure work experience bullets use correct font */
-    .experience .achievements {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 12px 0 0 0;
-      color: var(--warm-grey);
-    }
-    
-    .experience .achievements li {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-    
-    .experience .achievements li strong {
-      font-weight: 500;
-    }
-    }
-@@ Update work experience bullets @@
-    .experience .achievements {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 12px 0 0 0;
-      color: var(--warm-grey);
-    }
-    
-    .experience .achievements li {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-    
-    .experience .achievements li strong {
-      font-weight: 500;
-    }
-      margin: 8px 0 4px 0;
-    }
-    
-    .education p {
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--warm-grey);
-      margin: 0;
-    }
-    
-    .education .timeline li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .education .timeline li:last-child {
-      border-bottom: none;
     }
 
     /* ── BACK LINK ── */
@@ -705,10 +565,6 @@
     .back-home:hover { color: var(--accent); border-color: var(--accent-light); }
     .back-home::before { content: '←'; font-size: 11px; }
 
-    @media (max-width: 520px) {
-      .back-home { top: 12px; left: 12px; font-size: 9px; padding: 5px 8px; }
-    }
-
     /* ── LANGUAGE SELECTOR ── */
     .lang-selector {
       position: fixed;
@@ -722,7 +578,6 @@
       border: 1px solid var(--border);
       padding: 6px 8px;
     }
-
     .lang-btn {
       font-family: var(--font-body);
       font-size: 10px;
@@ -736,157 +591,53 @@
       text-transform: uppercase;
       transition: color 0.2s ease;
     }
-
     .lang-btn:hover { color: var(--ink); }
     .lang-btn.active { color: var(--accent); font-weight: 700; }
 
     @media (max-width: 520px) {
       .lang-selector { top: 12px; right: 12px; padding: 5px 6px; }
       .lang-btn { font-size: 9px; padding: 2px 4px; }
+      .back-home { top: 12px; left: 12px; font-size: 9px; padding: 5px 8px; }
       .page { padding: 48px 20px 40px; }
       .expertise { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-period { text-align: left; }
+      .tl-row { grid-template-columns: 18px 1fr; }
+      .timeline .spine { left: 8px; }
+      .tl-row .tl-left, .tl-row .tl-right { text-align: left; padding-left: 6px; padding-right: 0; grid-column: 2; }
+      .tl-row > div:nth-child(2) { grid-column: 1; }
+      .tl-row > div:first-child:empty { display: none; }
+      .work-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .work-metric { width: auto; text-align: left; display: flex; align-items: baseline; gap: 8px; }
+      .work-metric .unit { margin-top: 0; }
       footer { flex-direction: column; gap: 8px; text-align: center; }
     }
 
     /* ── CALENDLY ── */
-    .calendly-section {
-      margin-top: 24px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.4);
-    }
-
-    .calendly-section-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .calendly-section-icon {
-      font-size: 15px;
-    }
-
-    .calendly-section-title {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-
-    .calendly-section-sub {
-      font-size: 11px;
-      color: var(--warm-grey);
-      margin-left: auto;
-    }
-
-    .calendly-inline-widget {
-      min-width: 100%;
-      height: 630px;
-    }
+    .calendly-section { margin-top: 24px; border: 1px solid var(--border); background: rgba(255,255,255,0.4); }
+    .calendly-section-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .calendly-section-icon { font-size: 15px; }
+    .calendly-section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
+    .calendly-section-sub { font-size: 11px; color: var(--warm-grey); margin-left: auto; }
+    .calendly-inline-widget { min-width: 100%; height: 630px; }
 
     /* ── CHATBOT ── */
-    .chatbot-wrap {
-      margin-top: 24px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.4);
-    }
-    .chatbot-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .chatbot-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: chatpulse 2s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-    @keyframes chatpulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-    .chatbot-header-text {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-    .chatbot-header-sub {
-      font-size: 11px;
-      color: var(--warm-grey);
-      margin-left: auto;
-    }
-    .chatbot-messages {
-      height: 260px;
-      overflow-y: auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      scroll-behavior: smooth;
-    }
+    .chatbot-wrap { margin-top: 24px; border: 1px solid var(--border); background: rgba(255,255,255,0.4); }
+    .chatbot-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .chatbot-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: chatpulse 2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes chatpulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    .chatbot-header-text { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
+    .chatbot-header-sub { font-size: 11px; color: var(--warm-grey); margin-left: auto; }
+    .chatbot-messages { height: 260px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
     .chatbot-messages::-webkit-scrollbar { width: 4px; }
     .chatbot-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-    .chat-msg {
-      max-width: 88%;
-      padding: 10px 14px;
-      font-size: 13px;
-      line-height: 1.55;
-      font-weight: 300;
-    }
-    .chat-msg.assistant {
-      background: rgba(26,23,20,0.05);
-      color: var(--ink);
-      align-self: flex-start;
-      border-left: 2px solid var(--accent);
-    }
-    .chat-msg.user {
-      background: var(--ink);
-      color: var(--cream);
-      align-self: flex-end;
-      font-weight: 400;
-    }
-    .chat-msg.typing {
-      background: rgba(26,23,20,0.05);
-      align-self: flex-start;
-      border-left: 2px solid var(--accent);
-      color: var(--warm-grey);
-      font-style: italic;
-      font-size: 12px;
-    }
-    .chatbot-suggestions {
-      padding: 0 16px 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .suggestion-btn {
-      font-family: var(--font-body);
-      font-size: 11px;
-      color: var(--warm-grey);
-      background: transparent;
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
+    .chat-msg { max-width: 88%; padding: 10px 14px; font-size: 13px; line-height: 1.55; font-weight: 300; }
+    .chat-msg.assistant { background: rgba(26,23,20,0.05); color: var(--ink); align-self: flex-start; border-left: 2px solid var(--accent); }
+    .chat-msg.user { background: var(--ink); color: var(--cream); align-self: flex-end; font-weight: 400; }
+    .chat-msg.typing { background: rgba(26,23,20,0.05); align-self: flex-start; border-left: 2px solid var(--accent); color: var(--warm-grey); font-style: italic; font-size: 12px; }
+    .chatbot-suggestions { padding: 0 16px 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .suggestion-btn { font-family: var(--font-body); font-size: 11px; color: var(--warm-grey); background: transparent; border: 1px solid var(--border); padding: 4px 10px; cursor: pointer; transition: all 0.2s ease; }
     .suggestion-btn:hover { color: var(--ink); border-color: var(--accent-light); }
-    .chatbot-input-row {
-      padding: 14px 16px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 8px;
-    }
+    .chatbot-input-row { padding: 14px 16px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
     .chatbot-input {
       flex: 1;
       padding: 10px 14px;
@@ -920,10 +671,10 @@
     .chatbot-send:hover { background: var(--accent); }
     .chatbot-send:disabled { opacity: 0.5; cursor: not-allowed; }
   </style>
-<script defer src="https://umami-three-xi.vercel.app/script.js" data-website-id="023cb59a-8684-4dce-9b4f-790895f09714"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+  <script defer src="https://umami-three-xi.vercel.app/script.js" data-website-id="023cb59a-8684-4dce-9b4f-790895f09714"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
 </head>
 <body>
 <a class="back-home" href="../">fraile.ch</a>
@@ -936,18 +687,17 @@
   <button class="lang-btn" onclick="setLang('it')">IT</button>
   <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
+
 <div class="page">
 
   <header>
     <p class="eyebrow">fraile.ch &nbsp;·&nbsp; Geneva, Switzerland</p>
-    <h1>Pablo<br><em>Pérez Fraile</em></h1>
-    <div class="title-line">
-      <span class="role" data-i18n="role">Finance &amp; Risk Professional</span>
-    </div>
+    <h1>Pablo <em>Pérez Fraile</em></h1>
+    <span class="role" data-i18n="role">Finance &amp; Risk Professional</span>
   </header>
 
   <div class="summary" data-i18n="summary">
-    Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. 
+    Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation.
     Based in Geneva - fluent in five languages, bridging quantitative rigour with cross-border communication.
   </div>
 
@@ -956,8 +706,7 @@
     <span data-i18n="download_cv">Download CV</span>
   </a>
 
-
-
+  <!-- ── EXPERTISE ── -->
   <div class="divider"><span data-i18n="expertise">Expertise</span></div>
   <div class="expertise">
     <div class="expertise-item">
@@ -998,96 +747,119 @@
     </div>
   </div>
 
-<section class="section education">
-  <h2 data-i18n="eduTitle">🎓 Educación</h2>
-  <ul class="timeline">
-    <li>
-      <h3 data-i18n="edu1title">Máster en Finanzas y Ciencia de Datos</h3>
-      <p>EAE Business School, Madrid | 2020 – 2021</p>
-    </li>
-    <li>
-      <h3 data-i18n="edu2title">Grado en Ingeniería Industrial</h3>
-      <p>Universidad Pontificia Comillas, Madrid | 2015 – 2021</p>
-    </li>
-    <li>
-      <h3 data-i18n="edu3title">Programa Anglo-Chino</h3>
-      <p>Universidad Normal Capital (Beijing), China | 2009 – 2010</p>
-    </li>
-  </ul>
+  <!-- ── CAREER TIMELINE ── -->
+  <p class="section-label" data-i18n="tlLabel">Career Timeline</p>
+  <div class="timeline">
+    <div class="spine"></div>
 
-  <style>
-    .badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .badge {
-      background: #e0e0e0;
-      color: #333;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-  </style>
-</section>
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-period" data-i18n="job1period">2026 — Present</div>
+        <div class="tl-role" data-i18n="job1role">Finance &amp; FinTech Instructor</div>
+        <div class="tl-company">IBERONEX · Remote</div>
+      </div>
+      <div class="tl-node"><span></span></div>
+      <div></div>
+    </div>
 
-<section class="section" style="margin: 64px 0;">
-  <h2 data-i18n="techSpecTitle" style="font-family: var(--font-display); font-size: 18px; margin-bottom: 20px; color: var(--ink);">🏅 Especialización Técnica</h2>
-  <div class="badges" style="margin-bottom: 8px;">
-    <span class="badge">FINMA/Basel</span>
-    <span class="badge">IFRS 9</span>
-    <span class="badge">ICAAP</span>
-    <span class="badge">ILAAP</span>
-    <span class="badge">KYC/AML</span>
-    <span class="badge">ESG Risk</span>
+    <div class="tl-row">
+      <div></div>
+      <div class="tl-node"><span></span></div>
+      <div class="tl-right">
+        <div class="tl-period">2025 — 2026</div>
+        <div class="tl-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
+        <div class="tl-company">Ernst &amp; Young · Zurich</div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-period">2021 — 2025</div>
+        <div class="tl-role" data-i18n="job3role">Crisis &amp; Regulatory Affairs Analyst</div>
+        <div class="tl-company">Santander Bank · Madrid</div>
+      </div>
+      <div class="tl-node"><span></span></div>
+      <div></div>
+    </div>
+
+    <div class="tl-row">
+      <div></div>
+      <div class="tl-node hollow"><span></span></div>
+      <div class="tl-right">
+        <div class="tl-period">2020 — 2021</div>
+        <div class="tl-role" data-i18n="job4role">Enterprise Risk Management Intern</div>
+        <div class="tl-company">Santander Bank · Madrid</div>
+      </div>
+    </div>
   </div>
-</section>
-  <div class="divider"><span data-i18n="experience">Experience</span></div>
-  <div class="experience">
-    <div class="exp-item">
-      <div>
-        <div class="exp-role" data-i18n="job1role">Finance & FinTech Instructor</div>
-        <div class="exp-company">IBERONEX - Remote</div>
-        <ul class="achievements">
-          <li data-i18n="job1bullet1"><strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.</li>
-          <li data-i18n="job1bullet2"><strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.</li>
-        </ul>
-      </div>
-      <div class="exp-period" data-i18n="job1period">2026 - Present</div>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
-        <div class="exp-company">Ernst & Young - Zurich</div>
-        <ul class="achievements">
-          <li data-i18n="job2bullet1"><strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.</li>
-          <li data-i18n="job2bullet2"><strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.</li>
-        </ul>
-      </div>
-      <div class="exp-period">2025 - 2026</div>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-role" data-i18n="job3role">Crisis & Regulatory Affairs Analyst</div>
-        <div class="exp-company">Santander Bank - Madrid</div>
-        <ul class="achievements">
-          <li data-i18n="job3bullet1"><strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.</li>
-          <li data-i18n="job3bullet2"><strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.</li>
-        </ul>
-      </div>
-      <div class="exp-period">2021 - 2025</div>
-    </div>
-    <div class="exp-item" style="border-bottom: none;">
-      <div>
-        <div class="exp-role" data-i18n="job4role">Enterprise Risk Management Intern</div>
-        <div class="exp-company">Santander Bank - Madrid</div>
-      </div>
-      <div class="exp-period">2020 - 2021</div>
-    </div>
 
-    <div class="divider"><span data-i18n="languages">Languages</span></div>
+  <!-- ── SELECTED WORK ── -->
+  <p class="section-label" data-i18n="swLabel">Selected Work</p>
+  <div class="work">
+    <div class="work-card">
+      <div class="work-metric">
+        <div class="num">40%</div>
+        <div class="unit" data-i18n="p1unit">workload cut</div>
+      </div>
+      <div>
+        <div class="work-title" data-i18n="p1title">Power Platform Automation</div>
+        <div class="work-desc" data-i18n="p1desc">Automated reporting tools and a Power Automate JIRA workflow at Santander Bank.</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-metric">
+        <div class="num">3</div>
+        <div class="unit" data-i18n="p2unit">continents</div>
+      </div>
+      <div>
+        <div class="work-title" data-i18n="p2title">Everbridge Crisis Rollout</div>
+        <div class="work-desc" data-i18n="p2desc">Global rollout across 3+ business units with cross-border war games.</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-metric">
+        <div class="num">AI</div>
+        <div class="unit" data-i18n="p3unit">audit tool</div>
+      </div>
+      <div>
+        <div class="work-title" data-i18n="p3title">AI Audit Mapping Tool</div>
+        <div class="work-desc" data-i18n="p3desc">AI-enhanced reference mapping ensuring error-free audit work plans at EY Zurich.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDUCATION ── -->
+  <div class="ledger-head">
+    <span class="num">01</span>
+    <span class="lbl" data-i18n="eduLabel">Education</span>
+    <span class="rule"></span>
+  </div>
+  <div class="edu-row">
+    <span class="yr">2020—21</span>
+    <div><div class="deg" data-i18n="edu1title">Master in Finance and Data Science</div><div class="sch">EAE Business School, Madrid</div></div>
+  </div>
+  <div class="edu-row">
+    <span class="yr">2015—21</span>
+    <div><div class="deg" data-i18n="edu2title">Bachelor in Industrial Engineering</div><div class="sch">Universidad Pontificia Comillas, Madrid</div></div>
+  </div>
+  <div class="edu-row">
+    <span class="yr">2009—10</span>
+    <div><div class="deg" data-i18n="edu3title">Anglo-Chinese Programme</div><div class="sch">Capital Normal University, Beijing</div></div>
+  </div>
+
+  <!-- ── TECHNICAL SPECIALISATION ── -->
+  <div class="ledger-head">
+    <span class="num">02</span>
+    <span class="lbl" data-i18n="techLabel">Technical Specialisation</span>
+    <span class="rule"></span>
+  </div>
+  <p class="tech-line">
+    FINMA / Basel &nbsp;·&nbsp; IFRS 9 &nbsp;·&nbsp; ICAAP &nbsp;·&nbsp; ILAAP &nbsp;·&nbsp; KYC / AML &nbsp;·&nbsp; ESG Risk<br>
+    <span class="tools">Python &nbsp;·&nbsp; Power BI &nbsp;·&nbsp; Power Automate &nbsp;·&nbsp; VBA &nbsp;·&nbsp; Advanced Excel</span>
+  </p>
+
+  <!-- ── LANGUAGES ── -->
+  <div class="divider" style="margin-top:56px;"><span data-i18n="languages">Languages</span></div>
   <div class="languages">
     <span class="lang-tag">Spanish <span class="level">Native</span></span>
     <span class="lang-tag">English <span class="level">Fluent</span></span>
@@ -1097,7 +869,8 @@
     <span class="lang-tag">Italian <span class="level">Business</span></span>
   </div>
 
-  <div class="divider"><span data-i18n="contact">Contact</span></div>
+  <!-- ── CONTACT ── -->
+  <div class="divider" style="margin-top:56px;"><span data-i18n="contact">Contact</span></div>
   <div class="contact">
     <div class="contact-grid">
 
@@ -1111,13 +884,13 @@
         </div>
       </a>
 
-      <a class="contact-link" href="mailto:pablo@fraile.ch">
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#c0b0a1a2acaf80a6b2a1a9aca5eea3a8">
         <div class="c-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div class="c-text">
           <strong data-i18n="email">Email</strong>
-          <span>pablo@fraile.ch</span>
+          <span><span class="__cf_email__" data-cfemail="e898898a8487a88e9a8981848dc68b80">[email&#160;protected]</span></span>
         </div>
       </a>
 
@@ -1218,37 +991,14 @@
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── I18N TRANSLATION SYSTEM ──
 const translations = {
   en: {
-    download_cv: "Download CV",
-    download_vcf: "Save Contact"
-  },
-  es: {
-    download_cv: "Descargar CV",
-    download_vcf: "Guardar Contacto"
-  },
-  fr: {
-    download_cv: "Télécharger CV",
-    download_vcf: "Enregistrer le contact"
-  },
-  de: {
-    download_cv: "Lebenslauf herunterladen",
-    download_vcf: "Kontakt speichern"
-  },
-  zh: {
-    download_cv: "下载简历",
-    download_vcf: "保存联系人"
-  },
-  it: {
-    download_cv: "Scarica CV",
-    download_vcf: "Salva Contatto"
-  },
-  en: {
     role: "Finance & Risk Professional",
     summary: "Multilingual finance professional with 5+ years across risk management, regulatory audit, and process automation. Based in Geneva - fluent in five languages, bridging quantitative rigour with cross-border communication.",
-    expertise: "Expertise", experience: "Experience", languages: "Languages", contact: "Contact",
+    expertise: "Expertise", languages: "Languages", contact: "Contact",
+    tlLabel: "Career Timeline", swLabel: "Selected Work", eduLabel: "Education", techLabel: "Technical Specialisation",
     e1title: "Financial Risk", e1desc: "Liquidity & credit risk, FINMA/Basel compliance, regulatory audit at EY Zurich",
     e1label: "At EY Zurich", e1tip: "Conducted liquidity and credit risk regulatory reviews for major Swiss banks, ensuring FINMA and Basel compliance. Processed large datasets in Python to support TBTF reporting reviews.",
     e2title: "Process Automation", e2desc: "Power BI, Power Automate, VBA, Python - up to 40% workload reduction",
@@ -1258,31 +1008,26 @@ const translations = {
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, Gen AI integration, Finance & FinTech instructor",
     e4label: "At IBERONEX", e4tip: "Designed and delivered advanced lectures on blockchain, DeFi and tokenization. Built an AI-enhanced reference mapping tool at EY that ensured error-free updates to the audit work plan.",
     download_cv: "Download CV",
-    job1role: "Finance & FinTech Instructor", job1period: "2026 - Present",
+    job1role: "Finance & FinTech Instructor", job1period: "2026 — Present",
     job2role: "Financial Risk Regulatory Audit Consultant",
     job3role: "Crisis & Regulatory Affairs Analyst",
     job4role: "Enterprise Risk Management Intern",
+    p1title: "Power Platform Automation", p1desc: "Automated reporting tools and a Power Automate JIRA workflow at Santander Bank.", p1unit: "workload cut",
+    p2title: "Everbridge Crisis Rollout", p2desc: "Global rollout across 3+ business units with cross-border war games.", p2unit: "continents",
+    p3title: "AI Audit Mapping Tool", p3desc: "AI-enhanced reference mapping ensuring error-free audit work plans at EY Zurich.", p3unit: "audit tool",
     savecontact: "Save Contact", sendmsg: "Send a message", caltitle: "Schedule a call", calsub: "30 min · Video call",
-    namelabel: "Name", emaillabel: "Email", subjectlabel: "Subject", msglabel: "Message",
     nameph: "Your name", emailph: "your@email.com", subjectph: "How can I help?", msgph: "Your message...",
     sendbtn: "Send message →", formsuccess: "✓  Message sent - I'll be in touch soon.",
     linkedin: "LinkedIn", email: "Email", phone: "Phone", web: "Web",
-    eduTitle: "🎓 Education",
     edu1title: "Master in Finance and Data Science",
     edu2title: "Bachelor in Industrial Engineering",
-    edu3title: "Anglo-Chinese Programme",
-    techSpecTitle: "🏅 Technical Specialisation",
-    job1bullet1: "<strong>FinTech Training:</strong> Delivered advanced lectures on blockchain, DeFi and Web3 to university students.",
-    job1bullet2: "<strong>Regulatory Knowledge:</strong> Designed and taught regulatory frameworks applied to the digital environment.",
-    job2bullet1: "<strong>Regulatory Optimisation:</strong> Developed an AI-based tool for audit plans, improving consistency and reducing manual time.",
-    job2bullet2: "<strong>Data Management:</strong> Processed large volumes of financial/banking data via Python and advanced Excel, contributing to liquidity and credit risk reviews.",
-    job3bullet1: "<strong>Regulatory Automation:</strong> Developed a Power Platform solution that significantly reduced manual workload in internal processes.",
-    job3bullet2: "<strong>Audit Experience:</strong> Carried out 50+ enhanced reports and participated in 5+ key regulatory projects."
+    edu3title: "Anglo-Chinese Programme"
   },
   es: {
     role: "Profesional en Finanzas y Riesgos",
     summary: "Profesional multilingüe en finanzas con más de 5 años en gestión de riesgos, auditoría regulatoria y automatización de procesos. Basado en Ginebra - fluido en cinco idiomas, combinando rigor cuantitativo con comunicación transfronteriza.",
-    expertise: "Especialización", experience: "Experiencia", languages: "Idiomas", contact: "Contacto",
+    expertise: "Especialización", languages: "Idiomas", contact: "Contacto",
+    tlLabel: "Trayectoria", swLabel: "Trabajo Destacado", eduLabel: "Educación", techLabel: "Especialización Técnica",
     e1title: "Riesgo Financiero", e1desc: "Riesgo de liquidez y crédito, cumplimiento FINMA/Basilea, auditoría regulatoria en EY Zúrich",
     e1label: "En EY Zúrich", e1tip: "Realicé revisiones regulatorias de riesgo de liquidez y crédito para grandes bancos suizos, garantizando el cumplimiento de FINMA y Basilea. Procesé grandes conjuntos de datos en Python para análisis TBTF.",
     e2title: "Automatización de Procesos", e2desc: "Power BI, Power Automate, VBA, Python - hasta 40% de reducción de carga de trabajo",
@@ -1292,31 +1037,26 @@ const translations = {
     e4title: "FinTech e IA", e4desc: "Blockchain, DeFi, integración de IA generativa, instructor de Finanzas y FinTech",
     e4label: "En IBERONEX", e4tip: "Diseñé e impartí clases avanzadas sobre blockchain, DeFi y tokenización. Desarrollé una herramienta de mapeo de referencias con IA en EY para actualizaciones sin errores del plan de auditoría.",
     download_cv: "Descargar CV",
-    job1role: "Instructor de Finanzas y FinTech", job1period: "2026 - Presente",
+    job1role: "Instructor de Finanzas y FinTech", job1period: "2026 — Presente",
     job2role: "Consultor de Auditoría Regulatoria de Riesgo Financiero",
     job3role: "Analista de Crisis y Asuntos Regulatorios",
     job4role: "Becario de Gestión de Riesgos Empresariales",
+    p1title: "Automatización Power Platform", p1desc: "Herramientas de reporting automatizado y flujo JIRA con Power Automate en Santander.", p1unit: "menos carga",
+    p2title: "Despliegue de Crisis Everbridge", p2desc: "Despliegue global en 3+ unidades de negocio con simulacros transfronterizos.", p2unit: "continentes",
+    p3title: "Herramienta de Auditoría con IA", p3desc: "Mapeo de referencias con IA para planes de auditoría sin errores en EY Zúrich.", p3unit: "auditoría IA",
     savecontact: "Guardar Contacto", sendmsg: "Enviar un mensaje", caltitle: "Agendar una llamada", calsub: "30 min · Videollamada",
-    namelabel: "Nombre", emaillabel: "Email", subjectlabel: "Asunto", msglabel: "Mensaje",
     nameph: "Tu nombre", emailph: "tu@email.com", subjectph: "¿En qué puedo ayudarte?", msgph: "Tu mensaje...",
     sendbtn: "Enviar mensaje →", formsuccess: "✓  Mensaje enviado - me pondré en contacto pronto.",
     linkedin: "LinkedIn", email: "Email", phone: "Teléfono", web: "Web",
-    eduTitle: "🎓 Educación",
     edu1title: "Máster en Finanzas y Ciencia de Datos",
     edu2title: "Grado en Ingeniería Industrial",
-    edu3title: "Programa Anglo-Chino",
-    techSpecTitle: "🏅 Especialización Técnica",
-    job1bullet1: "<strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.",
-    job1bullet2: "<strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.",
-    job2bullet1: "<strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.",
-    job2bullet2: "<strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.",
-    job3bullet1: "<strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.",
-    job3bullet2: "<strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave."
+    edu3title: "Programa Anglo-Chino"
   },
   fr: {
     role: "Professionnel en Finance & Risques",
     summary: "Professionnel multilingue en finance avec plus de 5 ans d'expérience en gestion des risques, audit réglementaire et automatisation des processus. Basé à Genève - maîtrise de cinq langues, alliant rigueur quantitative et communication transfrontalière.",
-    expertise: "Expertise", experience: "Expérience", languages: "Langues", contact: "Contact",
+    expertise: "Expertise", languages: "Langues", contact: "Contact",
+    tlLabel: "Parcours", swLabel: "Travaux Sélectionnés", eduLabel: "Formation", techLabel: "Spécialisation Technique",
     e1title: "Risque Financier", e1desc: "Risque de liquidité et de crédit, conformité FINMA/Bâle, audit réglementaire chez EY Zurich",
     e1label: "Chez EY Zurich", e1tip: "Réalisé des revues réglementaires de risque de liquidité et de crédit pour les grandes banques suisses, en garantissant la conformité FINMA et Bâle. Traitement de grands ensembles de données en Python.",
     e2title: "Automatisation des Processus", e2desc: "Power BI, Power Automate, VBA, Python - jusqu'à 40% de réduction de charge",
@@ -1326,31 +1066,26 @@ const translations = {
     e4title: "FinTech & IA", e4desc: "Blockchain, DeFi, intégration IA générative, formateur Finance & FinTech",
     e4label: "Chez IBERONEX", e4tip: "Conçu et dispensé des cours avancés sur la blockchain, la DeFi et la tokenisation. Développé un outil de cartographie de références basé sur l'IA chez EY.",
     download_cv: "Télécharger CV",
-    job1role: "Formateur Finance & FinTech", job1period: "2026 - Présent",
+    job1role: "Formateur Finance & FinTech", job1period: "2026 — Présent",
     job2role: "Consultant en Audit Réglementaire du Risque Financier",
     job3role: "Analyste Affaires Réglementaires & Gestion de Crise",
     job4role: "Stagiaire Gestion des Risques d'Entreprise",
+    p1title: "Automatisation Power Platform", p1desc: "Outils de reporting automatisés et flux JIRA avec Power Automate chez Santander.", p1unit: "de charge en moins",
+    p2title: "Déploiement de Crise Everbridge", p2desc: "Déploiement mondial dans 3+ unités avec exercices transfrontaliers.", p2unit: "continents",
+    p3title: "Outil d'Audit par IA", p3desc: "Cartographie de références par IA pour des plans d'audit sans erreur chez EY Zurich.", p3unit: "audit IA",
     savecontact: "Enregistrer le contact", sendmsg: "Envoyer un message", caltitle: "Planifier un appel", calsub: "30 min · Appel vidéo",
-    namelabel: "Nom", emaillabel: "Email", subjectlabel: "Sujet", msglabel: "Message",
     nameph: "Votre nom", emailph: "votre@email.com", subjectph: "Comment puis-je vous aider ?", msgph: "Votre message...",
     sendbtn: "Envoyer →", formsuccess: "✓  Message envoyé - je vous recontacterai bientôt.",
     linkedin: "LinkedIn", email: "Email", phone: "Téléphone", web: "Site web",
-    eduTitle: "🎓 Formation",
     edu1title: "Master en Finance et Science des Données",
     edu2title: "Licence en Génie Industriel",
-    edu3title: "Programme Anglo-Chinois",
-    techSpecTitle: "🏅 Spécialisation Technique",
-    job1bullet1: "<strong>Formation FinTech :</strong> Dispensé des cours avancés sur la blockchain, la DeFi et le Web3 à des étudiants universitaires.",
-    job1bullet2: "<strong>Connaissance Réglementaire :</strong> Conçu et enseigné des cadres réglementaires appliqués à l'environnement numérique.",
-    job2bullet1: "<strong>Optimisation Réglementaire :</strong> Développé un outil basé sur l'IA pour les plans d'audit, améliorant la cohérence et réduisant les délais manuels.",
-    job2bullet2: "<strong>Gestion des Données :</strong> Traité de grands volumes de données financières via Python et Excel avancé, contribuant aux revues de risque de liquidité et de crédit.",
-    job3bullet1: "<strong>Automatisation Réglementaire :</strong> Développé une solution Power Platform réduisant significativement la charge manuelle dans les processus internes.",
-    job3bullet2: "<strong>Expérience d'Audit :</strong> Réalisé plus de 50 rapports améliorés et participé à 5+ projets réglementaires clés."
+    edu3title: "Programme Anglo-Chinois"
   },
   de: {
     role: "Finanz- & Risikoprofi",
     summary: "Mehrsprachiger Finanzprofi mit über 5 Jahren Erfahrung in Risikomanagement, regulatorischer Prüfung und Prozessautomatisierung. Ansässig in Genf - fließend in fünf Sprachen, Verbindung von quantitativer Strenge und grenzüberschreitender Kommunikation.",
-    expertise: "Fachgebiete", experience: "Erfahrung", languages: "Sprachen", contact: "Kontakt",
+    expertise: "Fachgebiete", languages: "Sprachen", contact: "Kontakt",
+    tlLabel: "Werdegang", swLabel: "Ausgewählte Arbeiten", eduLabel: "Ausbildung", techLabel: "Technische Spezialisierung",
     e1title: "Finanzrisiko", e1desc: "Liquiditäts- und Kreditrisiko, FINMA/Basel-Konformität, regulatorische Prüfung bei EY Zürich",
     e1label: "Bei EY Zürich", e1tip: "Regulatorische Prüfungen von Liquiditäts- und Kreditrisiken für Schweizer Großbanken durchgeführt. Verarbeitung großer Datensätze in Python für TBTF-Analysen.",
     e2title: "Prozessautomatisierung", e2desc: "Power BI, Power Automate, VBA, Python - bis zu 40% Arbeitsreduktion",
@@ -1360,65 +1095,26 @@ const translations = {
     e4title: "FinTech & KI", e4desc: "Blockchain, DeFi, generative KI-Integration, Dozent für Finanzen & FinTech",
     e4label: "Bei IBERONEX", e4tip: "Fortgeschrittene Vorlesungen über Blockchain, DeFi und Tokenisierung entwickelt und gehalten. KI-gestütztes Referenz-Mapping-Tool bei EY entwickelt.",
     download_cv: "Lebenslauf herunterladen",
-    job1role: "Dozent für Finanzen & FinTech", job1period: "2026 - Heute",
+    job1role: "Dozent für Finanzen & FinTech", job1period: "2026 — Heute",
     job2role: "Berater für regulatorische Finanzrisikoprüfung",
     job3role: "Analyst für Krisen- und Regulierungsangelegenheiten",
     job4role: "Praktikant Unternehmensweites Risikomanagement",
+    p1title: "Power Platform Automatisierung", p1desc: "Automatisierte Reporting-Tools und Power-Automate-JIRA-Workflow bei Santander.", p1unit: "weniger Aufwand",
+    p2title: "Everbridge Krisen-Rollout", p2desc: "Globaler Rollout über 3+ Einheiten mit grenzüberschreitenden Übungen.", p2unit: "Kontinente",
+    p3title: "KI-Audit-Mapping-Tool", p3desc: "KI-gestütztes Referenz-Mapping für fehlerfreie Prüfpläne bei EY Zürich.", p3unit: "KI-Audit",
     savecontact: "Kontakt speichern", sendmsg: "Nachricht senden", caltitle: "Gespräch vereinbaren", calsub: "30 Min · Videoanruf",
-    namelabel: "Name", emaillabel: "E-Mail", subjectlabel: "Betreff", msglabel: "Nachricht",
     nameph: "Ihr Name", emailph: "ihre@email.com", subjectph: "Wie kann ich helfen?", msgph: "Ihre Nachricht...",
     sendbtn: "Nachricht senden →", formsuccess: "✓  Nachricht gesendet - ich melde mich bald.",
     linkedin: "LinkedIn", email: "E-Mail", phone: "Telefon", web: "Webseite",
-    eduTitle: "🎓 Ausbildung",
     edu1title: "Master in Finanzen und Datenwissenschaft",
     edu2title: "Bachelor in Wirtschaftsingenieurwesen",
-    edu3title: "Anglo-Chinesisches Programm",
-    techSpecTitle: "🏅 Technische Spezialisierung",
-    job1bullet1: "<strong>FinTech-Schulung:</strong> Fortgeschrittene Vorlesungen über Blockchain, DeFi und Web3 an Universitätsstudenten gehalten.",
-    job1bullet2: "<strong>Regulatorisches Wissen:</strong> Regulatorische Rahmenbedingungen für das digitale Umfeld entwickelt und gelehrt.",
-    job2bullet1: "<strong>Regulatorische Optimierung:</strong> KI-basiertes Tool für Prüfungspläne entwickelt, das Konsistenz verbessert und manuelle Zeit reduziert.",
-    job2bullet2: "<strong>Datenmanagement:</strong> Große Mengen an Finanz- und Bankdaten über Python und Excel verarbeitet; Beitrag zu Liquiditäts- und Kreditrisikoprüfungen.",
-    job3bullet1: "<strong>Regulatorische Automatisierung:</strong> Power Platform-Lösung entwickelt, die den manuellen Aufwand in internen Prozessen deutlich reduziert.",
-    job3bullet2: "<strong>Prüfungserfahrung:</strong> Über 50 verbesserte Berichte erstellt und an 5+ wichtigen regulatorischen Projekten mitgewirkt."
-  },
-  zh: {
-    role: "金融与风险管理专业人士",
-    summary: "多语言金融专业人士，拥有5年以上风险管理、监管审计和流程自动化经验。常驻日内瓦，精通五种语言，将定量严谨性与跨境沟通相结合。",
-    expertise: "专业领域", experience: "工作经历", languages: "语言能力", contact: "联系方式",
-    e1title: "金融风险", e1desc: "流动性与信用风险、FINMA/巴塞尔合规、EY苏黎世监管审计",
-    e1label: "在EY苏黎世", e1tip: "为瑞士主要银行开展流动性和信用风险监管审查，确保符合FINMA和巴塞尔标准。使用Python处理大型数据集，支持TBTF报告审查。",
-    e2title: "流程自动化", e2desc: "Power BI、Power Automate、VBA、Python - 工作量减少40%",
-    e2label: "在桑坦德银行", e2tip: "设计自动化报告工具，将手动工作量减少40%。使用Power Automate构建JIRA工作流，并使用VBA自动化审计流程。",
-    e3title: "危机与业务连续性", e3desc: "业务连续性计划、Everbridge部署、跨境协调",
-    e3label: "在桑坦德银行", e3tip: "领导Everbridge危机管理平台在3个以上业务单元的全球推广。协调欧洲、南美和北美的恢复演练。",
-    e4title: "金融科技与AI", e4desc: "区块链、DeFi、生成式AI整合、金融与金融科技讲师",
-    e4label: "在IBERONEX", e4tip: "设计并讲授区块链、DeFi和通证化高级课程。在EY开发了AI增强参考映射工具，确保审计计划无误更新。",
-    download_cv: "下载简历",
-    job1role: "金融与金融科技讲师", job1period: "2026 - 至今",
-    job2role: "金融风险监管审计顾问",
-    job3role: "危机与监管事务分析师",
-    job4role: "企业风险管理实习生",
-    savecontact: "保存联系人", sendmsg: "发送消息", caltitle: "预约通话", calsub: "30分钟 · 视频通话",
-    namelabel: "姓名", emaillabel: "电子邮件", subjectlabel: "主题", msglabel: "消息",
-    nameph: "您的姓名", emailph: "您的邮箱", subjectph: "我能帮您什么？", msgph: "您的消息...",
-    sendbtn: "发送消息 →", formsuccess: "✓  消息已发送 - 我会尽快与您联系。",
-    linkedin: "领英", email: "电子邮件", phone: "电话", web: "网站",
-    eduTitle: "🎓 教育背景",
-    edu1title: "金融与数据科学硕士",
-    edu2title: "工业工程学士",
-    edu3title: "英汉双语项目",
-    techSpecTitle: "🏅 技术专长",
-    job1bullet1: "<strong>金融科技培训：</strong>为大学生讲授区块链、DeFi和Web3高级课程。",
-    job1bullet2: "<strong>监管知识：</strong>设计并讲授应用于数字环境的监管框架。",
-    job2bullet1: "<strong>监管优化：</strong>开发了基于AI的审计计划工具，提高一致性并减少手动时间。",
-    job2bullet2: "<strong>数据管理：</strong>通过Python和高级Excel处理大量金融/银行数据，为流动性和信用风险审查做出贡献。",
-    job3bullet1: "<strong>监管自动化：</strong>开发了Power Platform解决方案，显著减少了内部流程中的手动工作量。",
-    job3bullet2: "<strong>审计经验：</strong>完成50+份增强报告，参与5+个关键监管项目。"
+    edu3title: "Anglo-Chinesisches Programm"
   },
   it: {
     role: "Professionista in Finanza & Rischi",
     summary: "Professionista multilingue in finanza con oltre 5 anni di esperienza in gestione del rischio, audit regolatorio e automazione dei processi. Basato a Ginevra - fluente in cinque lingue, unendo rigore quantitativo e comunicazione transfrontaliera.",
-    expertise: "Competenze", experience: "Esperienza", languages: "Lingue", contact: "Contatti",
+    expertise: "Competenze", languages: "Lingue", contact: "Contatti",
+    tlLabel: "Percorso", swLabel: "Lavori Selezionati", eduLabel: "Istruzione", techLabel: "Specializzazione Tecnica",
     e1title: "Rischio Finanziario", e1desc: "Rischio di liquidità e credito, conformità FINMA/Basilea, audit regolatorio presso EY Zurigo",
     e1label: "In EY Zurigo", e1tip: "Revisioni regolamentari del rischio di liquidità e credito per le principali banche svizzere, garantendo la conformità a FINMA e Basilea. Elaborazione di grandi dataset in Python.",
     e2title: "Automazione dei Processi", e2desc: "Power BI, Power Automate, VBA, Python - fino al 40% di riduzione del carico",
@@ -1428,26 +1124,49 @@ const translations = {
     e4title: "FinTech & AI", e4desc: "Blockchain, DeFi, integrazione AI generativa, docente di Finanza & FinTech",
     e4label: "In IBERONEX", e4tip: "Progettato e tenuto lezioni avanzate su blockchain, DeFi e tokenizzazione. Sviluppato uno strumento di mappatura di riferimento basato su AI presso EY.",
     download_cv: "Scarica CV",
-    job1role: "Docente di Finanza & FinTech", job1period: "2026 - Presente",
+    job1role: "Docente di Finanza & FinTech", job1period: "2026 — Presente",
     job2role: "Consulente di Audit Regolatorio del Rischio Finanziario",
     job3role: "Analista di Crisi e Affari Regolatori",
     job4role: "Stagista Gestione del Rischio Aziendale",
+    p1title: "Automazione Power Platform", p1desc: "Strumenti di reporting automatizzati e flusso JIRA con Power Automate in Santander.", p1unit: "carico in meno",
+    p2title: "Rollout di Crisi Everbridge", p2desc: "Rollout globale in 3+ unità aziendali con esercitazioni transfrontaliere.", p2unit: "continenti",
+    p3title: "Strumento di Audit con IA", p3desc: "Mappatura di riferimenti con IA per piani di audit senza errori in EY Zurigo.", p3unit: "audit IA",
     savecontact: "Salva Contatto", sendmsg: "Invia un messaggio", caltitle: "Prenota una chiamata", calsub: "30 min · Videochiamata",
-    namelabel: "Nome", emaillabel: "Email", subjectlabel: "Oggetto", msglabel: "Messaggio",
     nameph: "Il tuo nome", emailph: "tua@email.com", subjectph: "Come posso aiutarti?", msgph: "Il tuo messaggio...",
     sendbtn: "Invia messaggio →", formsuccess: "✓  Messaggio inviato - ti risponderò presto.",
     linkedin: "LinkedIn", email: "Email", phone: "Telefono", web: "Sito web",
-    eduTitle: "🎓 Istruzione",
     edu1title: "Master in Finanza e Data Science",
     edu2title: "Laurea in Ingegneria Industriale",
-    edu3title: "Programma Anglo-Cinese",
-    techSpecTitle: "🏅 Specializzazione Tecnica",
-    job1bullet1: "<strong>Formazione FinTech:</strong> Tenuto lezioni avanzate su blockchain, DeFi e Web3 a studenti universitari.",
-    job1bullet2: "<strong>Conoscenza Normativa:</strong> Progettato e insegnato framework normativi applicati all'ambiente digitale.",
-    job2bullet1: "<strong>Ottimizzazione Normativa:</strong> Sviluppato strumento basato su AI per piani di audit, migliorando la coerenza e riducendo i tempi manuali.",
-    job2bullet2: "<strong>Gestione dei Dati:</strong> Elaborato grandi volumi di dati finanziari/bancari tramite Python ed Excel avanzato, contribuendo a revisioni del rischio di liquidità e credito.",
-    job3bullet1: "<strong>Automazione Normativa:</strong> Sviluppato soluzione Power Platform che ha ridotto significativamente il carico manuale nei processi interni.",
-    job3bullet2: "<strong>Esperienza di Audit:</strong> Condotto oltre 50 report migliorati e partecipato a 5+ progetti normativi chiave."
+    edu3title: "Programma Anglo-Cinese"
+  },
+  zh: {
+    role: "金融与风险管理专业人士",
+    summary: "多语言金融专业人士，拥有5年以上风险管理、监管审计和流程自动化经验。常驻日内瓦，精通五种语言，将定量严谨性与跨境沟通相结合。",
+    expertise: "专业领域", languages: "语言能力", contact: "联系方式",
+    tlLabel: "职业历程", swLabel: "代表项目", eduLabel: "教育背景", techLabel: "技术专长",
+    e1title: "金融风险", e1desc: "流动性与信用风险、FINMA/巴塞尔合规、EY苏黎世监管审计",
+    e1label: "在EY苏黎世", e1tip: "为瑞士主要银行开展流动性和信用风险监管审查，确保符合FINMA和巴塞尔标准。使用Python处理大型数据集，支持TBTF报告审查。",
+    e2title: "流程自动化", e2desc: "Power BI、Power Automate、VBA、Python - 工作量减少40%",
+    e2label: "在桑坦德银行", e2tip: "设计自动化报告工具，将手动工作量减少40%。使用Power Automate构建JIRA工作流，并使用VBA自动化审计流程。",
+    e3title: "危机与业务连续性", e3desc: "业务连续性计划、Everbridge部署、跨境协调",
+    e3label: "在桑坦德银行", e3tip: "领导Everbridge危机管理平台在3个以上业务单元的全球推广。协调欧洲、南美和北美的恢复演练。",
+    e4title: "金融科技与AI", e4desc: "区块链、DeFi、生成式AI整合、金融与金融科技讲师",
+    e4label: "在IBERONEX", e4tip: "设计并讲授区块链、DeFi和通证化高级课程。在EY开发了AI增强参考映射工具，确保审计计划无误更新。",
+    download_cv: "下载简历",
+    job1role: "金融与金融科技讲师", job1period: "2026 — 至今",
+    job2role: "金融风险监管审计顾问",
+    job3role: "危机与监管事务分析师",
+    job4role: "企业风险管理实习生",
+    p1title: "Power Platform 自动化", p1desc: "在桑坦德银行构建自动化报告工具和 Power Automate JIRA 工作流。", p1unit: "工作量减少",
+    p2title: "Everbridge 危机部署", p2desc: "在3个以上业务单元全球推广，并开展跨境演练。", p2unit: "大洲",
+    p3title: "AI 审计映射工具", p3desc: "在EY苏黎世以AI增强参考映射，确保审计计划无误。", p3unit: "AI审计",
+    savecontact: "保存联系人", sendmsg: "发送消息", caltitle: "预约通话", calsub: "30分钟 · 视频通话",
+    nameph: "您的姓名", emailph: "您的邮箱", subjectph: "我能帮您什么？", msgph: "您的消息...",
+    sendbtn: "发送消息 →", formsuccess: "✓  消息已发送 - 我会尽快与您联系。",
+    linkedin: "领英", email: "电子邮件", phone: "电话", web: "网站",
+    edu1title: "金融与数据科学硕士",
+    edu2title: "工业工程学士",
+    edu3title: "英汉双语项目"
   }
 };
 
@@ -1458,37 +1177,27 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (t[key]) el.innerHTML = t[key];
   });
-  // Update form placeholders
   const fields = {name: 'nameph', email: 'emailph', subject: 'subjectph', message: 'msgph'};
   Object.entries(fields).forEach(([id, key]) => {
     const el = document.getElementById(id);
     if (el && t[key]) el.placeholder = t[key];
   });
-  // Update save button
   const saveBtn = document.querySelector('.save-btn');
   if (saveBtn && t.savecontact) saveBtn.childNodes[saveBtn.childNodes.length - 1].textContent = ' ' + t.savecontact;
-  // Update form title
   const formTitle = document.querySelector('.form-title');
   if (formTitle && t.sendmsg) formTitle.textContent = t.sendmsg;
-  // Calendly header labels
   const calTitle = document.getElementById('cal-title');
   const calSub   = document.getElementById('cal-sub');
   if (calTitle && t.caltitle) calTitle.textContent = t.caltitle;
   if (calSub   && t.calsub)   calSub.textContent   = t.calsub;
-  // Update submit button
   const submitBtn = document.querySelector('.form-submit');
   if (submitBtn && t.sendbtn) submitBtn.textContent = t.sendbtn;
-  // Update success message
   const successMsg = document.getElementById('form-success');
   if (successMsg && t.formsuccess) successMsg.innerHTML = t.formsuccess;
-  // Update active button
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   const activeBtn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
   if (activeBtn) activeBtn.classList.add('active');
-  // Update dividers
-  const dividers = document.querySelectorAll('.divider span');
-  const dividerKeys = ['expertise', 'experience', 'languages', 'contact'];
-  dividers.forEach((el, i) => { if (dividerKeys[i] && t[dividerKeys[i]]) el.textContent = t[dividerKeys[i]]; });
+  document.documentElement.lang = lang === 'zh' ? 'zh' : lang;
   localStorage.setItem('lang', lang);
 }
 
@@ -1580,17 +1289,12 @@ async function sendMessage() {
   const input = document.getElementById('chat-input');
   const text = input.value.trim();
   if (!text) return;
-
-  // Hide suggestions after first message
   document.getElementById('chat-suggestions').style.display = 'none';
-
   input.value = '';
   appendMessage('user', text);
   chatHistory.push({ role: 'user', content: text });
-
   setLoading(true);
   const typing = appendMessage('typing', '···');
-
   try {
     const res = await fetch(WORKER_URL, {
       method: 'POST',
@@ -1606,7 +1310,6 @@ async function sendMessage() {
     typing.remove();
     appendMessage('assistant', 'Connection error. Please try again.');
   }
-
   setLoading(false);
 }
 
@@ -1627,7 +1330,6 @@ function generateQR() {
   new QRious({ element: document.getElementById('qr-canvas'), value: QR_VCARD, size: 160, foreground: '#1A1714', background: '#FFFFFF', level: 'M' });
 }
 
-// QR label translations
 const QR_LABELS = { en: 'Scan to save', es: 'Escanear', fr: 'Scanner', de: 'Scannen', it: 'Scansiona', zh: '扫码保存' };
 
 const _qrOrigSetLang = setLang;
