@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuna · Tuna Suiza 2026</title>
+  <meta name="description" content="Tuna Suiza 2026 — Ruta de 6 personas desde Milán a Stuttgart, Neuchâtel y Ginebra." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F5F2ED;
+      --ink: #1A1714;
+      --warm-grey: #8C8680;
+      --accent: #B8935A;
+      --accent-light: #D4B483;
+      --border: rgba(26,23,20,0.1);
+      --border-strong: rgba(26,23,20,0.18);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+
+    /* Back link */
+    .back { margin-bottom: 32px; }
+    .back a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back a:hover { color: var(--accent); }
+
+    /* Header */
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 7vw, 52px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+    h1 em { font-style: italic; color: var(--warm-grey); }
+    .subtitle {
+      font-size: 13px;
+      color: var(--warm-grey);
+      margin-bottom: 40px;
+    }
+
+    /* Sections */
+    section { margin-bottom: 40px; }
+    h2 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 12px 0;
+    }
+    th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      padding: 8px 6px 6px 0;
+      border-bottom: 1px solid var(--border-strong);
+    }
+    td {
+      padding: 8px 6px 8px 0;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .day { font-weight: 500; white-space: nowrap; }
+
+    /* Links section */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.25s, border-color 0.25s;
+      font-size: 13px;
+    }
+    .link-card:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: var(--accent-light);
+    }
+    .link-card .icon { font-size: 20px; flex-shrink: 0; }
+    .link-card .label { line-height: 1.3; }
+    .link-card .label small {
+      display: block;
+      font-size: 10px;
+      color: var(--warm-grey);
+      font-weight: 400;
+    }
+
+    /* Saturday breakdown */
+    .timeline { margin: 12px 0; }
+    .tl-row {
+      display: flex;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tl-time {
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--accent);
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+    .tl-info { font-size: 13px; }
+    .tl-info .km {
+      font-size: 10px;
+      color: var(--warm-grey);
+    }
+
+    p, li { font-size: 13px; line-height: 1.6; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 4px 0; }
+
+    /* KML download */
+    .kml-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      margin-top: 8px;
+    }
+    .kml-download:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 520px) {
+      .page { padding: 40px 20px 60px; }
+      .links-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <div class="back"><a href="/">← fraile.ch</a></div>
+
+  <p class="eyebrow">Tuna · Julio 2026</p>
+  <h1>Gira <em>Suiza</em></h1>
+  <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.400 km</p>
+
+  <!-- Route -->
+  <section>
+    <h2>🗺️ Ruta</h2>
+    <table>
+      <thead>
+        <tr><th>Día</th><th>Fecha</th><th>Trayecto</th><th>Noche</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="day">Lun</td><td>13</td><td>MXP → Lugano</td><td>Lugano 🛌</td></tr>
+        <tr><td class="day">Mar</td><td>14</td><td>Lugano → Zúrich</td><td>Zúrich 🛌</td></tr>
+        <tr><td class="day">Mié</td><td>15</td><td>Zúrich → Stuttgart</td><td>Stuttgart 🛌</td></tr>
+        <tr><td class="day">Jue</td><td>16</td><td>Stuttgart (día completo)</td><td>Stuttgart 🛌</td></tr>
+        <tr><td class="day">Vie</td><td>17</td><td>Stuttgart (día completo)</td><td>Stuttgart 🛌</td></tr>
+        <tr><td class="day">Sáb</td><td>18</td><td>Stuttgart → Basilea → Neuchâtel → Ginebra</td><td>Ginebra 🛌</td></tr>
+        <tr><td class="day">Dom</td><td>19</td><td>Ginebra → Milán (MXP)</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Saturday detail -->
+  <section>
+    <h2>⏱️ Sábado 18 — al detalle</h2>
+    <div class="timeline">
+      <div class="tl-row"><span class="tl-time">7:00</span><span class="tl-info">Salida de Stuttgart</span></div>
+      <div class="tl-row"><span class="tl-time">10:00</span><span class="tl-info">☕ Basilea — café rápido junto al Rin <span class="km">(300 km)</span></span></div>
+      <div class="tl-row"><span class="tl-time">12:00</span><span class="tl-info">🍝 Neuchâtel — comida + paseo por el lago <span class="km">(130 km)</span></span></div>
+      <div class="tl-row"><span class="tl-time">14:30</span><span class="tl-info">🌅 Ginebra — llegada, tarde libre, cena junto al lago <span class="km">(120 km)</span></span></div>
+    </div>
+  </section>
+
+  <!-- Enlaces -->
+  <section>
+    <h2>🔗 Enlaces útiles</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://tricount.com/tfptNnLukeGEaaifjs" target="_blank" rel="noopener">
+        <span class="icon">💰</span>
+        <span class="label">Tricount<small>Gastos compartidos</small></span>
+      </a>
+      <a class="link-card" href="https://drive.google.com/drive/folders/1ppmdoLrqbydqEswzAyvfpdouWF1sPQOn" target="_blank" rel="noopener">
+        <span class="icon">📁</span>
+        <span class="label">Google Drive<small>Repertorios</small></span>
+      </a>
+      <a class="link-card" href="https://open.spotify.com/playlist/7yFJ7Ukl7C8IiNHHzl4mkF" target="_blank" rel="noopener">
+        <span class="icon">🎵</span>
+        <span class="label">Spotify<small>Playlist de la gira</small></span>
+      </a>
+      <a class="link-card" href="https://www.google.com/maps/d/edit?mid=1Prbr7C5n3MMEb3WKuXMAS-dFWqGnvvk" target="_blank" rel="noopener">
+        <span class="icon">🗺️</span>
+        <span class="label">My Maps<small>Mapa personalizado</small></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- KML -->
+  <section>
+    <h2>📥 Descargar ruta</h2>
+    <p>Archivo KML para importar en Google Maps / Google Earth / My Maps. Incluye todas las paradas con coordenadas y la ruta dibujada.</p>
+    <a class="kml-download" href="ruta-suiza-2026.kml" download>⬇ Descargar KML</a>
+  </section>
+</div>
+
+</body>
+</html>

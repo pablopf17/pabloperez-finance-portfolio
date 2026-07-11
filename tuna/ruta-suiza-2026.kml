@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ruta Suiza 2026</name>
+    <description>13-19 julio 2026 - Road trip 6 pers, 2 coches</description>
+
+    <Style id="pinDay1">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="pinDay2">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="pinDay3">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="pinDay6">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/yellow-dot.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="pinDay7">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/purple-dot.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="routeLine">
+      <LineStyle><color>ff0000ff</color><width>4</width></LineStyle>
+    </Style>
+
+    <!-- LUN 13 -->
+    <Placemark>
+      <name>1. MXP → Lugano</name>
+      <description>Llegada, recogida coches, cena en Lugano</description>
+      <styleUrl>#pinDay1</styleUrl>
+      <Point><coordinates>8.7247,45.6301,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>2. Lugano 🛌</name>
+      <description>Noche del lunes 13</description>
+      <styleUrl>#pinDay1</styleUrl>
+      <Point><coordinates>8.9511,46.0037,0</coordinates></Point>
+    </Placemark>
+
+    <!-- MAR 14 -->
+    <Placemark>
+      <name>3. Zürich 🛌</name>
+      <description>Día completo + noche del martes 14</description>
+      <styleUrl>#pinDay2</styleUrl>
+      <Point><coordinates>8.5417,47.3769,0</coordinates></Point>
+    </Placemark>
+
+    <!-- MIÉ 15 → VIE 17 Stuttgart -->
+    <Placemark>
+      <name>4. Stuttgart 🛌🛌🛌</name>
+      <description>Miércoles 15 a viernes 17 — 3 noches. Museo Mercedes/Porsche, Schlossplatz</description>
+      <styleUrl>#pinDay3</styleUrl>
+      <Point><coordinates>9.1829,48.7758,0</coordinates></Point>
+    </Placemark>
+
+    <!-- SÁB 18 -->
+    <Placemark>
+      <name>5. Basel ☕</name>
+      <description>Café rápido 10:00</description>
+      <styleUrl>#pinDay6</styleUrl>
+      <Point><coordinates>7.5886,47.5596,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>6. Neuchâtel 🍝</name>
+      <description>Comida + paseo lago 12:00</description>
+      <styleUrl>#pinDay6</styleUrl>
+      <Point><coordinates>6.9293,46.9895,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>7. Genève 🌅</name>
+      <description>Tarde completa + noche del sábado 18</description>
+      <styleUrl>#pinDay6</styleUrl>
+      <Point><coordinates>6.1432,46.2044,0</coordinates></Point>
+    </Placemark>
+
+    <!-- DOM 19 -->
+    <Placemark>
+      <name>8. Milano MXP 🔙</name>
+      <description>Devolución coches domingo 19</description>
+      <styleUrl>#pinDay7</styleUrl>
+      <Point><coordinates>8.7247,45.6301,0</coordinates></Point>
+    </Placemark>
+
+    <!-- RUTA LÍNEA -->
+    <Placemark>
+      <name>Ruta completa</name>
+      <description>~1,400 km total</description>
+      <styleUrl>#routeLine</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          8.7247,45.6301,0
+          8.9511,46.0037,0
+          8.5417,47.3769,0
+          9.1829,48.7758,0
+          7.5886,47.5596,0
+          6.9293,46.9895,0
+          6.1432,46.2044,0
+          8.7247,45.6301,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
