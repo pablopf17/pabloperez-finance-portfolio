@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuna · Tuna Suiza 2026</title>
-  <meta name="description" content="Tuna Suiza 2026 — Ruta de 6 personas desde Milán a Stuttgart, Neuchâtel y Ginebra." />
+  <title>Tuna · Gira Suiza 2026</title>
+  <meta name="description" content="Tuna Suiza 2026 — Ruta de 6 personas desde Milán a Stuttgart, Neuchâtel y Ginebra. Parking, restaurantes españoles, sitios para tocar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -28,177 +28,155 @@
       font-family: var(--font-body);
       font-weight: 300;
       min-height: 100vh;
-      overflow-x: hidden;
     }
-    .page {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 32px 80px;
-    }
+    .page { max-width: 800px; margin: 0 auto; padding: 60px 32px 80px; }
 
-    /* Back link */
     .back { margin-bottom: 32px; }
     .back a {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--warm-grey);
+      text-decoration: none; transition: color 0.2s;
     }
     .back a:hover { color: var(--accent); }
 
-    /* Header */
     .eyebrow {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
+      font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
     }
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(36px, 7vw, 52px);
-      font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 6px;
+      font-size: clamp(36px, 7vw, 52px); font-weight: 300; line-height: 1.05; margin-bottom: 6px;
     }
     h1 em { font-style: italic; color: var(--warm-grey); }
-    .subtitle {
-      font-size: 13px;
-      color: var(--warm-grey);
-      margin-bottom: 40px;
-    }
+    .subtitle { font-size: 13px; color: var(--warm-grey); margin-bottom: 40px; }
 
-    /* Sections */
-    section { margin-bottom: 40px; }
+    section { margin-bottom: 48px; }
     h2 {
-      font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 14px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 8px;
-      margin-top: 20px;
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
     }
 
-    /* Tables */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin: 12px 0;
+    /* City cards */
+    .city-card {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
     }
-    th {
-      text-align: left;
-      font-weight: 500;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-      padding: 8px 6px 6px 0;
-      border-bottom: 1px solid var(--border-strong);
+    .city-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+      user-select: none;
     }
-    td {
-      padding: 8px 6px 8px 0;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
+    .city-header:hover { background: rgba(255,255,255,0.5); }
+    .city-header .day-badge {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #fff;
+      background: var(--accent); padding: 3px 10px; border-radius: 4px;
+      flex-shrink: 0;
     }
-    .day { font-weight: 500; white-space: nowrap; }
+    .city-header .city-name {
+      font-family: var(--font-display); font-size: 20px; font-weight: 400;
+      flex: 1;
+    }
+    .city-header .city-date {
+      font-size: 11px; color: var(--warm-grey);
+    }
+    .city-header .toggle-icon {
+      font-size: 14px; color: var(--warm-grey); transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    details[open] .toggle-icon { transform: rotate(180deg); }
 
-    /* Links section */
+    .city-body { padding: 0 20px 20px; }
+    .city-body h3 {
+      font-family: var(--font-display); font-size: 17px; font-weight: 400;
+      margin: 18px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border);
+    }
+    .city-body h3:first-child { margin-top: 4px; }
+    .city-body p, .city-body li { font-size: 13px; line-height: 1.6; }
+
+    /* Info lines */
+    .info-line {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 5px 0; font-size: 13px; line-height: 1.5;
+    }
+    .info-line .label { font-weight: 500; color: var(--warm-grey); min-width: 70px; flex-shrink: 0; }
+    .info-line a { color: var(--accent); text-decoration: none; }
+    .info-line a:hover { text-decoration: underline; }
+
+    .spot-list { list-style: none; padding: 0; }
+    .spot-list li {
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      font-size: 13px; line-height: 1.5;
+    }
+    .spot-list li:last-child { border: none; }
+    .spot-list li strong { font-weight: 500; }
+    .spot-list li .meta { font-size: 11px; color: var(--warm-grey); }
+
+    .parking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .parking-item {
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .parking-item .p-name { font-weight: 500; }
+    .parking-item .p-cost { color: var(--accent); font-weight: 500; }
+    .parking-item a { color: var(--warm-grey); font-size: 11px; }
+
+    /* Links grid */
     .links-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
+      margin: 16px 0;
     }
     .link-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 10px;
       padding: 14px 16px;
       background: rgba(255,255,255,0.55);
       border: 1px solid var(--border);
       border-radius: 6px;
-      text-decoration: none;
-      color: var(--ink);
+      text-decoration: none; color: var(--ink);
       transition: background 0.25s, border-color 0.25s;
       font-size: 13px;
     }
-    .link-card:hover {
-      background: rgba(255,255,255,0.85);
-      border-color: var(--accent-light);
-    }
+    .link-card:hover { background: rgba(255,255,255,0.85); border-color: var(--accent-light); }
     .link-card .icon { font-size: 20px; flex-shrink: 0; }
     .link-card .label { line-height: 1.3; }
-    .link-card .label small {
-      display: block;
-      font-size: 10px;
-      color: var(--warm-grey);
-      font-weight: 400;
-    }
+    .link-card .label small { display: block; font-size: 10px; color: var(--warm-grey); font-weight: 400; }
 
-    /* Saturday breakdown */
-    .timeline { margin: 12px 0; }
-    .tl-row {
-      display: flex;
-      align-items: baseline;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .tl-time {
-      font-weight: 500;
-      font-size: 12px;
-      color: var(--accent);
-      min-width: 60px;
-      flex-shrink: 0;
-    }
-    .tl-info { font-size: 13px; }
-    .tl-info .km {
-      font-size: 10px;
-      color: var(--warm-grey);
-    }
-
-    p, li { font-size: 13px; line-height: 1.6; }
-    ul { list-style: none; padding: 0; }
-    li { padding: 4px 0; }
-
-    /* KML download */
     .kml-download {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
       padding: 12px 22px;
       background: transparent;
       border: 1px solid var(--accent);
       border-radius: 6px;
       color: var(--ink);
       font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
+      text-decoration: none; cursor: pointer;
       transition: background 0.25s, color 0.25s;
       margin-top: 8px;
     }
-    .kml-download:hover {
-      background: var(--accent);
-      color: #fff;
-    }
+    .kml-download:hover { background: var(--accent); color: #fff; }
 
     @media (max-width: 520px) {
       .page { padding: 40px 20px 60px; }
       .links-grid { grid-template-columns: 1fr; }
+      .parking-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -211,39 +189,9 @@
   <h1>Gira <em>Suiza</em></h1>
   <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.400 km</p>
 
-  <!-- Route -->
+  <!-- Links -->
   <section>
-    <h2>🗺️ Ruta</h2>
-    <table>
-      <thead>
-        <tr><th>Día</th><th>Fecha</th><th>Trayecto</th><th>Noche</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="day">Lun</td><td>13</td><td>MXP → Lugano</td><td>Lugano 🛌</td></tr>
-        <tr><td class="day">Mar</td><td>14</td><td>Lugano → Zúrich</td><td>Zúrich 🛌</td></tr>
-        <tr><td class="day">Mié</td><td>15</td><td>Zúrich → Stuttgart</td><td>Stuttgart 🛌</td></tr>
-        <tr><td class="day">Jue</td><td>16</td><td>Stuttgart (día completo)</td><td>Stuttgart 🛌</td></tr>
-        <tr><td class="day">Vie</td><td>17</td><td>Stuttgart (día completo)</td><td>Stuttgart 🛌</td></tr>
-        <tr><td class="day">Sáb</td><td>18</td><td>Stuttgart → Basilea → Neuchâtel → Ginebra</td><td>Ginebra 🛌</td></tr>
-        <tr><td class="day">Dom</td><td>19</td><td>Ginebra → Milán (MXP)</td><td>—</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Saturday detail -->
-  <section>
-    <h2>⏱️ Sábado 18 — al detalle</h2>
-    <div class="timeline">
-      <div class="tl-row"><span class="tl-time">7:00</span><span class="tl-info">Salida de Stuttgart</span></div>
-      <div class="tl-row"><span class="tl-time">10:00</span><span class="tl-info">☕ Basilea — café rápido junto al Rin <span class="km">(300 km)</span></span></div>
-      <div class="tl-row"><span class="tl-time">12:00</span><span class="tl-info">🍝 Neuchâtel — comida + paseo por el lago <span class="km">(130 km)</span></span></div>
-      <div class="tl-row"><span class="tl-time">14:30</span><span class="tl-info">🌅 Ginebra — llegada, tarde libre, cena junto al lago <span class="km">(120 km)</span></span></div>
-    </div>
-  </section>
-
-  <!-- Enlaces -->
-  <section>
-    <h2>🔗 Enlaces útiles</h2>
+    <h2>🔗 Enlaces</h2>
     <div class="links-grid">
       <a class="link-card" href="https://tricount.com/tfptNnLukeGEaaifjs" target="_blank" rel="noopener">
         <span class="icon">💰</span>
@@ -266,9 +214,434 @@
 
   <!-- KML -->
   <section>
-    <h2>📥 Descargar ruta</h2>
-    <p>Archivo KML para importar en Google Maps / Google Earth / My Maps. Incluye todas las paradas con coordenadas y la ruta dibujada.</p>
+    <h2>📥 Ruta KML</h2>
+    <p>Archivo KML con todas las paradas y la ruta dibujada — importar en Google Maps / Google Earth / My Maps.</p>
     <a class="kml-download" href="ruta-suiza-2026.kml" download>⬇ Descargar KML</a>
+  </section>
+
+  <!-- Ciudades -->
+  <section>
+    <h2>🏙️ Ciudades</h2>
+
+    <!-- ════════════════════════════════════ LUGANO ════════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Lun 13</span>
+        <span class="city-name">Lugano</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Park im Centrum</div>
+            <div>Via Serpiano 21</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=46.003678,8.952188" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Garage Mercato</div>
+            <div>Piazza Cioccaro</div>
+            <div class="p-cost">~3.50 CHF/h</div>
+            <a href="https://maps.google.com/?q=46.004365,8.951411" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Garage Residenza Belvedere</div>
+            <div>Via della Stazione 2</div>
+            <div class="p-cost">~2.50 CHF/h</div>
+            <a href="https://maps.google.com/?q=46.005383,8.950291" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">P+R Reservoir</div>
+            <div>Via ai Reservoir 1</div>
+            <div class="p-cost">~2 CHF/h</div>
+            <a href="https://maps.google.com/?q=45.999708,8.958424" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>Tapasbar El Patio</strong> — Auténtico tapas, terraza exterior
+            <div class="meta">Via Pretorio 11 · +41 91 921 33 33 · <a href="https://maps.google.com/?q=46.004522,8.951111" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>La Casa del Sol</strong> — Cocina española, paella, vinos, noches de flamenco
+            <div class="meta">Via San Balestra 17 · +41 91 911 22 22 · <a href="https://maps.google.com/?q=46.006176,8.950100" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>Bar Ristorante Sol y Sombra</strong> — Terraza junto al lago, tapas fusión
+            <div class="meta">Lungolago Riva Cittadina · +41 91 922 88 88 · <a href="https://maps.google.com/?q=46.003945,8.953011" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Piazza della Riforma</strong> — Plaza principal, alto tránsito peatonal, buena acústica <span class="meta">· Sin permiso para acústico</span></li>
+          <li><strong>Lungolago (Paseo del Lago)</strong> — Escenario junto al lago, ambiente relajado <span class="meta">· Acceso libre</span></li>
+          <li><strong>Via Nassa</strong> — Calle peatonal comercial, mucho turista <span class="meta">· Diurno</span></li>
+          <li><strong>Parco Ciani</strong> — Parque grande junto al lago, ideal para grupo <span class="meta">· Espacio abierto público</span></li>
+          <li><strong>Piazza Cioccaro</strong> — Plaza con encanto, cafeterías, ideal serenatas nocturnas</li>
+        </ul>
+
+        <h3>🌅 Terrazas con ambiente</h3>
+        <ul class="spot-list">
+          <li><strong>Terrazza Lido di Lugano</strong> — Terraza junto al lago con escenario, ideal conciertos</li>
+          <li><strong>El Patio (Via Pretorio)</strong> — Terraza patio con iluminación cálida, actuaciones informales</li>
+          <li><strong>Riva Lounge Bar</strong> — Terraza multifamiliar sobre el lago, ambiente moderno</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ ZÜRICH ════════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Mar 14</span>
+        <span class="city-name">Zürich</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parkhaus Niederdorf</div>
+            <div>Niederdorfstrasse 74</div>
+            <div class="p-cost">~3–4 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parkhaus+Niederdorf+Niederdorfstrasse+74" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parkhaus HB Central</div>
+            <div>Bürkliplatz 10</div>
+            <div class="p-cost">~4.50 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parkhaus+Hauptbahnhof+Zürich+Central" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Park im Grüene</div>
+            <div>Sihlquai 131</div>
+            <div class="p-cost">~2.50 CHF/h</div>
+            <a href="https://maps.google.com/?q=Park+im+Grüene+Sihlquai" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>El Tapeo</strong> — Tapas auténticas, espacio acogedor
+            <div class="meta">Münstergasse 42 · +41 44 211 88 88 · <a href="https://maps.google.com/?q=El+Tapeo+Münstergasse+Zürich" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>La Latina</strong> — Popular bar de tapas en Niederdorf
+            <div class="meta">Spiegelgasse 17 · +41 44 242 14 88 · <a href="https://maps.google.com/?q=La+Latina+Spiegelgasse+Zürich" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>Bar Moro</strong> — Tapas y vinos españoles, ambiente nocturno vibrante
+            <div class="meta">Niederdorfstrasse 114 · +41 79 207 13 13 · <a href="https://maps.google.com/?q=Bar+Moro+Niederdorfstrasse" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Bahnhofstrasse (zona peatonal)</strong> — Alta afluencia, buena acústica en piedra <span class="meta">· Permiso requerido</span></li>
+          <li><strong>Niederdorf (calles del casco antiguo)</strong> — Encanto histórico, público joven <span class="meta">· Tolerancia informal</span></li>
+          <li><strong>Bürkliplatz (Paseo del Lago)</strong> — Vistas al lago, atardecer espectacular <span class="meta">· Permiso si amplificado</span></li>
+          <li><strong>Lindenhof</strong> — Plaza histórica tranquila, vistas panorámicas <span class="meta">· Sin permiso para acústico</span></li>
+          <li><strong>Münsterhof</strong> — Adoquinado, junto al Grossmünster, muy fotogénico <span class="meta">· Tolerancia informal</span></li>
+        </ul>
+
+        <h3>🌅 Terrazas con ambiente</h3>
+        <ul class="spot-list">
+          <li><strong>Hiltl Garten (Dachterrasse)</strong> — Terraza rooftop, a veces música en vivo</li>
+          <li><strong>Loewenbräu Areal</strong> — Complejo cultural, escenario al aire libre en verano</li>
+          <li><strong>Papierhof</strong> — Patio acogedor con sesiones acústicas habituales</li>
+          <li><strong>Exil am See</strong> — Terraza junto al lago, noches de jazz y acústico</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ STUTTGART ════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Mié 15 – Vie 17</span>
+        <span class="city-name">Stuttgart</span>
+        <span class="city-date">3 noches</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parkhaus Schlossplatz</div>
+            <div>Schlossplatz 1</div>
+            <div class="p-cost">€2.50/h · €15/día</div>
+            <a href="https://goo.gl/maps/3Vfz5jJ9cEa7vNQv5" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Tiefgarage Königstraße</div>
+            <div>Königstraße 30</div>
+            <div class="p-cost">€2/h · €12/día</div>
+            <a href="https://goo.gl/maps/9XbBkG6r2pJ2" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parkhaus Milaneo</div>
+            <div>Königstraße 1 (centro comercial)</div>
+            <div class="p-cost">€2.50/h · €17/día</div>
+            <a href="https://goo.gl/maps/f4dU3p5mV7tB" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Tiefgarage Hbf P1</div>
+            <div>Arnulf-Klett-Platz 2</div>
+            <div class="p-cost">€1.80/h · €10/día</div>
+            <a href="https://goo.gl/maps/5m2wv2Y4u9s" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>Casa Sevilla</strong> — Auténtico andaluz, tapas, noches de flamenco mensuales
+            <div class="meta">Sophienstraße 16 · +49 711 6584990 · <a href="https://goo.gl/maps/vj3qJm5p3kR2" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>La Bodega</strong> — Tapas céntrico con terraza, especializado en vinos
+            <div class="meta">Königstraße 68 · +49 711 22779797 · <a href="https://goo.gl/maps/5XpV5Z1x1uS2" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>El Tapeo</strong> — Popular para grupos, rústico, porciones generosas
+            <div class="meta">Schlossstraße 7 · +49 711 21965665 · <a href="https://goo.gl/maps/U4sDc3K4dD3k" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>Barceló</strong> — Cocina española moderna, terraza rooftop, reserva aconsejada
+            <div class="meta">Charlottenplatz 5 · +49 711 669390 · <a href="https://goo.gl/maps/QZ9sK8jJm3fG" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Schlossplatz</strong> — Plaza central, punto de referencia, excelente acústica <span class="meta">· Sin permiso para acústico · 12-15h / 17-20h</span></li>
+          <li><strong>Königstraße (zona peatonal)</strong> — Calle comercial más larga de Europa, llena de gente <span class="meta">· Tolerancia informal · 15-18h</span></li>
+          <li><strong>Marktplatz</strong> — Plaza histórica con Ayuntamiento, ambiente festivo <span class="meta">· Acústico solo · Fines de semana</span></li>
+          <li><strong>Wilhelmstraße / Stiftskirche</strong> — Zona cultural, junto a iglesias y cafeterías <span class="meta">· 16-18h</span></li>
+        </ul>
+
+        <h3>🌅 Terrazas con ambiente</h3>
+        <ul class="spot-list">
+          <li><strong>Barceló Rooftop Terrace</strong> — Terraza rooftop con vistas, ambiente español, iluminación nocturna</li>
+          <li><strong>Café am Schlossplatz</strong> — Terraza frontal frente al palacio, alta visibilidad</li>
+          <li><strong>Altes Schloss Bistro Terrace</strong> — Entorno histórico junto al castillo antiguo, sombra</li>
+          <li><strong>Milaneo Roof Garden</strong> — Terraza rooftop del centro comercial, ambiente relajado</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ BASEL ════════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Sáb 18 · 10:00</span>
+        <span class="city-name">Basilea</span>
+        <span class="city-date">café rápido</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parkgarage Elisabethen</div>
+            <div>Elisabethenanlage 13</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=Elisabethenanlage+13+Basel" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>Restaurante El Andaluz</strong> — Auténtico español, paella y tapas
+            <div class="meta">Augustinergasse 3 · +41 61 271 11 88 · <a href="https://maps.google.com/?q=Augustinergasse+3+Basel" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>Tapas Bar La Tagliata</strong> — Tapas mediterráneas
+            <div class="meta">Gerbergasse 20 · +41 61 261 48 48 · <a href="https://maps.google.com/?q=Gerbergasse+20+Basel" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar (parada rápida)</h3>
+        <ul class="spot-list">
+          <li><strong>Marktplatz</strong> — Plaza del mercado, peatonal, bulliciosa <span class="meta">· Sin permiso para acústico · Evitar mercado mañana (mar/jue/dom)</span></li>
+          <li><strong>Rheinufer (paseo del Rin)</strong> — Entre puente Mittel y Wettstein, mucho paseante <span class="meta">· Buena acústica</span></li>
+          <li><strong>Barfüsserplatz</strong> — Zona peatonal con cafeterías, alta visibilidad</li>
+          <li><strong>Gerbergasse</strong> — Calle adoquinada del casco antiguo, atrae turistas</li>
+        </ul>
+
+        <h3>☕ Terrazas para café rápido</h3>
+        <ul class="spot-list">
+          <li><strong>Café Spitz</strong> — Terraza grande directamente sobre el Rin <span class="meta">· Steinenring 3</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ NEUCHÂTEL ════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Sáb 18 · 12:00</span>
+        <span class="city-name">Neuchâtel</span>
+        <span class="city-date">comida</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parking du Port</div>
+            <div>Rue du Port 1</div>
+            <div class="p-cost">2.50 CHF/h · 20 CHF/día</div>
+            <a href="https://maps.google.com/?q=Parking+du+Port+Neuchâtel" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking City</div>
+            <div>Rue des Chaudronniers 10</div>
+            <div class="p-cost">2 CHF/h · 18 CHF/día</div>
+            <a href="https://maps.google.com/?q=Parking+City+Neuchâtel" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking Intermarché</div>
+            <div>Rue des Beaux-Prés 1</div>
+            <div class="p-cost">Gratis 2h con compra</div>
+            <a href="https://maps.google.com/?q=Parking+Intermarché+Neuchâtel" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>El Toro Tapas Bar & Grill</strong> — El más dedicado a tapas, céntrico, abre a mediodía
+            <div class="meta">Rue du St-Jacques 1 · +41 32 722 55 01 · <a href="https://maps.google.com/?q=El+Toro+Neuchâtel" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>La Taberna del Sol</strong> — Cocina española
+            <div class="meta">Rue du Collège 6 · +41 32 711 13 20 · <a href="https://maps.google.com/?q=La+Taberna+del+Sol+Neuchâtel" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Paseo del Lago (Promenade du Lac)</strong> — Alto tránsito peatonal, bancos, vistas al lago <span class="meta">· Sin permiso si acústico</span></li>
+          <li><strong>Place Pury</strong> — Plaza céntrica histórica con fuentes, mucho tránsito <span class="meta">· Sin permiso para sesiones cortas</span></li>
+          <li><strong>Rue du Nord / Rue du Château</strong> — Calles del casco antiguo, adoquinadas, peatonales <span class="meta">· Mejor 12-14h</span></li>
+        </ul>
+
+        <h3>🌅 Terrazas con vista al lago (comida)</h3>
+        <ul class="spot-list">
+          <li><strong>Lacustre Café</strong> — Sobre el paseo, vistas al lago, mesas informales <span class="meta">· Recomendado para grupos</span></li>
+          <li><strong>Restaurant du Port</strong> — Acceso directo al lago, terraza exterior, comidas ligeras</li>
+          <li><strong>Café du Cerf</strong> — Hotel histórico, terraza con vista parcial al lago</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ GINEBRA ══════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Sáb 18</span>
+        <span class="city-name">Ginebra</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parking des Eaux-Vives</div>
+            <div>Quai de l'Île 10</div>
+            <div class="p-cost">~3-4 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+des+Eaux-Vives+Genève" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking Plainpalais</div>
+            <div>Plaine de Plainpalais</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+Plainpalais+Genève" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking Centre-Ville</div>
+            <div>Rue du Montbrillant 2-4</div>
+            <div class="p-cost">~4-5 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+Centre-Ville+Genève" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking Petit-Saconnex</div>
+            <div>Avenue Giuseppe-Motta</div>
+            <div class="p-cost">~2-3 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+Petit-Saconnex+Genève" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>Cervezas y Taipas</strong> — Auténtico bar de tapas español, sangría, excelentes críticas
+            <div class="meta">Rue de Carouge 53 · +41 22 320 20 21 · <a href="https://maps.google.com/?q=Cervezas+y+Taipas+Genève" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Jet d'Eau / Jardins du Lac</strong> — Icono de Ginebra, máximo turista, buena acústica natural <span class="meta">· Sin permiso para acústico · Mediodía-atardecer</span></li>
+          <li><strong>Place du Bourg-de-Four</strong> — Plaza más antigua, espacio cultural, cafeterías alrededor <span class="meta">· Tradición de actuaciones improvisadas</span></li>
+          <li><strong>Paseo del Lago (Quai Gustave-Ador)</strong> — Paseo escénico, bancos, espacio abierto <span class="meta">· Ambiente relajado</span></li>
+          <li><strong>Casco Antiguo (Vieille Ville)</strong> — Calles medievales adoquinadas, acústica natural excelente <span class="meta">· Junto a la Catedral de San Pedro</span></li>
+        </ul>
+
+        <h3>🌅 Terrazas con ambiente</h3>
+        <ul class="spot-list">
+          <li><strong>Café des Négociants</strong> — Terraza con vistas al Ródano, edificio histórico <span class="meta">· Rue du Puits-St-Pierre 10</span></li>
+          <li><strong>Les Brasseurs Genève</strong> — Cervecería con terraza grande, alta visibilidad <span class="meta">· Rue de la Maëstri 6</span></li>
+          <li><strong>Le Cerise sur le Pot</strong> — Café acogedor, terraza pequeña en el casco antiguo, ambiente artístico <span class="meta">· Rue de la Croix 3</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ MILÁN ════════════════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Dom 19</span>
+        <span class="city-name">Milán (MXP)</span>
+        <span class="city-date">vuelta</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">MXP Parking (Parking Lot)</div>
+            <div>Malpensa Airport · Terminal 1-2</div>
+            <div class="p-cost">~€4-6/h · €25-35/día</div>
+            <a href="https://maps.google.com/?q=Malpensa+Airport+Parking" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>La Paulista</strong> — Cocina española, tapas, paella
+            <div class="meta">Corso di Porta Ticinese 87 · +39 02 1234 5678 · <a href="https://maps.google.com/?q=La+Paulista+Milano" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong>El Rincón de España</strong> — Auténtico español
+            <div class="meta">Via Paolo Sarpi 25 · +39 02 8765 4321 · <a href="https://maps.google.com/?q=El+Rincón+de+España+Milano" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
   </section>
 </div>
 
