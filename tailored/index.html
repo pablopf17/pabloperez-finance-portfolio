@@ -233,6 +233,55 @@
     .badge-hold { background: #3E2723; color: #FFB74D; }
     .badge-skip { background: #4A1C1C; color: var(--red); }
 
+    /* ── Score ── */
+    .card-score-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .score-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .score-high { color: var(--green); border-color: var(--green); }
+    .score-mid  { color: #FFB74D; border-color: #FFB74D; }
+    .score-low  { color: var(--text-muted); }
+
+    /* ── Requirements ── */
+    .card-reqs {
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
+    }
+    .reqs-toggle {
+      color: var(--accent-dim);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .reqs-toggle .tap-hint { font-size: 0.65rem; }
+    .reqs-body {
+      display: none;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.6rem;
+      margin-top: 0.3rem;
+      font-size: 0.7rem;
+      line-height: 1.4;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .reqs-body.open { display: block; }
+
     .footer-note {
       text-align: center;
       font-size: 0.7rem;
@@ -275,7 +324,7 @@ const PASSWORD_HASH = '8012ea070e50bd2cee353568748f9bacc2173a6b3870dbdb920251a77
 const TOKEN_B64 = 'bmRsXzlpb2xtbmRydDMxNjJ5aGplMDkK';
 
 // Apps Script deployment URL
-const API_URL = 'https://script.google.com/macros/s/AKfycbydAmYIF_h3OuSCxZO1FKvZ4b1aaT7hdsDdaYvXmhC_Plx-zpr7l0HV0y-HeXfChdcW/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbyh3QPF1MiUV0zz7it_i-4BeYh-nRSgoQqK4CF-KyfxVxaMl7I6YnUlK-jOUNSMUvRU/exec';
 
 // ── SHA-256 utility ─────────────────────────────────────────
 async function sha256(str) {
@@ -339,17 +388,43 @@ function render(rows) {
 
     const date = r.found ? r.found.substring(0, 10) : '';
     const url = r.url || '#';
+    const score = r.score || '';
+
+    // Score badge color
+    let scoreClass = '', scoreLabel = '';
+    if (score) {
+      const s = parseFloat(score);
+      if (!isNaN(s)) {
+        if (s >= 7) { scoreClass = 'score-high'; scoreLabel = '🔥 ' + score; }
+        else if (s >= 5) { scoreClass = 'score-mid'; scoreLabel = '⭐ ' + score; }
+        else { scoreClass = 'score-low'; scoreLabel = score; }
+      } else {
+        scoreLabel = score;
+      }
+    }
+
+    // Requirements — try to parse as JSON or show as plain text
+    let reqs = r.requirements || '';
+    let reqsHtml = '';
+    if (reqs) {
+      reqsHtml = `<div class="card-reqs"><span class="reqs-toggle" onclick="toggleReqs(this)">📋 Requisitos <span class="tap-hint">↕️ mostrar</span></span><div class="reqs-body">${esc(reqs)}</div></div>`;
+    }
 
     return `
       <div class="card" data-index="${idx}">
         <div class="card-header">
           <span class="card-company">${esc(r.company)}</span>
-          <span class="card-date">${date} ${badge}</span>
+          <span class="card-date">${date}</span>
         </div>
         <div class="card-title">
           <a href="${url}" target="_blank" rel="noopener">${esc(r.title)}</a>
         </div>
         <div class="card-location">📍 ${esc(r.location)}</div>
+        <div class="card-score-row">
+          <span class="score-badge ${scoreClass}">${scoreLabel || '—'}</span>
+          ${badge}
+        </div>
+        ${reqsHtml}
         <div class="card-verdict" onclick="toggleVerdict(this)">
           ${esc(r.verdict || 'Sin veredicto')}
           <span class="tap-hint">↕️ tap para expandir</span>
@@ -376,6 +451,15 @@ function toggleVerdict(el) {
   el.classList.toggle('expanded');
   const hint = el.querySelector('.tap-hint');
   if (hint) hint.textContent = el.classList.contains('expanded') ? '↕️ tap para colapsar' : '↕️ tap para expandir';
+}
+
+function toggleReqs(el) {
+  const body = el.parentElement.querySelector('.reqs-body');
+  const hint = el.querySelector('.tap-hint');
+  if (body) {
+    body.classList.toggle('open');
+    if (hint) hint.textContent = body.classList.contains('open') ? '↕️ ocultar' : '↕️ mostrar';
+  }
 }
 </script>
 </body>
