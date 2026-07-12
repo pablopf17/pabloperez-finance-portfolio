@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tuna · Gira Suiza 2026</title>
-  <meta name="description" content="Tuna Suiza 2026 — Ruta de 6 personas desde Milán a Stuttgart, Neuchâtel y Ginebra. Alojamiento en Casa da Suite Mirabello. Parking, restaurantes españoles, sitios para tocar." />
+  <meta name="description" content="Tuna Suiza 2026 — Dos rutas: Original (Milán→Suiza→Stuttgart) y Alternativa (Turín→Suiza→Stuttgart). Parking, restaurantes españoles, presupuesto completo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -178,6 +178,37 @@
     }
     .kml-download:hover { background: var(--accent); color: #fff; }
 
+
+    /* Route tabs */
+    .route-tabs { display: flex; gap: 0; margin-bottom: 24px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .route-tabs input { display: none; }
+    .route-tabs label {
+      flex: 1; padding: 14px 18px; cursor: pointer; text-align: center;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--warm-grey);
+      background: rgba(255,255,255,0.3);
+      transition: all 0.25s; user-select: none;
+      border-right: 1px solid var(--border);
+    }
+    .route-tabs label:last-child { border-right: none; }
+    .route-tabs input:checked + label { background: var(--accent); color: #fff; }
+    .route-content { display: none; }
+    #route-f:checked ~ #content-f,
+    #route-r:checked ~ #content-r { display: block; }
+
+    /* Budget table */
+    .budget-wrap { margin-top: 40px; }
+    .budget-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+    .budget-table th, .budget-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .budget-table th { font-family: var(--font-display); font-size: 14px; font-weight: 400; color: var(--warm-grey); background: rgba(255,255,255,0.3); }
+    .budget-table td:last-child, .budget-table th:last-child { text-align: right; }
+    .budget-table tr.total td { font-weight: 600; border-top: 2px solid var(--accent); border-bottom: none; }
+    .budget-table tr.total td:last-child { color: var(--accent); font-size: 15px; }
+    .budget-note { font-size: 11px; color: var(--warm-grey); margin-top: 8px; line-height: 1.5; }
+    .route-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .route-dot.f { background: var(--accent); }
+    .route-dot.r { background: var(--ink); }
+
     @media (max-width: 520px) {
       .page { padding: 40px 20px 60px; }
       .links-grid { grid-template-columns: 1fr; }
@@ -193,6 +224,7 @@
   <p class="eyebrow">Tuna · Julio 2026</p>
   <h1>Gira <em>Suiza</em></h1>
   <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.400 km</p>
+<p style="font-size:12px;color:var(--warm-grey);margin-top:-28px;margin-bottom:36px;">🚀 Ruta Original · <strong>↕</strong> · 🔄 Ruta Alternativa (vía Turín)</p>
 
   <!-- Links -->
   <section>
@@ -221,8 +253,18 @@
   <section>
     <h2>🏙️ Ciudades</h2>
 
+    <div class="route-tabs">
+      <input type="radio" name="route" id="route-f" checked>
+      <label for="route-f">🚀 Ruta Original</label>
+      <input type="radio" name="route" id="route-r">
+      <label for="route-r">🔄 Ruta Alternativa</label>
+    </div>
+
+    <!-- ════════════════════════════════════ RUTA ORIGINAL ════════════════════════════ -->
+    <div class="route-content" id="content-f">
+
     <!-- ════════════════════════════════════ MILÁN ════════════════════════════════════ -->
-        <details class="city-card" open>
+    <details class="city-card" open>
           <summary class="city-header">
             <span class="day-badge">Lun 13</span>
             <span class="city-name">Milán</span>
@@ -781,6 +823,320 @@
             </div>
           </div>
         </details>
+
+    </div><!-- /content-f -->
+
+    <!-- ════════════════════════════════════ RUTA ALTERNATIVA ════════════════════════ -->
+    <div class="route-content" id="content-r">
+
+    <!-- ════════════════════════════════════ TURÍN ════════════════════════════════════ -->
+    <details class="city-card" open>
+      <summary class="city-header">
+        <span class="day-badge">Lun 13</span>
+        <span class="city-name">Turín</span>
+        <span class="city-date">1 noche ✨</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🅿️ Parking (centro)</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parcheggio Centro</div>
+            <div>Via Roma / Piazza Castello</div>
+            <div class="p-cost">~€2-3/h</div>
+            <a href="https://maps.google.com/?q=Turin+parking+via+roma" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parcheggio Porta Susa</div>
+            <div>Junto estación, económico</div>
+            <div class="p-cost">~€1.50-2.50/h</div>
+            <a href="https://maps.google.com/?q=Parcheggio+Porta+Susa+Torino" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🍽️ Restaurantes españoles</h3>
+        <ul class="spot-list">
+          <li>
+            <strong><a href="https://maps.google.com/?q=La+Paella+Torino" target="_blank">La Paella</a></strong> — Auténtica paella y tapas
+            <div class="meta">Via Garibaldi · <a href="https://maps.google.com/?q=La+Paella+Torino" target="_blank">📍 Maps</a></div>
+          </li>
+          <li>
+            <strong><a href="https://maps.google.com/?q=El+Rincon+Latino+Torino" target="_blank">El Rincón Latino</a></strong> — Cocina española y latina
+            <div class="meta">Via Po · <a href="https://maps.google.com/?q=El+Rincon+Latino+Torino" target="_blank">📍 Maps</a></div>
+          </li>
+        </ul>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Piazza Castello</strong> — Corazón de Turín, máxima afluencia <span class="meta">· Permiso requerido</span></li>
+          <li><strong>Via Roma (peatonal)</strong> — Conexión entre Piazza Castello y Piazza CLN <span class="meta">· Tarde-noche</span></li>
+          <li><strong>Piazza Vittorio Veneto</strong> — Gran plaza, Muraglia, ambiente nocturno <span class="meta">· Acústico solo</span></li>
+        </ul>
+
+        <h3>🛌 Alojamiento (6 pers)</h3>
+        <ul class="spot-list">
+          <li>
+            <strong>B&B / Hostel centro</strong> — opciones económicas en Piazza Castello
+            <div class="meta">~150-250 € total (~25-42 €/pers) · <a href="https://www.booking.com/searchresults.html?ss=Turin&checkin=2026-07-13&checkout=2026-07-14&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ GINEBRA (ruta alt) ═══════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Mar 14</span>
+        <span class="city-name">Ginebra</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🚗 Turín → Ginebra</h3>
+        <ul class="spot-list">
+          <li><strong>~3h 30min · 330 km</strong> por autopista A5 / E25 (peaje IT ~20€)</li>
+          <li>Salida temprano desde Turín, llegada a mediodía a Ginebra</li>
+        </ul>
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parking des Eaux-Vives</div>
+            <div>Quai de l'Île 10</div>
+            <div class="p-cost">~3-4 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+des+Eaux-Vives+Genève" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Parking Plainpalais</div>
+            <div>Plaine de Plainpalais</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=Parking+Plainpalais+Genève" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Jet d'Eau / Jardins du Lac</strong> — Icono, máximo turista <span class="meta">· Sin permiso acústico</span></li>
+          <li><strong>Place du Bourg-de-Four</strong> — Plaza más antigua, cafeterías <span class="meta">· Tradición actuaciones</span></li>
+        </ul>
+
+        <h3>🛌 City Hostel Geneva 🏆</h3>
+        <ul class="spot-list">
+          <li><div class="meta">Rue de Montbrillant 28 · ~400 CHF total (~67 CHF/pers) · <a href="https://www.cityhostel.ch/" target="_blank">🌐 Web</a></div></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ BASILEA (ruta alt) ════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Mié 15</span>
+        <span class="city-name">Basilea</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🚗 Ginebra → Neuchâtel → Basilea</h3>
+        <ul class="spot-list">
+          <li><strong>Neuchâtel (comida)</strong> — ~1h 15min desde Ginebra</li>
+          <li><strong>Basilea</strong> — ~1h 30min desde Neuchâtel</li>
+        </ul>
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parkgarage Elisabethen</div>
+            <div>Elisabethenanlage 13</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=Elisabethenanlage+13+Basel" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item p-rail">
+            <div class="p-name">🚆 P+Rail Spalentor</div>
+            <div>Spalentorweg 112</div>
+            <div class="p-cost">~5 CHF/día</div>
+          </div>
+        </div>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Marktplatz</strong> — Plaza peatonal, bulliciosa <span class="meta">· Sin permiso acústico</span></li>
+          <li><strong>Barfüsserplatz</strong> — Cafeterías, alta visibilidad</li>
+        </ul>
+
+        <h3>🛌 Alojamiento (6 pers)</h3>
+        <ul class="spot-list">
+          <li><strong>Hostel / Airbnb en Basilea</strong><div class="meta">~250-350 CHF total (~42-58 CHF/pers)</div></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ STUTTGART (ruta alt) ══════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Jue 16 – Vie 17</span>
+        <span class="city-name">Stuttgart</span>
+        <span class="city-date">2 noches ✨</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🚗 Basilea → Stuttgart</h3>
+        <ul class="spot-list">
+          <li><strong>~3h 30min · 340 km</strong> — autopista A5 (peaje DE ~25€)</li>
+          <li>Llegada jueves, viernes tarde + noche requisito ✅</li>
+        </ul>
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Parkhaus Schlossplatz</div>
+            <div class="p-cost">€2.50/h · €15/día</div>
+            <a href="https://goo.gl/maps/3Vfz5jJ9cEa7vNQv5" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item">
+            <div class="p-name">Tiefgarage Königstraße</div>
+            <div class="p-cost">€2/h · €12/día</div>
+            <a href="https://goo.gl/maps/9XbBkG6r2pJ2" target="_blank">📍 Maps</a>
+          </div>
+        </div>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Schlossplatz</strong> — Plaza central, excelente acústica <span class="meta">· Sin permiso acústico</span></li>
+          <li><strong>Königstraße (peatonal)</strong> — Calle comercial más larga de Europa</li>
+        </ul>
+
+        <h3>🛌 A&O Stuttgart City 🏆</h3>
+        <ul class="spot-list">
+          <li><div class="meta">Rosensteinstraße 14-16 · ~240-320 € total (2 noches, ~20-27 €/pers/noche) · <a href="https://www.booking.com/searchresults.html?ss=Stuttgart&checkin=2026-07-16&checkout=2026-07-18&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ LUGANO (ruta alt) ═════════════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Sáb 18</span>
+        <span class="city-name">Lugano</span>
+        <span class="city-date">1 noche</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+
+        <h3>🚗 Stuttgart → Zúrich (comida) → Lugano</h3>
+        <ul class="spot-list">
+          <li><strong>Stuttgart → Zúrich</strong> — ~3h · comida en Niederdorf</li>
+          <li><strong>Zúrich → Lugano</strong> — ~2h 30min por Gotthard</li>
+        </ul>
+
+        <h3>🅿️ Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item">
+            <div class="p-name">Park im Centrum</div>
+            <div class="p-cost">~3 CHF/h</div>
+            <a href="https://maps.google.com/?q=46.003678,8.952188" target="_blank">📍 Maps</a>
+          </div>
+          <div class="parking-item p-rail">
+            <div class="p-name">🚆 P+Rail Lugano Stazione</div>
+            <div class="p-cost">~5 CHF/día</div>
+          </div>
+        </div>
+
+        <h3>🎵 Sitios para tocar</h3>
+        <ul class="spot-list">
+          <li><strong>Piazza della Riforma</strong> — Principal, alta afluencia <span class="meta">· Sin permiso acústico</span></li>
+          <li><strong>Lungolago (Paseo del Lago)</strong> — Ambiente relajado, vistas <span class="meta">· Acceso libre</span></li>
+        </ul>
+
+        <h3>🛌 Youth Hostel Lugano Savosa 🏆</h3>
+        <ul class="spot-list">
+          <li><div class="meta">Via Cantonale 13 · ~210-270 CHF total (~35-45 CHF/pers) · <a href="https://www.booking.com/searchresults.html?ss=Lugano&checkin=2026-07-18&checkout=2026-07-19&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ════════════════════════════════════ REGRESO MXP (ruta alt) ═══════════════════ -->
+    <details class="city-card">
+      <summary class="city-header">
+        <span class="day-badge">Dom 19</span>
+        <span class="city-name">Lugano → Milán (MXP)</span>
+        <span class="city-date">vuelta</span>
+        <span class="toggle-icon">▾</span>
+      </summary>
+      <div class="city-body">
+        <h3>🚗 Lugano → MXP</h3>
+        <ul class="spot-list">
+          <li><strong>~1h · 80 km</strong> por autopista A2 / E35</li>
+          <li>Salida tranquila, llegar con tiempo al vuelo</li>
+        </ul>
+        <h3>🅿️ MXP Parking</h3>
+        <div class="parking-grid">
+          <div class="parking-item"><div class="p-name">MXP Parking</div><div class="p-cost">~€4-6/h · €25-35/día</div></div>
+          <div class="parking-item"><div class="p-name">Parking Economy</div><div class="p-cost">~€15-20/día</div></div>
+        </div>
+      </div>
+    </details>
+
+    </div><!-- /content-r -->
+
+    <!-- ════════════════════════════════════ PRESUPUESTO ═══════════════════════════════ -->
+    <div class="budget-wrap">
+      <h2>💰 Presupuesto estimado</h2>
+      <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">Costes totales para 6 personas · 2 coches · 7 días (todo incluido)</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <!-- Forward -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:18px;">
+          <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">🚀 Ruta Original</h3>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Total</th></tr>
+            <tr><td>🏨 Milán (Casa da Suite Mirabello)</td><td>~309 €</td></tr>
+            <tr><td>🏨 Lugano (Youth Hostel)</td><td>~240 €</td></tr>
+            <tr><td>🏨 Zúrich (Youth Hostel)</td><td>~280 €</td></tr>
+            <tr><td>🏨 Stuttgart (A&O, 1 noche)</td><td>~140 €</td></tr>
+            <tr><td>🏨 Ginebra (City Hostel)</td><td>~400 €</td></tr>
+            <tr><td style="font-weight:500;">🛏️ Total alojamiento</td><td style="font-weight:500;">~1.369 €</td></tr>
+            <tr><td>⛽ Combustible (~1.400 km, 2 coches)</td><td>~200 €</td></tr>
+            <tr><td>🛣️ Peajes + Vignette Suiza (2 coches)</td><td>~180 €</td></tr>
+            <tr><td>🅿️ Parking (6 días)</td><td>~120 €</td></tr>
+            <tr><td style="font-weight:500;">🚗 Total transporte</td><td style="font-weight:500;">~500 €</td></tr>
+            <tr><td>🍽️ Comida (6 pers × 6 días, ~30 €/pers/día)</td><td>~1.080 €</td></tr>
+            <tr class="total"><td>💶 TOTAL</td><td>~2.949 €</td></tr>
+            <tr><td style="font-size:11px;color:var(--warm-grey);border-top:none;padding-top:0;"><em>Por persona</em></td><td style="font-size:15px;font-weight:600;color:var(--accent);border-top:none;padding-top:0;">~492 €</td></tr>
+          </table>
+        </div>
+
+        <!-- Reverse -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:18px;">
+          <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">🔄 Ruta Alternativa</h3>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Total</th></tr>
+            <tr><td>🏨 Turín (B&B / Hostel)</td><td>~200 €</td></tr>
+            <tr><td>🏨 Ginebra (City Hostel)</td><td>~400 €</td></tr>
+            <tr><td>🏨 Basilea (Hostel / Airbnb)</td><td>~300 €</td></tr>
+            <tr><td>🏨 Stuttgart (A&O, 2 noches)</td><td>~280 €</td></tr>
+            <tr><td>🏨 Lugano (Youth Hostel)</td><td>~240 €</td></tr>
+            <tr><td style="font-weight:500;">🛏️ Total alojamiento</td><td style="font-weight:500;">~1.420 €</td></tr>
+            <tr><td>⛽ Combustible (~1.500 km, 2 coches)</td><td>~220 €</td></tr>
+            <tr><td>🛣️ Peajes CH/I/F/D + Vignette (2 coches)</td><td>~220 €</td></tr>
+            <tr><td>🅿️ Parking (6 días)</td><td>~120 €</td></tr>
+            <tr><td style="font-weight:500;">🚗 Total transporte</td><td style="font-weight:500;">~560 €</td></tr>
+            <tr><td>🍽️ Comida (6 pers × 6 días, ~30 €/pers/día)</td><td>~1.080 €</td></tr>
+            <tr class="total"><td>💶 TOTAL</td><td>~3.060 €</td></tr>
+            <tr><td style="font-size:11px;color:var(--warm-grey);border-top:none;padding-top:0;"><em>Por persona</em></td><td style="font-size:15px;font-weight:600;color:var(--accent);border-top:none;padding-top:0;">~510 €</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <p class="budget-note">
+        * Estimaciones orientativas. Combustible a ~1.80 €/L · Comida ~30 €/pers/día (desayuno+comida+cena).<br>
+        * Swiss Vignette 40 CHF/coche (válida 14 meses). · Parking varía según ciudad y horas.<br>
+        * Precios alojamiento en base a opciones económicas recomendadas. Pueden fluctuar según disponibilidad.
+      </p>
+    </div>
 
   </section>
 </div>
