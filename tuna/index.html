@@ -213,13 +213,52 @@
     .route-dot.r { background: var(--ink); }
 
     @media (max-width: 720px) {
-      .budget-wrap > div > div { grid-template-columns: 1fr !important; }
-    }
-    @media (max-width: 520px) {
-      .page { padding: 40px 20px 60px; }
-      .links-grid { grid-template-columns: 1fr; }
-      .parking-grid { grid-template-columns: 1fr; }
-    }
+          .budget-wrap > div > div { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 520px) {
+          .page { padding: 40px 20px 60px; }
+          .links-grid { grid-template-columns: 1fr; }
+          .parking-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Password gate */
+        .password-gate {
+          margin: 32px 0; padding: 32px 24px;
+          text-align: center;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          background: rgba(255,255,255,0.35);
+        }
+        .password-gate h3 {
+          font-family: var(--font-display); font-size: 22px; font-weight: 400;
+          margin-bottom: 6px;
+        }
+        .password-gate p {
+          font-size: 13px; color: var(--warm-grey); margin-bottom: 18px;
+        }
+        .password-gate input {
+          font-family: var(--font-body); font-size: 14px;
+          padding: 10px 14px; border: 1px solid var(--border-strong);
+          border-radius: 6px; background: #fff; color: var(--ink);
+          width: 200px; outline: none; transition: border-color 0.2s;
+        }
+        .password-gate input:focus { border-color: var(--accent); }
+        .password-gate button {
+          font-family: var(--font-body); font-size: 12px; font-weight: 500;
+          letter-spacing: 0.08em; text-transform: uppercase;
+          padding: 10px 22px; margin-left: 8px;
+          border: 1px solid var(--accent); border-radius: 6px;
+          background: transparent; color: var(--ink); cursor: pointer;
+          transition: background 0.25s, color 0.25s;
+        }
+        .password-gate button:hover { background: var(--accent); color: #fff; }
+        .password-gate .error {
+          font-size: 11px; color: #c0392b; margin-top: 10px; display: none;
+        }
+        .password-gate .error.show { display: block; }
+        .protected-content { display: none; }
+        .protected-content.unlocked { display: block; }
+        .password-gate.unlocked { display: none; }
   </style>
 </head>
 <body>
@@ -232,8 +271,19 @@
   <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.800 km</p>
   <p style="font-size:12px;color:var(--warm-grey);margin-top:-28px;margin-bottom:36px;">🚀 Ruta Original · <strong>↕</strong> · 🔄 Ruta Alternativa · <strong>↕</strong> · 🆕 Ruta Real (vía Aosta/Chamonix)</p>
 
-  <!-- Links -->
-  <section>
+  <!-- Password gate -->
+    <div class="password-gate" id="passwordGate">
+      <h3>🔒 Contenido privado</h3>
+      <p>Introduce la contraseña para ver enlaces y presupuesto</p>
+      <div>
+        <input type="password" id="passInput" placeholder="Contraseña" autocomplete="off" onkeydown="if(event.key==='Enter')unlockSection()" />
+        <button onclick="unlockSection()">Abrir</button>
+      </div>
+      <div class="error" id="passError">Contraseña incorrecta</div>
+          </div>
+
+          <!-- Links -->
+          <section class="protected-content">
     <h2>🔗 Enlaces</h2>
     <div class="links-grid">
       <a class="link-card" href="https://tricount.com/tfptNnLukeGEaaifjs" target="_blank" rel="noopener">
@@ -1503,7 +1553,7 @@
         </div><!-- /route-wrap -->
 
     <!-- ════════════════════════════════════ PRESUPUESTO ═══════════════════════════════ -->
-    <div class="budget-wrap">
+    <div class="budget-wrap protected-content">
       <h2>💰 Presupuesto estimado</h2>
       <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">Costes totales para 6 personas · 2 coches · 7 días (todo incluido)</p>
 
@@ -1576,10 +1626,32 @@
                 * Ruta Real: 2 noches Milán, trayecto extra por Aosta/Chamonix (Túnel Mont Blanc). · Parking varía según ciudad y horas.<br>
                 * Precios alojamiento en base a opciones económicas recomendadas. Pueden fluctuar según disponibilidad.
       </p>
-    </div>
+          </div><!-- /budget-wrap -->
 
-  </section>
-</div>
+        </section>
+      </div>
 
+<script>
+    function unlockSection() {
+      var pass = document.getElementById('passInput').value;
+      if (pass === 'aupatuna') {
+        document.getElementById('passwordGate').classList.add('unlocked');
+        document.querySelectorAll('.protected-content').forEach(function(el) {
+          el.classList.add('unlocked');
+        });
+        sessionStorage.setItem('tuna_unlocked', '1');
+      } else {
+        document.getElementById('passError').classList.add('show');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem('tuna_unlocked') === '1') {
+        document.getElementById('passwordGate').classList.add('unlocked');
+        document.querySelectorAll('.protected-content').forEach(function(el) {
+          el.classList.add('unlocked');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
