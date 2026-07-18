@@ -72,6 +72,28 @@
     h1 em { font-style: italic; color: var(--warm-grey); }
     .subtitle { font-size: 13px; color: var(--warm-grey); margin-bottom: 0; }
 
+    /* Media gallery */
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .media-grid .media-item {
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.3);
+    }
+    .media-grid img,
+    .media-grid video {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    .media-grid .media-item video {
+      cursor: pointer;
+    }
+
     section { margin-bottom: 48px; }
     h2 {
       font-family: var(--font-display); font-size: 26px; font-weight: 400;
@@ -295,8 +317,11 @@
             <span class="toggle-icon">▾</span>
           </summary>
           <div class="city-body">
-            <p style="font-size:13px;color:var(--warm-grey);">Llegada a Milán · Noche en Navigli</p>
-          </div>
+                      <p style="font-size:13px;color:var(--warm-grey);">Llegada a Milán · Noche en Navigli</p>
+                      <div class="media-grid">
+                        <div class="media-item"><img src="media/Lun.jpg" alt="Lun 13 — Milán" /></div>
+                      </div>
+                    </div>
         </details>
 
         <!-- ════════════════════════════════════ TURÍN ════════════════════════════════════ -->
@@ -308,10 +333,13 @@
             <span class="toggle-icon">▾</span>
           </summary>
           <div class="city-body">
-            <ul class="spot-list">
-              <li><strong>Milán → Turín</strong> — ~1h 30min · 140 km (autopista A4/E64, peaje ~10€)</li>
-            </ul>
-          </div>
+                      <ul class="spot-list">
+                        <li><strong>Milán → Turín</strong> — ~1h 30min · 140 km (autopista A4/E64, peaje ~10€)</li>
+                      </ul>
+                      <div class="media-grid">
+                        <div class="media-item"><img src="media/Mar.jpg" alt="Mar 14 — Turín" /></div>
+                      </div>
+                    </div>
         </details>
 
         <!-- ════════════════════════════════════ AOSTA → CHAMONIX → GINEBRA ═══════════════ -->
@@ -323,12 +351,16 @@
             <span class="toggle-icon">▾</span>
           </summary>
           <div class="city-body">
-            <ul class="spot-list">
-              <li><strong>Turín → Aosta</strong> — ~1h 30min · 110 km (autopista A5, peaje ~10€)</li>
-              <li><strong>Aosta → Chamonix</strong> — ~1h 20min · 105 km (SS26 y A40, túnel Mont Blanc ~50€ ida)</li>
-              <li><strong>Chamonix → Ginebra</strong> — ~1h 45min · 135 km (A40, peaje ~8€)</li>
-            </ul>
-          </div>
+                      <ul class="spot-list">
+                        <li><strong>Turín → Aosta</strong> — ~1h 30min · 110 km (autopista A5, peaje ~10€)</li>
+                        <li><strong>Aosta → Chamonix</strong> — ~1h 20min · 105 km (SS26 y A40, túnel Mont Blanc ~50€ ida)</li>
+                        <li><strong>Chamonix → Ginebra</strong> — ~1h 45min · 135 km (A40, peaje ~8€)</li>
+                      </ul>
+                      <div class="media-grid">
+                        <div class="media-item"><img src="media/Mie-1.jpg" alt="Mié 15 — Aosta/Chamonix" /></div>
+                        <div class="media-item"><img src="media/Mie-2.jpg" alt="Mié 15 — Ginebra" /></div>
+                      </div>
+                    </div>
         </details>
 
         <!-- ════════════════════════════════════ NEUCHÂTEL → BASILEA ════════════════════════ -->
@@ -340,10 +372,15 @@
             <span class="toggle-icon">▾</span>
           </summary>
           <div class="city-body">
-            <ul class="spot-list">
-              <li><strong>Neuchâtel → Basilea</strong> — ~1h 30min · 140 km (autopista A5)</li>
-            </ul>
-          </div>
+                      <ul class="spot-list">
+                        <li><strong>Neuchâtel → Basilea</strong> — ~1h 30min · 140 km (autopista A5)</li>
+                      </ul>
+                      <div class="media-grid">
+                        <div class="media-item"><img src="media/Jue-1.jpg" alt="Jue 16 — Neuchâtel/Basilea" /></div>
+                        <div class="media-item"><img src="media/Jue-2.jpg" alt="Jue 16 — Neuchâtel/Basilea" /></div>
+                        <div class="media-item" style="grid-column:1/-1;"><video src="media/Jue-3.mp4" controls muted playsinline preload="metadata"></video></div>
+                      </div>
+                    </div>
         </details>
 
         <!-- ════════════════════════════════════ FRIBURGO → WELZHEIM ══════════════════════ -->
@@ -355,11 +392,16 @@
             <span class="toggle-icon">▾</span>
           </summary>
           <div class="city-body">
-            <ul class="spot-list">
-              <li><strong>Basilea → Friburgo</strong> — ~1h · 70 km (autopista A5, peaje DE ~10€)</li>
-              <li><strong>Friburgo → Welzheim</strong> — ~2h 30min · 200 km (autopista A5/A8)</li>
-            </ul>
-          </div>
+                      <ul class="spot-list">
+                        <li><strong>Basilea → Friburgo</strong> — ~1h · 70 km (autopista A5, peaje DE ~10€)</li>
+                        <li><strong>Friburgo → Welzheim</strong> — ~2h 30min · 200 km (autopista A5/A8)</li>
+                      </ul>
+                      <div class="media-grid">
+                        <div class="media-item"><img src="media/Vie-1.jpg" alt="Vie 17 — Friburgo" /></div>
+                        <div class="media-item"><img src="media/Vie-2.jpg" alt="Vie 17 — Welzheim" /></div>
+                        <div class="media-item"><img src="media/Vie-3.jpg" alt="Vie 17 — Welzheim" /></div>
+                      </div>
+                    </div>
         </details>
 
         <!-- ════════════════════════════════════ ZÚRICH → LUGANO → MILÁN ══════════════════ -->
