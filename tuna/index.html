@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --cream: #F5F2ED;
@@ -326,7 +327,31 @@
         .protected-content { display: none; }
         .protected-content.unlocked { display: block; }
         .password-gate.unlocked { display: none; }
-  </style>
+
+            /* Map styles */
+            #route-map { background: #e8e2d9; }
+            #route-map .leaflet-popup-content-wrapper {
+              background: #fff; color: #1A1714; border-radius: 8px;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+              font-family: 'DM Sans', sans-serif;
+            }
+            #route-map .leaflet-popup-tip { background: #fff; }
+            #route-map .leaflet-popup-content { margin: 12px 16px; font-size: 13px; line-height: 1.5; }
+            #route-map .leaflet-popup-content strong { color: #B8935A; }
+            #route-map .leaflet-popup-content em { font-size: 11px; color: #8C8680; }
+
+            .map-marker {
+              display: flex; align-items: center; justify-content: center;
+              border-radius: 50%; font-weight: 700; font-size: 10px;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+              width: 26px; height: 26px; line-height: 26px; text-align: center;
+              border: 2px solid #fff;
+            }
+            .map-marker.start { background: #22d3ee; width: 32px; height: 32px; font-size: 14px; }
+            .map-marker.end { background: #f43f5e; width: 32px; height: 32px; font-size: 14px; }
+            .map-marker.night { background: #B8935A; color: #fff; }
+            .map-marker.waypoint { background: #8C8680; color: #fff; width: 20px; height: 20px; font-size: 7px; line-height: 20px; }
+          </style>
 </head>
 <body>
 
@@ -489,11 +514,19 @@
     
 
         </section>
-      </div>
 
+              <!-- ════════════════════════════════════ MAPA DE RUTA ════════════════════ -->
+              <section>
+                <h2>🗺️ Ruta</h2>
+                <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">
+                  ~1.800 km · 7 días · 2 coches · <a href="ruta-suiza-2026.kml" style="color:var(--accent);">Descargar KML</a>
+                </p>
+                <div id="route-map" style="height:480px;border-radius:8px;border:1px solid var(--border);overflow:hidden;"></div>
+              </section>
 
+            </div>
 
-<!-- Password gate -->
+        <!-- Password gate -->
     <div class="password-gate" id="passwordGate">
       <h3>🔒 Contenido privado</h3>
       <p>Introduce la contraseña para ver enlaces y presupuesto</p>
@@ -689,6 +722,95 @@
                                     });
                                   });
                                 });
-  </script>
+
+                                    // ===== MAPA DE RUTA (Leaflet) =====
+                                    const routeCoords = [
+                                      { name: "Milán", lat: 45.4642, lng: 9.1900, type: "start", day: "LUN 13", note: "Salida · Navigli" },
+                                      { name: "Turín", lat: 45.0703, lng: 7.6869, type: "night", day: "MAR 14", note: "1 noche · centro" },
+                                      { name: "Aosta", lat: 45.7375, lng: 7.3154, type: "waypoint", day: "MIÉ 15", note: "" },
+                                      { name: "Chamonix", lat: 45.9237, lng: 6.8694, type: "waypoint", day: "MIÉ 15", note: "" },
+                                      { name: "Ginebra", lat: 46.2044, lng: 6.1432, type: "night", day: "MIÉ 15", note: "1 noche" },
+                                      { name: "Neuchâtel", lat: 46.9899, lng: 6.9301, type: "waypoint", day: "JUE 16", note: "" },
+                                      { name: "Basilea", lat: 47.5596, lng: 7.5886, type: "night", day: "JUE 16", note: "1 noche" },
+                                      { name: "Friburgo", lat: 47.9990, lng: 7.8521, type: "waypoint", day: "VIE 17", note: "" },
+                                      { name: "Welzheim", lat: 48.8769, lng: 9.6342, type: "night", day: "VIE 17", note: "1 noche" },
+                                      { name: "Senden", lat: 48.3246, lng: 10.0435, type: "waypoint", day: "SÁB 18", note: "" },
+                                      { name: "Lindau", lat: 47.5461, lng: 9.6839, type: "waypoint", day: "SÁB 18", note: "" },
+                                      { name: "Milán", lat: 45.4642, lng: 9.1900, type: "night", day: "SÁB 18", note: "Vuelta" },
+                                      { name: "Milán", lat: 45.4642, lng: 9.1900, type: "end", day: "DOM 19", note: "Último día" }
+                                    ];
+
+                                    function initRouteMap() {
+                                      const el = document.getElementById('route-map');
+                                      if (!el) return;
+                                      const map = L.map('route-map', { zoomControl: true, attributionControl: true });
+                                      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                                        maxZoom: 19,
+                                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
+                                      }).addTo(map);
+
+                                      const routeColors = ['#22d3ee','#22d3ee','#22d3ee','#22d3ee','#22d3ee','#22d3ee','#f43f5e'];
+                                      const dayMarkers = [0]; // indices where a new day section starts
+                                      let currentDay = routeCoords[0].day;
+                                      routeCoords.forEach((p, i) => {
+                                        if (p.day !== currentDay) { dayMarkers.push(i); currentDay = p.day; }
+                                      });
+                                      dayMarkers.push(routeCoords.length);
+
+                                      const allLatLngs = [];
+                                      routeCoords.forEach(p => allLatLngs.push([p.lat, p.lng]));
+
+                                      // Draw each day segment
+                                      for (let d = 0; d < dayMarkers.length - 1; d++) {
+                                        const start = dayMarkers[d];
+                                        const end = dayMarkers[d + 1];
+                                        const seg = routeCoords.slice(start, end);
+                                        const segLatLngs = seg.map(p => [p.lat, p.lng]);
+                                        L.polyline(segLatLngs, {
+                                          color: routeColors[d] || '#22d3ee',
+                                          weight: 4, opacity: 0.8
+                                        }).addTo(map);
+                                      }
+
+                                      // Yellow dashed connectors between days
+                                      for (let d = 0; d < dayMarkers.length - 2; d++) {
+                                        const last = routeCoords[dayMarkers[d + 1] - 1];
+                                        const first = routeCoords[dayMarkers[d + 1]];
+                                        if (last.lat === first.lat && last.lng === first.lng) continue;
+                                        L.polyline([[last.lat, last.lng], [first.lat, first.lng]], {
+                                          color: '#B8935A', weight: 2, opacity: 0.5, dashArray: '6,8', interactive: false
+                                        }).addTo(map);
+                                      }
+
+                                      // Markers
+                                      const seen = {};
+                                      routeCoords.forEach((p) => {
+                                        const key = p.lat.toFixed(4) + ',' + p.lng.toFixed(4) + p.type;
+                                        if (seen[key] && p.type !== 'end' && p.type !== 'night') return;
+                                        seen[key] = true;
+
+                                        let cls, size, label;
+                                        if (p.type === 'start')     { cls='start'; size=32; label='🚀'; }
+                                        else if (p.type === 'end')  { cls='end'; size=32; label='🏁'; }
+                                        else if (p.type === 'night'){ cls='night'; size=28; label='🌙'; }
+                                        else                        { cls='waypoint'; size=20; label='●'; }
+
+                                        const icon = L.divIcon({
+                                          className: '',
+                                          html: `<div class="map-marker ${cls}" style="width:${size}px;height:${size}px;line-height:${size}px;">${label}</div>`,
+                                          iconSize: [size, size], iconAnchor: [size/2, size/2]
+                                        });
+                                        const m = L.marker([p.lat, p.lng], { icon }).addTo(map);
+                                        const parts = [p.day ? `<strong>${p.day}</strong>` : '', p.name, p.note ? `<em>${p.note}</em>` : ''];
+                                        m.bindPopup(parts.filter(Boolean).join('<br>'));
+                                      });
+
+                                      // Fit bounds
+                                      if (allLatLngs.length > 1) {
+                                        map.fitBounds(allLatLngs, { padding: [40, 40], maxZoom: 8 });
+                                      }
+                                    }
+                                    document.addEventListener('DOMContentLoaded', initRouteMap);
+                                  </script>
 </body>
 </html>
