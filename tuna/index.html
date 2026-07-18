@@ -451,9 +451,9 @@
         </details>
 
         <!-- ════════════════════════════════════ FRIBURGO → WELZHEIM ══════════════════════ -->
-        <details class="city-card" id="day-1"><!-- Lun 13: Milán -->
-          <summary class="city-header">
-            <span class="day-badge">Vie 17</span>
+                <details class="city-card" id="day-5"><!-- Vie 17: Friburgo · Welzheim -->
+                  <summary class="city-header">
+                    <span class="day-badge">Vie 17</span>
             <span class="city-name">Friburgo · Welzheim</span>
             <span class="city-date">1 noche</span>
             <span class="toggle-icon">▾</span>
@@ -474,9 +474,9 @@
         </details>
 
         <!-- ════════════════════════════════════ SENDEN → LIECHTENSTEIN → LINDAU → MILÁN ══════════════════ -->
-                <details class="city-card" id="day-1"><!-- Lun 13: Milán -->
-                  <summary class="city-header">
-                    <span class="day-badge">Sáb 18</span>
+                        <details class="city-card" id="day-6"><!-- Sáb 18: Senden · Liechtenstein · Lindau · Milán -->
+                          <summary class="city-header">
+                            <span class="day-badge">Sáb 18</span>
                     <span class="city-name">Senden · Liechtenstein · Lindau · Milán</span>
                     <span class="city-date">1 noche</span>
                     <span class="toggle-icon">▾</span>
@@ -497,9 +497,9 @@
                 </details>
 
         <!-- ════════════════════════════════════ DOMINGO MILÁN ═════════════════════════════ -->
-        <details class="city-card" id="day-1"><!-- Lun 13: Milán -->
-          <summary class="city-header">
-            <span class="day-badge">Dom 19</span>
+                <details class="city-card" id="day-7"><!-- Dom 19: Milán -->
+                  <summary class="city-header">
+                    <span class="day-badge">Dom 19</span>
             <span class="city-name">Milán</span>
             <span class="city-date">último día</span>
             <span class="toggle-icon">▾</span>
@@ -742,22 +742,22 @@
                                 });
 
                                     // ===== MAPA DE RUTA (Leaflet) =====
-                                    const routeCoords = [
-                                      { name: "Milán", lat: 45.4642, lng: 9.1900, type: "start", day: "LUN 13", note: "Salida · Navigli" },
-                                      { name: "Turín", lat: 45.0703, lng: 7.6869, type: "night", day: "MAR 14", note: "1 noche · centro" },
-                                      { name: "Aosta", lat: 45.7375, lng: 7.3154, type: "waypoint", day: "MIÉ 15", note: "" },
-                                      { name: "Chamonix", lat: 45.9237, lng: 6.8694, type: "waypoint", day: "MIÉ 15", note: "" },
-                                      { name: "Ginebra", lat: 46.2044, lng: 6.1432, type: "night", day: "MIÉ 15", note: "1 noche" },
-                                      { name: "Neuchâtel", lat: 46.9899, lng: 6.9301, type: "waypoint", day: "JUE 16", note: "" },
-                                      { name: "Basilea", lat: 47.5596, lng: 7.5886, type: "night", day: "JUE 16", note: "1 noche" },
-                                      { name: "Friburgo", lat: 47.9990, lng: 7.8521, type: "waypoint", day: "VIE 17", note: "" },
-                                      { name: "Welzheim", lat: 48.8769, lng: 9.6342, type: "night", day: "VIE 17", note: "1 noche" },
-                                      { name: "Senden", lat: 48.3246, lng: 10.0435, type: "waypoint", day: "SÁB 18", note: "" },
-                                                                            { name: "Liechtenstein", lat: 47.1410, lng: 9.5215, type: "waypoint", day: "SÁB 18", note: "Vaduz" },
-                                                                            { name: "Lindau", lat: 47.5461, lng: 9.6839, type: "waypoint", day: "SÁB 18", note: "" },
-                                                                            { name: "Milán", lat: 45.4642, lng: 9.1900, type: "night", day: "SÁB 18", note: "Vuelta" },
-                                      { name: "Milán", lat: 45.4642, lng: 9.1900, type: "end", day: "DOM 19", note: "Último día" }
-                                    ];
+                                                                        const routeCoords = [
+                                                                          { name: "Milán", lat: 45.4642, lng: 9.1900, type: "start", day: "LUN 13", note: "Salida · Navigli", cardId: "day-1" },
+                                                                          { name: "Turín", lat: 45.0703, lng: 7.6869, type: "night", day: "MAR 14", note: "1 noche · centro", cardId: "day-2" },
+                                                                          { name: "Aosta", lat: 45.7375, lng: 7.3154, type: "waypoint", day: "MIÉ 15", note: "", cardId: "day-3" },
+                                                                          { name: "Chamonix", lat: 45.9237, lng: 6.8694, type: "waypoint", day: "MIÉ 15", note: "", cardId: "day-3" },
+                                                                          { name: "Ginebra", lat: 46.2044, lng: 6.1432, type: "night", day: "MIÉ 15", note: "1 noche", cardId: "day-3" },
+                                                                          { name: "Neuchâtel", lat: 46.9899, lng: 6.9301, type: "waypoint", day: "JUE 16", note: "", cardId: "day-4" },
+                                                                          { name: "Basilea", lat: 47.5596, lng: 7.5886, type: "night", day: "JUE 16", note: "1 noche", cardId: "day-4" },
+                                                                          { name: "Friburgo", lat: 47.9990, lng: 7.8521, type: "waypoint", day: "VIE 17", note: "", cardId: "day-5" },
+                                                                          { name: "Welzheim", lat: 48.8769, lng: 9.6342, type: "night", day: "VIE 17", note: "1 noche", cardId: "day-5" },
+                                                                          { name: "Senden", lat: 48.3246, lng: 10.0435, type: "waypoint", day: "SÁB 18", note: "", cardId: "day-6" },
+                                                                          { name: "Liechtenstein", lat: 47.1410, lng: 9.5215, type: "waypoint", day: "SÁB 18", note: "Vaduz", cardId: "day-6" },
+                                                                          { name: "Lindau", lat: 47.5461, lng: 9.6839, type: "waypoint", day: "SÁB 18", note: "", cardId: "day-6" },
+                                                                          { name: "Milán", lat: 45.4642, lng: 9.1900, type: "night", day: "SÁB 18", note: "Vuelta", cardId: "day-6" },
+                                                                          { name: "Milán", lat: 45.4642, lng: 9.1900, type: "end", day: "DOM 19", note: "Último día", cardId: "day-7" }
+                                                                        ];
 
                                     function initRouteMap() {
                                       const el = document.getElementById('route-map');
@@ -820,8 +820,15 @@
                                           iconSize: [size, size], iconAnchor: [size/2, size/2]
                                         });
                                         const m = L.marker([p.lat, p.lng], { icon }).addTo(map);
-                                        const parts = [p.day ? `<strong>${p.day}</strong>` : '', p.name, p.note ? `<em>${p.note}</em>` : ''];
-                                        m.bindPopup(parts.filter(Boolean).join('<br>'));
+                                                                                const parts = [p.day ? `<strong>${p.day}</strong>` : '', p.name, p.note ? `<em>${p.note}</em>` : '', '<span style="font-size:10px;color:#B8935A;">📸 Fotos</span>'];
+                                                                                m.bindPopup(parts.filter(Boolean).join('<br>'));
+                                                                                m.on('click', function() {
+                                                                                  const card = document.getElementById(p.cardId);
+                                                                                  if (card) {
+                                                                                    card.setAttribute('open', '');
+                                                                                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                                                                  }
+                                                                                });
                                       });
 
                                       // Fit bounds
