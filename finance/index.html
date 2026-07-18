@@ -914,8 +914,8 @@
   </p>
 
   <a href="/assets/CV_Pablo_Pérez_Fraile.pdf" class="btn-download-cv" download>
-    📄 Descargar CV
-  </a>
+      📄 <span data-i18n="downloadcv">Descargar CV</span>
+    </a>
 
   <div class="divider"><span data-i18n="expertise">Expertise</span></div>
   <div class="expertise">
@@ -960,7 +960,7 @@
   <div class="divider"><span data-i18n="experience">Experience</span></div>
 
   <section class="section">
-    <h2>🎓 Educación</h2>
+    <h2>🎓 <span data-i18n="education">Educación</span></h2>
     <ul class="timeline">
       <li>
         <h3>Máster en Finanzas y Ciencia de Datos</h3>
@@ -978,7 +978,7 @@
   </section>
 
   <section class="section">
-    <h2>🏅 Especialización Técnica</h2>
+    <h2>🏅 <span data-i18n="specialization">Especialización Técnica</span></h2>
     <div class="badges">
       <span class="badge">FINMA/Basel</span>
       <span class="badge">IFRS 9</span>
@@ -996,31 +996,31 @@
       </div>
       <div class="exp-period" data-i18n="job1period">2026 — Present</div>
       <ul class="achievements">
-        <li><strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.</li>
-        <li><strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.</li>
-      </ul>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
-        <div class="exp-company">Ernst &amp; Young — Zurich</div>
-      </div>
-      <div class="exp-period">2025 — 2026</div>
-      <ul class="achievements">
-        <li><strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.</li>
-        <li><strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.</li>
-      </ul>
-    </div>
-    <div class="exp-item">
-      <div>
-        <div class="exp-role" data-i18n="job3role">Crisis &amp; Regulatory Affairs Analyst</div>
-        <div class="exp-company">Santander Bank — Madrid</div>
-      </div>
-      <div class="exp-period">2021 — 2025</div>
-      <ul class="achievements">
-        <li><strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.</li>
-        <li><strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.</li>
-      </ul>
+              <li data-i18n="job1b1"><strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.</li>
+              <li data-i18n="job1b2"><strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <div>
+              <div class="exp-role" data-i18n="job2role">Financial Risk Regulatory Audit Consultant</div>
+              <div class="exp-company">Ernst &amp; Young — Zurich</div>
+            </div>
+            <div class="exp-period">2025 — 2026</div>
+            <ul class="achievements">
+              <li data-i18n="job2b1"><strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.</li>
+              <li data-i18n="job2b2"><strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <div>
+              <div class="exp-role" data-i18n="job3role">Crisis &amp; Regulatory Affairs Analyst</div>
+              <div class="exp-company">Santander Bank — Madrid</div>
+            </div>
+            <div class="exp-period">2021 — 2025</div>
+            <ul class="achievements">
+              <li data-i18n="job3b1"><strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.</li>
+              <li data-i18n="job3b2"><strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.</li>
+            </ul>
     </div>
     <div class="exp-item">
       <div>
@@ -1181,6 +1181,13 @@ const translations = {
     job2role: "Financial Risk Regulatory Audit Consultant",
     job3role: "Crisis & Regulatory Affairs Analyst",
     job4role: "Enterprise Risk Management Intern",
+    downloadcv: "Download CV", education: "Education", specialization: "Technical Specialization",
+    job1b1: "<strong>Fintech Training:</strong> Delivered advanced lectures on blockchain, DeFi and Web3 to university students.",
+    job1b2: "<strong>Regulatory Knowledge:</strong> Designed and taught regulatory frameworks applied to the digital environment.",
+    job2b1: "<strong>Regulatory Optimization:</strong> Developed an AI-powered tool for audit plans, improving consistency and reducing manual time.",
+    job2b2: "<strong>Data Management:</strong> Processed large financial/banking datasets using Python and advanced Excel, contributing to liquidity and credit risk reviews.",
+    job3b1: "<strong>Regulatory Automation:</strong> Built a Power Platform solution that significantly reduced manual workload in internal processes.",
+    job3b2: "<strong>Audit Experience:</strong> Delivered 50+ enhanced reports and participated in 5+ key regulatory projects.",
     savecontact: "Save Contact", sendmsg: "Send a message", caltitle: "Schedule a call", calsub: "30 min · Video call",
     namelabel: "Name", emaillabel: "Email", subjectlabel: "Subject", msglabel: "Message",
     nameph: "Your name", emailph: "your@email.com", subjectph: "How can I help?", msgph: "Your message...",
@@ -1203,6 +1210,13 @@ const translations = {
     job2role: "Consultor de Auditoría Regulatoria de Riesgo Financiero",
     job3role: "Analista de Crisis y Asuntos Regulatorios",
     job4role: "Becario de Gestión de Riesgos Empresariales",
+    downloadcv: "Descargar CV", education: "Educación", specialization: "Especialización Técnica",
+    job1b1: "<strong>Formación en Fintech:</strong> Impartí lecciones avanzadas en blockchain, DeFi y Web3 a estudiantes universitarios.",
+    job1b2: "<strong>Conocimiento Normativo:</strong> Diseñé y enseñé sobre frameworks regulatorios aplicados al entorno digital.",
+    job2b1: "<strong>Optimización Regulatoria:</strong> Desarrollé herramienta basada en IA para planes de auditoría, mejorando consistencia y reduciendo tiempos manuales.",
+    job2b2: "<strong>Gestión de Datos:</strong> Procesé grandes volúmenes de datos financiero/bancarios mediante Python y Excel avanzado, contribuyendo a revisiones de riesgo de liquidez y crédito.",
+    job3b1: "<strong>Automatización Regulatoria:</strong> Desarrollé solución con Power Platform que redujo significativamente la carga manual en procesos internos.",
+    job3b2: "<strong>Experiencia de Auditoría:</strong> Llevé a cabo más de 50 informes mejorados y participé en 5+ proyectos regulatorios clave.",
     savecontact: "Guardar Contacto", sendmsg: "Enviar un mensaje", caltitle: "Agendar una llamada", calsub: "30 min · Videollamada",
     namelabel: "Nombre", emaillabel: "Email", subjectlabel: "Asunto", msglabel: "Mensaje",
     nameph: "Tu nombre", emailph: "tu@email.com", subjectph: "¿En qué puedo ayudarte?", msgph: "Tu mensaje...",
@@ -1225,6 +1239,13 @@ const translations = {
     job2role: "Consultant en Audit Réglementaire du Risque Financier",
     job3role: "Analyste Affaires Réglementaires & Gestion de Crise",
     job4role: "Stagiaire Gestion des Risques d'Entreprise",
+    downloadcv: "Télécharger CV", education: "Formation", specialization: "Spécialisation Technique",
+    job1b1: "<strong>Formation Fintech :</strong> Dispensé des cours avancés sur la blockchain, la DeFi et le Web3 aux étudiants universitaires.",
+    job1b2: "<strong>Connaissances Réglementaires :</strong> Conçu et enseigné les cadres réglementaires appliqués à l'environnement numérique.",
+    job2b1: "<strong>Optimisation Réglementaire :</strong> Développé un outil basé sur l'IA pour les plans d'audit, améliorant la cohérence et réduisant le temps manuel.",
+    job2b2: "<strong>Gestion des Données :</strong> Traité de grands volumes de données financières/bancaires avec Python et Excel avancé, contribuant aux revues de risque de liquidité et de crédit.",
+    job3b1: "<strong>Automatisation Réglementaire :</strong> Développé une solution Power Platform réduisant significativement la charge manuelle dans les processus internes.",
+    job3b2: "<strong>Expérience d'Audit :</strong> Livré plus de 50 rapports améliorés et participé à 5+ projets réglementaires clés.",
     savecontact: "Enregistrer le contact", sendmsg: "Envoyer un message", caltitle: "Planifier un appel", calsub: "30 min · Appel vidéo",
     namelabel: "Nom", emaillabel: "Email", subjectlabel: "Sujet", msglabel: "Message",
     nameph: "Votre nom", emailph: "votre@email.com", subjectph: "Comment puis-je vous aider ?", msgph: "Votre message...",
@@ -1247,6 +1268,13 @@ const translations = {
     job2role: "Berater für regulatorische Finanzrisikoprüfung",
     job3role: "Analyst für Krisen- und Regulierungsangelegenheiten",
     job4role: "Praktikant Unternehmensweites Risikomanagement",
+    downloadcv: "Lebenslauf herunterladen", education: "Ausbildung", specialization: "Technische Spezialisierung",
+    job1b1: "<strong>Fintech-Schulung:</strong> Fortgeschrittene Vorlesungen über Blockchain, DeFi und Web3 für Universitätsstudenten gehalten.",
+    job1b2: "<strong>Regulierungswissen:</strong> Schulungen zu regulatorischen Rahmenwerken im digitalen Umfeld entwickelt und durchgeführt.",
+    job2b1: "<strong>Regulierungsoptimierung:</strong> KI-gestütztes Tool für Audit-Pläne entwickelt, das Konsistenz verbessert und manuelle Zeit reduziert.",
+    job2b2: "<strong>Datenmanagement:</strong> Große Finanz-/Bankdatensätze mit Python und fortgeschrittenem Excel verarbeitet, beigetragen zu Liquiditäts- und Kreditrisikoprüfungen.",
+    job3b1: "<strong>Regulierungsautomatisierung:</strong> Power Platform-Lösung entwickelt, die die manuelle Belastung in internen Prozessen erheblich reduzierte.",
+    job3b2: "<strong>Prüfungserfahrung:</strong> Über 50 verbesserte Berichte geliefert und an 5+ wichtigen regulatorischen Projekten teilgenommen.",
     savecontact: "Kontakt speichern", sendmsg: "Nachricht senden", caltitle: "Gespräch vereinbaren", calsub: "30 Min · Videoanruf",
     namelabel: "Name", emaillabel: "E-Mail", subjectlabel: "Betreff", msglabel: "Nachricht",
     nameph: "Ihr Name", emailph: "ihre@email.com", subjectph: "Wie kann ich helfen?", msgph: "Ihre Nachricht...",
@@ -1269,6 +1297,13 @@ const translations = {
     job2role: "金融风险监管审计顾问",
     job3role: "危机与监管事务分析师",
     job4role: "企业风险管理实习生",
+    downloadcv: "下载简历", education: "教育背景", specialization: "技术专长",
+    job1b1: "<strong>金融科技培训：</strong>为大学生讲授区块链、DeFi和Web3高级课程。",
+    job1b2: "<strong>监管知识：</strong>设计并教授适用于数字环境的监管框架课程。",
+    job2b1: "<strong>监管优化：</strong>开发基于AI的审计计划工具，提高一致性并减少人工时间。",
+    job2b2: "<strong>数据管理：</strong>使用Python和高级Excel处理大型金融/银行数据集，为流动性和信用风险审查做出贡献。",
+    job3b1: "<strong>监管自动化：</strong>构建Power Platform解决方案，显著减少内部流程的人工工作量。",
+    job3b2: "<strong>审计经验：</strong>交付50+份改进报告并参与5+个关键监管项目。",
     savecontact: "保存联系人", sendmsg: "发送消息", caltitle: "预约通话", calsub: "30分钟 · 视频通话",
     namelabel: "姓名", emaillabel: "电子邮件", subjectlabel: "主题", msglabel: "消息",
     nameph: "您的姓名", emailph: "您的邮箱", subjectph: "我能帮您什么？", msgph: "您的消息...",
@@ -1291,6 +1326,13 @@ const translations = {
     job2role: "Consulente di Audit Regolatorio del Rischio Finanziario",
     job3role: "Analista di Crisi e Affari Regolatori",
     job4role: "Stagista Gestione del Rischio Aziendale",
+    downloadcv: "Scarica CV", education: "Istruzione", specialization: "Specializzazione Tecnica",
+    job1b1: "<strong>Formazione Fintech:</strong> Tenuto lezioni avanzate su blockchain, DeFi e Web3 a studenti universitari.",
+    job1b2: "<strong>Conoscenze Normative:</strong> Progettato e insegnato quadri normativi applicati all’ambiente digitale.",
+    job2b1: "<strong>Ottimizzazione Regolatoria:</strong> Sviluppato strumento basato su AI per piani di audit, migliorando la coerenza e riducendo i tempi manuali.",
+    job2b2: "<strong>Gestione Dati:</strong> Elaborato grandi volumi di dati finanziari/bancari con Python ed Excel avanzato, contribuendo a revisioni del rischio di liquidità e credito.",
+    job3b1: "<strong>Automazione Regolatoria:</strong> Realizzato soluzione Power Platform che ha ridotto significativamente il carico manuale nei processi interni.",
+    job3b2: "<strong>Esperienza di Audit:</strong> Consegnato oltre 50 report migliorati e partecipato a 5+ progetti normativi chiave.",
     savecontact: "Salva Contatto", sendmsg: "Invia un messaggio", caltitle: "Prenota una chiamata", calsub: "30 min · Videochiamata",
     namelabel: "Nome", emaillabel: "Email", subjectlabel: "Oggetto", msglabel: "Messaggio",
     nameph: "Il tuo nome", emailph: "tua@email.com", subjectph: "Come posso aiutarti?", msgph: "Il tuo messaggio...",
