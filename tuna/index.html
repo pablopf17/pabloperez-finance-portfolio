@@ -755,8 +755,8 @@
                                                                                                                                                     { name: "Senden", lat: 48.3246, lng: 10.0435, type: "waypoint", day: "SÁB 18", note: "", cardId: "day-6" },
                                                                                                                                                     { name: "Liechtenstein", lat: 47.1410, lng: 9.5215, type: "waypoint", day: "SÁB 18", note: "Vaduz", cardId: "day-6" },
                                                                                                                                                     { name: "Lindau", lat: 47.5461, lng: 9.6839, type: "waypoint", day: "SÁB 18", note: "", cardId: "day-6" },
-                                                                                                                                                    { name: "Milán (vuelta)", lat: 46.0800, lng: 9.8500, type: "night", day: "SÁB 18", note: "Vuelta · zona Sondrio", cardId: "day-6" },
-                                                                                                                                                                                                                              { name: "Milán (fin)", lat: 44.6800, lng: 8.5000, type: "end", day: "DOM 19", note: "Último día · zona Acqui Terme", cardId: "day-7" }
+                                                                                                                                                    { name: "Milán (vuelta)", lat: 45.4642, lng: 9.1900, type: "night", day: "SÁB 18", note: "Vuelta · Navigli", cardId: "day-6" },
+                                                                                                                                                                                                                              { name: "Milán (fin)", lat: 45.4642, lng: 9.1900, type: "end", day: "DOM 19", note: "Último día · Navigli", cardId: "day-7" }
                                                                         ];
 
                                     function initRouteMap() {
@@ -802,27 +802,29 @@
                                       }
 
                                       // Markers
-                                      const seen = {};
-                                      routeCoords.forEach((p) => {
-                                        const key = p.lat.toFixed(4) + ',' + p.lng.toFixed(4) + p.type;
-                                        if (seen[key] && p.type !== 'end' && p.type !== 'night') return;
-                                        seen[key] = true;
+                                                                            const coordCount = {};
+                                                                            routeCoords.forEach((p) => {
+                                                                              const key = p.lat.toFixed(4) + ',' + p.lng.toFixed(4);
+                                                                              if (!coordCount[key]) coordCount[key] = 0;
+                                                                              coordCount[key]++;
 
-                                        let cls, size, label;
-                                        if (p.type === 'start')     { cls='start'; size=32; label='🚀'; }
-                                        else if (p.type === 'end')  { cls='end'; size=32; label='🏁'; }
-                                        else if (p.type === 'night'){ cls='night'; size=28; label='🌙'; }
-                                        else                        { cls='waypoint'; size=20; label='●'; }
+                                                                              let cls, size, label;
+                                                                              if (p.type === 'start')     { cls='start'; size=32; label='🚀'; }
+                                                                              else if (p.type === 'end')  { cls='end'; size=32; label='🏁'; }
+                                                                              else if (p.type === 'night'){ cls='night'; size=28; label='🌙'; }
+                                                                              else                        { cls='waypoint'; size=20; label='●'; }
 
-                                        const icon = L.divIcon({
-                                          className: '',
-                                          html: `<div class="map-marker ${cls}" style="width:${size}px;height:${size}px;line-height:${size}px;">${label}</div>`,
-                                          iconSize: [size, size], iconAnchor: [size/2, size/2]
-                                        });
-                                        const m = L.marker([p.lat, p.lng], { icon }).addTo(map);
-                                                                                const parts = [p.day ? `<strong>${p.day}</strong>` : '', p.name, p.note ? `<em>${p.note}</em>` : '', '<span style="font-size:10px;color:#B8935A;">📸 Fotos</span>'];
-                                                                                m.bindPopup(parts.filter(Boolean).join('<br>'));
-                                                                                m.on('click', function() {
+                                                                              const offset = (coordCount[key] - 1) * 36;
+                                                                              const icon = L.divIcon({
+                                                                                className: '',
+                                                                                html: `<div class="map-marker ${cls}" style="width:${size}px;height:${size}px;line-height:${size}px;">${label}</div>`,
+                                                                                iconSize: [size, size],
+                                                                                iconAnchor: [size/2 - offset, size/2]
+                                                                              });
+                                                                              const m = L.marker([p.lat, p.lng], { icon, zIndexOffset: -coordCount[key] }).addTo(map);
+                                                                              const parts = [p.day ? `<strong>${p.day}</strong>` : '', p.name, p.note ? `<em>${p.note}</em>` : '', '<span style="font-size:10px;color:#B8935A;">📸 Fotos</span>'];
+                                                                              m.bindPopup(parts.filter(Boolean).join('<br>'));
+                                                                              m.on('click', function() {
                                                                                   const card = document.getElementById(p.cardId);
                                                                                   if (card) {
                                                                                     card.setAttribute('open', '');
