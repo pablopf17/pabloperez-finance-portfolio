@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tuna · Gira Suiza 2026</title>
-  <meta name="description" content="Tuna Suiza 2026 — Tres rutas: Original (Milán→Suiza→Stuttgart), Alternativa (Turín→Suiza) y Real (Milán→Turín→Aosta/Chamonix→Ginebra→Basilea→Stuttgart→Lugano→Milán). Parking, restaurantes españoles, presupuesto." />
+  <meta name="description" content="Tuna Suiza 2026 — Ruta Real: Milán→Turín→Aosta/Chamonix→Ginebra→Friburgo→Stuttgart→Zúrich→Lugano→Milán. Parking, restaurantes españoles, presupuesto." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -70,7 +70,7 @@
       font-size: clamp(36px, 7vw, 52px); font-weight: 300; line-height: 1.05; margin-bottom: 6px;
     }
     h1 em { font-style: italic; color: var(--warm-grey); }
-    .subtitle { font-size: 13px; color: var(--warm-grey); margin-bottom: 40px; }
+    .subtitle { font-size: 13px; color: var(--warm-grey); margin-bottom: 0; }
 
     section { margin-bottom: 48px; }
     h2 {
@@ -202,24 +202,6 @@
 
 
     /* Route tabs */
-    .route-tabs { display: flex; gap: 0; margin-bottom: 24px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-    .route-wrap input[type="radio"] { display: none; }
-    .route-tabs label {
-      flex: 1; padding: 14px 18px; cursor: pointer; text-align: center;
-      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--warm-grey);
-      background: rgba(255,255,255,0.3);
-      transition: all 0.25s; user-select: none;
-      border-right: 1px solid var(--border);
-    }
-    .route-tabs label:last-child { border-right: none; }
-    #route-f:checked ~ .route-tabs label[for="route-f"],
-        #route-r:checked ~ .route-tabs label[for="route-r"],
-        #route-r2:checked ~ .route-tabs label[for="route-r2"] { background: var(--accent); color: #fff; }
-        .route-wrap .route-content { display: none; }
-        #route-f:checked ~ #content-f,
-        #route-r:checked ~ #content-r,
-        #route-r2:checked ~ #content-r2 { display: block; }
 
     /* Budget table */
     .budget-wrap { margin-top: 40px; }
@@ -288,890 +270,24 @@
 <div class="page">
   <div class="back"><a href="/">← fraile.ch</a></div>
 
+    <p class="eyebrow">Tuna · Julio 2026</p>
+  <h1>Gira <em>Suiza</em></h1>
+  <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.800 km</p>
+
     <div class="hero-cover">
       <img src="cover.jpg" alt="Tuna Suiza 2026 — foto de grupo" />
     </div>
 
-    <p class="eyebrow">Tuna · Julio 2026</p>
-  <h1>Gira <em>Suiza</em></h1>
-  <p class="subtitle">13–19 julio · 6 personas · 2 coches · ~1.800 km</p>
-  <p style="font-size:12px;color:var(--warm-grey);margin-top:-28px;margin-bottom:36px;">🚀 Ruta Original · <strong>↕</strong> · 🔄 Ruta Alternativa · <strong>↕</strong> · 🆕 Ruta Real (vía Aosta/Chamonix)</p>
-
-  <!-- Password gate -->
-    <div class="password-gate" id="passwordGate">
-      <h3>🔒 Contenido privado</h3>
-      <p>Introduce la contraseña para ver enlaces y presupuesto</p>
-      <div>
-        <input type="password" id="passInput" placeholder="Contraseña" autocomplete="off" onkeydown="if(event.key==='Enter')unlockSection()" />
-        <button onclick="unlockSection()">Abrir</button>
-      </div>
-      <div class="error" id="passError">Contraseña incorrecta</div>
-          </div>
-
-          <!-- Links -->
-          <section class="protected-content">
-    <h2>🔗 Enlaces</h2>
-    <div class="links-grid">
-      <a class="link-card" href="https://tricount.com/tfptNnLukeGEaaifjs" target="_blank" rel="noopener">
-        <span class="icon">💰</span>
-        <span class="label">Tricount<small>Gastos compartidos</small></span>
-      </a>
-      <a class="link-card" href="https://drive.google.com/drive/folders/1ppmdoLrqbydqEswzAyvfpdouWF1sPQOn" target="_blank" rel="noopener">
-        <span class="icon">📁</span>
-        <span class="label">Google Drive<small>Repertorios</small></span>
-      </a>
-      <a class="link-card" href="https://open.spotify.com/playlist/7yFJ7Ukl7C8IiNHHzl4mkF" target="_blank" rel="noopener">
-        <span class="icon">🎵</span>
-        <span class="label">Spotify<small>Playlist de la gira</small></span>
-      </a>
-      <a class="link-card" href="https://www.google.com/maps/d/u/0/edit?mid=18qF7cy9WmVNPJk57MfML6bpwjsMuq6A&usp=sharing" target="_blank" rel="noopener">
-        <span class="icon">🗺️</span>
-        <span class="label">My Maps<small>Mapa personalizado</small></span>
-      </a>
-    </div>
-  </section>
+  
 
   <!-- Ciudades -->
   <section>
-    <h2>🏙️ Ciudades</h2>
+      <h2>🏙️ Ciudades</h2>
 
-    <div class="route-wrap">
-    <input type="radio" name="route" id="route-f" checked>
-    <input type="radio" name="route" id="route-r">
-    <input type="radio" name="route" id="route-r2">
-    <div class="route-tabs">
-      <label for="route-f">🚀 Ruta Original</label>
-      <label for="route-r">🔄 Ruta Alternativa</label>
-      <label for="route-r2">🆕 Ruta Real</label>
-    </div>
-
-    <!-- ════════════════════════════════════ RUTA ORIGINAL ════════════════════════════ -->
-    <div class="route-content" id="content-f">
-
-    <!-- ════════════════════════════════════ MILÁN ════════════════════════════════════ -->
-    <details class="city-card" open>
-          <summary class="city-header">
-            <span class="day-badge">Lun 13</span>
-            <span class="city-name">Milán</span>
-            <span class="city-date">1 noche</span>
-            <span class="toggle-icon">▾</span>
-          </summary>
-          <div class="city-body">
-
-            <h3>🅿️ Parking (centro)</h3>
-            <div class="parking-grid">
-              <div class="parking-item">
-                <div class="p-name">Autosilo Diaz</div>
-                <div>Via Diaz · junto a Piazza Duomo</div>
-                <div class="p-cost">~€4-6/h · abierto hasta 2:00</div>
-                <span class="p-note">+39 02 8646 0077</span>
-                <a href="https://maps.google.com/?q=Autosilo+Diaz+Milano" target="_blank">📍 Maps</a>
-              </div>
-              <div class="parking-item">
-                <div class="p-name">Autosilo San Fedele</div>
-                <div>Via San Fedele · junto a Duomo</div>
-                <div class="p-cost">~€4-6/h · abierto hasta 0:00</div>
-                <span class="p-note">+39 02 7200 3228</span>
-                <a href="https://maps.google.com/?q=Autosilo+San+Fedele+Milano" target="_blank">📍 Maps</a>
-              </div>
-              <div class="parking-item">
-                <div class="p-name">Parcheggio del Centro</div>
-                <div>Via G. Mazzini · 2 min Duomo</div>
-                <div class="p-cost">~€3-5/h</div>
-                <a href="https://maps.google.com/?q=Parcheggio+del+Centro+Milano" target="_blank">📍 Maps</a>
-              </div>
-              <div class="parking-item">
-                <div class="p-name">Parcheggio Stazione Centrale</div>
-                <div>Piazza Duca d'Aosta</div>
-                <div class="p-cost">~€3-4/h · €20-25/día</div>
-                <a href="https://maps.google.com/?q=Parcheggio+Stazione+Centrale+Milano" target="_blank">📍 Maps</a>
-              </div>
-            </div>
-
-            <h3>🍽️ Restaurantes españoles</h3>
-            <ul class="spot-list">
-              <li>
-                <strong><a href="https://maps.google.com/?q=La+Paulista+Milano" target="_blank">La Paulista</a></strong> — Cocina española, tapas, paella
-                <div class="meta">Corso di Porta Ticinese 87 · +39 02 1234 5678 · <a href="https://maps.google.com/?q=La+Paulista+Milano" target="_blank">📍 Maps</a></div>
-              </li>
-              <li>
-                <strong><a href="https://maps.google.com/?q=El+Rinc%C3%B3n+de+Espa%C3%B1a+Milano" target="_blank">El Rincón de España</a></strong> — Auténtico español
-                <div class="meta">Via Paolo Sarpi 25 · +39 02 8765 4321 · <a href="https://maps.google.com/?q=El+Rincón+de+España+Milano" target="_blank">📍 Maps</a></div>
-              </li>
-            </ul>
-
-            <h3>🎵 Sitios para tocar</h3>
-            <ul class="spot-list">
-              <li><strong>Piazza del Duomo</strong> — Plaza principal, máxima afluencia turística, acústica espectacular <span class="meta">· Permiso requerido para grupo</span></li>
-              <li><strong>Galleria Vittorio Emanuele II</strong> — Galería comercial histórica, ambiente único <span class="meta">· Tolerancia informal · Diurno</span></li>
-              <li><strong>Piazza dei Mercanti</strong> — Plaza medieval, menos masificada, buena acústica <span class="meta">· Sin permiso para acústico</span></li>
-              <li><strong>Via Dante (peatonal)</strong> — Conexión peatonal entre Castello y Duomo <span class="meta">· Tarde-noche</span></li>
-              <li><strong>Navigli (zona canales)</strong> — Ambiente nocturno, bares, restaurantes <span class="meta">· Noche · Sin permiso para acústico</span></li>
-            </ul>
-
-            <h3>🛌 Casa da Suite Mirabello 🏆</h3>
-            <ul class="spot-list">
-              <li>
-                <strong>Apartamento · 6 adultos</strong>
-                <div class="meta">Via Padre Reginaldo Giuliani 10, Segnano · 4.42 km del centro</div>
-                <div class="meta">Cocina, WiFi gratis, insonorizado, lavadora, transporte aeropuerto 24h</div>
-                <div class="meta">Desde <strong>309 €</strong> la noche · Incluye tasas e impuestos</div>
-                <div class="meta"><a href="https://www.edreams.es/travel/accommodation/hotel_details/checkIn=2026-07-13;checkOut=2026-07-14;geoId=2302%2BREGION;room0Adults=6;buyPath=SSLP_HOTELS;searchId=66451676520;accommodationDealKey=34;contentKey=T0MjMzM2MTk0Nw%3D%3D;dedupId=31100104;feeSelected=1" target="_blank">🔍 eDreams</a> · <a href="https://maps.google.com/?q=Casa+da+Suite+Mirabello+Milano" target="_blank">📍 Maps</a></div>
-              </li>
-            </ul>
-          </div>
-        </details>
-
-    <!-- ════════════════════════════════════ LUGANO ════════════════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Mar 14</span>
-        <span class="city-name">Lugano</span>
-        <span class="city-date">1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Park im Centrum</div>
-            <div>Via Serpiano 21</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=46.003678,8.952188" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Garage Mercato</div>
-            <div>Piazza Cioccaro</div>
-            <div class="p-cost">~3.50 CHF/h</div>
-            <a href="https://maps.google.com/?q=46.004365,8.951411" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Garage Residenza Belvedere</div>
-            <div>Via della Stazione 2</div>
-            <div class="p-cost">~2.50 CHF/h</div>
-            <a href="https://maps.google.com/?q=46.005383,8.950291" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Lugano Stazione</div>
-            <div>Piazzale Stazione</div>
-            <div class="p-cost">~5 CHF/día (abono) · 15 CHF/día</div>
-            <div class="p-note">Gratis 24h con billete transporte + tarjeta P+Rail (30 CHF/año)</div>
-            <a href="https://maps.google.com/?q=P%2BRail+Lugano+Stazione" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>Tapasbar El Patio</strong> — Auténtico tapas, terraza exterior
-            <div class="meta">Via Pretorio 11 · +41 91 921 33 33 · <a href="https://maps.google.com/?q=46.004522,8.951111" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>La Casa del Sol</strong> — Cocina española, paella, vinos, noches de flamenco
-            <div class="meta">Via San Balestra 17 · +41 91 911 22 22 · <a href="https://maps.google.com/?q=46.006176,8.950100" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>Bar Ristorante Sol y Sombra</strong> — Terraza junto al lago, tapas fusión
-            <div class="meta">Lungolago Riva Cittadina · +41 91 922 88 88 · <a href="https://maps.google.com/?q=46.003945,8.953011" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Piazza della Riforma</strong> — Plaza principal, alto tránsito peatonal, buena acústica <span class="meta">· Sin permiso para acústico</span></li>
-          <li><strong>Lungolago (Paseo del Lago)</strong> — Escenario junto al lago, ambiente relajado <span class="meta">· Acceso libre</span></li>
-          <li><strong>Via Nassa</strong> — Calle peatonal comercial, mucho turista <span class="meta">· Diurno</span></li>
-          <li><strong>Parco Ciani</strong> — Parque grande junto al lago, ideal para grupo <span class="meta">· Espacio abierto público</span></li>
-          <li><strong>Piazza Cioccaro</strong> — Plaza con encanto, cafeterías, ideal serenatas nocturnas</li>
-        </ul>
-
-        <h3>🌅 Terrazas con ambiente</h3>
-        <ul class="spot-list">
-          <li><strong>Terrazza Lido di Lugano</strong> — Terraza junto al lago con escenario, ideal conciertos</li>
-          <li><strong>El Patio (Via Pretorio)</strong> — Terraza patio con iluminación cálida, actuaciones informales</li>
-          <li><strong>Riva Lounge Bar</strong> — Terraza multifamiliar sobre el lago, ambiente moderno</li>
-        </ul>
-
-        <h3>🛌 Alojamiento económico (6 pers)</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>Youth Hostel Lugano Savosa</strong> — hab. privada 6 pers, baño, cocina 🏆
-            <div class="meta">Via Cantonale 13, Savosa · ~210-270 CHF total (~35-45 CHF/pers) · +41 91 966 27 28 · <a href="https://www.booking.com/searchresults.html?ss=Lugano&checkin=2026-07-14&checkout=2026-07-15&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a> · <a href="https://maps.google.com/?q=Youth+Hostel+Lugano+Savosa" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ ZÜRICH ════════════════════════════════════ -->
-        <details class="city-card">
-          <summary class="city-header">
-            <span class="day-badge">Mié 15</span>
-            <span class="city-name">Zürich</span>
-            <span class="city-date">1 noche</span>
-            <span class="toggle-icon">▾</span>
-          </summary>
-          <div class="city-body">
-
-            <h3>🅿️ Parking</h3>
-            <div class="parking-grid">
-              <div class="parking-item">
-                <div class="p-name">Parkhaus Niederdorf</div>
-            <div>Niederdorfstrasse 74</div>
-            <div class="p-cost">~3–4 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parkhaus+Niederdorf+Niederdorfstrasse+74" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parkhaus HB Central</div>
-            <div>Bürkliplatz 10</div>
-            <div class="p-cost">~4.50 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parkhaus+Hauptbahnhof+Zürich+Central" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Park im Grüene</div>
-            <div>Sihlquai 131</div>
-            <div class="p-cost">~2.50 CHF/h</div>
-            <a href="https://maps.google.com/?q=Park+im+Grüene+Sihlquai" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Hofen (Zürich-Oerlikon)</div>
-            <div>Neuhardstrasse, 8048 Zürich</div>
-            <div class="p-cost">~5 CHF/día (abono) · 18 CHF/día</div>
-            <div class="p-note">Afueras · gratis 24h con billete + tarjeta P+Rail</div>
-            <a href="https://maps.google.com/?q=P%2BRail+Hofen+Z%C3%BCrich" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong><a href="https://maps.google.com/?q=El+Tapeo+M%C3%BCnstergasse+Z%C3%BCrich" target="_blank">El Tapeo</a></strong> — Tapas auténticas, espacio acogedor
-            <div class="meta">Münstergasse 42 · +41 44 211 88 88 · <a href="https://maps.google.com/?q=El+Tapeo+Münstergasse+Zürich" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=La+Latina+Spiegelgasse+Z%C3%BCrich" target="_blank">La Latina</a></strong> — Popular bar de tapas en Niederdorf
-            <div class="meta">Spiegelgasse 17 · +41 44 242 14 88 · <a href="https://maps.google.com/?q=La+Latina+Spiegelgasse+Zürich" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=Bar+Moro+Niederdorfstrasse" target="_blank">Bar Moro</a></strong> — Tapas y vinos españoles, ambiente nocturno vibrante
-            <div class="meta">Niederdorfstrasse 114 · +41 79 207 13 13 · <a href="https://maps.google.com/?q=Bar+Moro+Niederdorfstrasse" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Bahnhofstrasse (zona peatonal)</strong> — Alta afluencia, buena acústica en piedra <span class="meta">· Permiso requerido</span></li>
-          <li><strong>Niederdorf (calles del casco antiguo)</strong> — Encanto histórico, público joven <span class="meta">· Tolerancia informal</span></li>
-          <li><strong>Bürkliplatz (Paseo del Lago)</strong> — Vistas al lago, atardecer espectacular <span class="meta">· Permiso si amplificado</span></li>
-          <li><strong>Lindenhof</strong> — Plaza histórica tranquila, vistas panorámicas <span class="meta">· Sin permiso para acústico</span></li>
-          <li><strong>Münsterhof</strong> — Adoquinado, junto al Grossmünster, muy fotogénico <span class="meta">· Tolerancia informal</span></li>
-        </ul>
-
-        <h3>🌅 Terrazas con ambiente</h3>
-        <ul class="spot-list">
-          <li><strong>Hiltl Garten (Dachterrasse)</strong> — Terraza rooftop, a veces música en vivo</li>
-          <li><strong>Loewenbräu Areal</strong> — Complejo cultural, escenario al aire libre en verano</li>
-          <li><strong>Papierhof</strong> — Patio acogedor con sesiones acústicas habituales</li>
-          <li><strong>Exil am See</strong> — Terraza junto al lago, noches de jazz y acústico</li>
-        </ul>
-
-        <h3>🛌 Alojamiento económico (6 pers)</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>Youth Hostel Zürich</strong> — hab. privadas múltiples, junto al lago 🏆
-            <div class="meta">Mutschellenstrasse 114 · ~240-330 CHF total (~40-55 CHF/pers) · <a href="https://www.booking.com/searchresults.html?ss=Z%C3%BCrich&checkin=2026-07-15&checkout=2026-07-16&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a> · <a href="https://maps.google.com/?q=Youth+Hostel+Z%C3%BCrich" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>City Backpacker Hostel</strong> — en Niederdorf, pleno casco antiguo
-            <div class="meta">Niederdorfstrasse 5 · ~210-300 CHF total (~35-50 CHF/pers) · <a href="https://www.booking.com/searchresults.html?ss=Z%C3%BCrich&checkin=2026-07-15&checkout=2026-07-16&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a> · <a href="https://maps.google.com/?q=City+Backpacker+Hostel+Z%C3%BCrich" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ STUTTGART ════════════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Vie 17</span>
-                <span class="city-name">Stuttgart</span>
-                <span class="city-date">tarde + 1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parkhaus Schlossplatz</div>
-            <div>Schlossplatz 1</div>
-            <div class="p-cost">€2.50/h · €15/día</div>
-            <a href="https://goo.gl/maps/3Vfz5jJ9cEa7vNQv5" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Tiefgarage Königstraße</div>
-            <div>Königstraße 30</div>
-            <div class="p-cost">€2/h · €12/día</div>
-            <a href="https://goo.gl/maps/9XbBkG6r2pJ2" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parkhaus Milaneo</div>
-            <div>Königstraße 1 (centro comercial)</div>
-            <div class="p-cost">€2.50/h · €17/día</div>
-            <a href="https://goo.gl/maps/f4dU3p5mV7tB" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Tiefgarage Hbf P1</div>
-            <div>Arnulf-Klett-Platz 2</div>
-            <div class="p-cost">€1.80/h · €10/día</div>
-            <a href="https://goo.gl/maps/5m2wv2Y4u9s" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong><a href="https://maps.google.com/?q=Casa+Sevilla+Stuttgart" target="_blank">Casa Sevilla</a></strong> — Auténtico andaluz, tapas, noches de flamenco mensuales
-            <div class="meta">Sophienstraße 16 · +49 711 6584990 · <a href="https://goo.gl/maps/vj3qJm5p3kR2" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=La+Bodega+Stuttgart" target="_blank">La Bodega</a></strong> — Tapas céntrico con terraza, especializado en vinos
-            <div class="meta">Königstraße 68 · +49 711 22779797 · <a href="https://goo.gl/maps/5XpV5Z1x1uS2" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=El+Tapeo+Stuttgart" target="_blank">El Tapeo</a></strong> — Popular para grupos, rústico, porciones generosas
-            <div class="meta">Schlossstraße 7 · +49 711 21965665 · <a href="https://goo.gl/maps/U4sDc3K4dD3k" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=Barcel%C3%B3+Stuttgart" target="_blank">Barceló</a></strong> — Cocina española moderna, terraza rooftop, reserva aconsejada
-            <div class="meta">Charlottenplatz 5 · +49 711 669390 · <a href="https://goo.gl/maps/QZ9sK8jJm3fG" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Schlossplatz</strong> — Plaza central, punto de referencia, excelente acústica <span class="meta">· Sin permiso para acústico · 12-15h / 17-20h</span></li>
-          <li><strong>Königstraße (zona peatonal)</strong> — Calle comercial más larga de Europa, llena de gente <span class="meta">· Tolerancia informal · 15-18h</span></li>
-          <li><strong>Marktplatz</strong> — Plaza histórica con Ayuntamiento, ambiente festivo <span class="meta">· Acústico solo · Fines de semana</span></li>
-          <li><strong>Wilhelmstraße / Stiftskirche</strong> — Zona cultural, junto a iglesias y cafeterías <span class="meta">· 16-18h</span></li>
-        </ul>
-
-        <h3>🌅 Terrazas con ambiente</h3>
-        <ul class="spot-list">
-          <li><strong>Barceló Rooftop Terrace</strong> — Terraza rooftop con vistas, ambiente español, iluminación nocturna</li>
-          <li><strong>Café am Schlossplatz</strong> — Terraza frontal frente al palacio, alta visibilidad</li>
-          <li><strong>Altes Schloss Bistro Terrace</strong> — Entorno histórico junto al castillo antiguo, sombra</li>
-          <li><strong>Milaneo Roof Garden</strong> — Terraza rooftop del centro comercial, ambiente relajado</li>
-        </ul>
-
-        <h3>🛌 Alojamiento económico (6 pers, 1 noche)</h3>
-                <ul class="spot-list">
-                  <li>
-                    <strong>A&O Stuttgart City</strong> — habitaciones familiares, barato 🏆
-                    <div class="meta">Rosensteinstraße 14-16 · ~120-160 € total (~20-27 €/pers) · <a href="https://www.booking.com/searchresults.html?ss=Stuttgart&checkin=2026-07-17&checkout=2026-07-18&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a> · <a href="https://maps.google.com/?q=A+O+Stuttgart+City" target="_blank">📍 Maps</a></div>
-                  </li>
-                  <li>
-                    <strong>Jugendherberge Stuttgart (Haus der Jugend)</strong> — céntrico, desayuno incluido
-                    <div class="meta">Richard-Wagner-Strasse 2 · ~150-180 € total (~25-30 €/pers) · <a href="https://www.booking.com/searchresults.html?ss=Stuttgart&checkin=2026-07-17&checkout=2026-07-18&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a> · <a href="https://maps.google.com/?q=Jugendherberge+Stuttgart+Haus+der+Jugend" target="_blank">📍 Maps</a></div>
-                  </li>
-                </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ BASEL ════════════════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Sáb 18 · 10:00</span>
-        <span class="city-name">Basilea</span>
-        <span class="city-date">café rápido</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parkgarage Elisabethen</div>
-            <div>Elisabethenanlage 13</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=Elisabethenanlage+13+Basel" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Spalentor</div>
-            <div>Spalentorweg 112</div>
-            <div class="p-cost">~5 CHF/día (abono) · 22 CHF/día</div>
-            <div class="p-note">Junto a Basel SBB · gratis 24h con billete + tarjeta</div>
-            <a href="https://maps.google.com/?q=P%2BRail+Spalentor+Basel" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>Restaurante El Andaluz</strong> — Auténtico español, paella y tapas
-            <div class="meta">Augustinergasse 3 · +41 61 271 11 88 · <a href="https://maps.google.com/?q=Augustinergasse+3+Basel" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>Tapas Bar La Tagliata</strong> — Tapas mediterráneas
-            <div class="meta">Gerbergasse 20 · +41 61 261 48 48 · <a href="https://maps.google.com/?q=Gerbergasse+20+Basel" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar (parada rápida)</h3>
-        <ul class="spot-list">
-          <li><strong>Marktplatz</strong> — Plaza del mercado, peatonal, bulliciosa <span class="meta">· Sin permiso para acústico · Evitar mercado mañana (mar/jue/dom)</span></li>
-          <li><strong>Rheinufer (paseo del Rin)</strong> — Entre puente Mittel y Wettstein, mucho paseante <span class="meta">· Buena acústica</span></li>
-          <li><strong>Barfüsserplatz</strong> — Zona peatonal con cafeterías, alta visibilidad</li>
-          <li><strong>Gerbergasse</strong> — Calle adoquinada del casco antiguo, atrae turistas</li>
-        </ul>
-
-        <h3>☕ Terrazas para café rápido</h3>
-        <ul class="spot-list">
-          <li><strong>Café Spitz</strong> — Terraza grande directamente sobre el Rin <span class="meta">· Steinenring 3</span></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ NEUCHÂTEL ════════════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Sáb 18 · 12:00</span>
-        <span class="city-name">Neuchâtel</span>
-        <span class="city-date">comida</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parking du Port</div>
-            <div>Rue du Port 1</div>
-            <div class="p-cost">2.50 CHF/h · 20 CHF/día</div>
-            <a href="https://maps.google.com/?q=Parking+du+Port+Neuchâtel" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parking City</div>
-            <div>Rue des Chaudronniers 10</div>
-            <div class="p-cost">2 CHF/h · 18 CHF/día</div>
-            <a href="https://maps.google.com/?q=Parking+City+Neuchâtel" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Neuchâtel CFF</div>
-            <div>Rue des Arceaux</div>
-            <div class="p-cost">~5 CHF/día (abono) · 12 CHF/día</div>
-            <div class="p-note">En la estación de tren principal</div>
-            <a href="https://maps.google.com/?q=P%2BRail+Neuch%C3%A2tel+Gare" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong><a href="https://maps.google.com/?q=El+Toro+Neuch%C3%A2tel" target="_blank">El Toro Tapas Bar & Grill</a></strong> — El más dedicado a tapas, céntrico, abre a mediodía
-            <div class="meta">Rue du St-Jacques 1 · +41 32 722 55 01 · <a href="https://maps.google.com/?q=El+Toro+Neuchâtel" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=La+Taberna+del+Sol+Neuch%C3%A2tel" target="_blank">La Taberna del Sol</a></strong> — Cocina española
-            <div class="meta">Rue du Collège 6 · +41 32 711 13 20 · <a href="https://maps.google.com/?q=La+Taberna+del+Sol+Neuchâtel" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Paseo del Lago (Promenade du Lac)</strong> — Alto tránsito peatonal, bancos, vistas al lago <span class="meta">· Sin permiso si acústico</span></li>
-          <li><strong>Place Pury</strong> — Plaza céntrica histórica con fuentes, mucho tránsito <span class="meta">· Sin permiso para sesiones cortas</span></li>
-          <li><strong>Rue du Nord / Rue du Château</strong> — Calles del casco antiguo, adoquinadas, peatonales <span class="meta">· Mejor 12-14h</span></li>
-        </ul>
-
-        <h3>🌅 Terrazas con vista al lago (comida)</h3>
-        <ul class="spot-list">
-          <li><strong>Lacustre Café</strong> — Sobre el paseo, vistas al lago, mesas informales <span class="meta">· Recomendado para grupos</span></li>
-          <li><strong>Restaurant du Port</strong> — Acceso directo al lago, terraza exterior, comidas ligeras</li>
-          <li><strong>Café du Cerf</strong> — Hotel histórico, terraza con vista parcial al lago</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ GINEBRA ══════════════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Sáb 18</span>
-        <span class="city-name">Ginebra</span>
-        <span class="city-date">1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parking des Eaux-Vives</div>
-            <div>Quai de l'Île 10</div>
-            <div class="p-cost">~3-4 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parking+des+Eaux-Vives+Genève" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parking Plainpalais</div>
-            <div>Plaine de Plainpalais</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parking+Plainpalais+Genève" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parking Centre-Ville</div>
-            <div>Rue du Montbrillant 2-4</div>
-            <div class="p-cost">~4-5 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parking+Centre-Ville+Genève" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Parking des Nations</div>
-            <div>Avenue de la Gare des Voyageurs 1</div>
-            <div class="p-cost">~6 CHF/día (abono) · 25+ CHF/día</div>
-            <div class="p-note">Junto a Gare Cornavin · gratis 24h con billete + tarjeta</div>
-            <a href="https://maps.google.com/?q=P%2BRail+Parking+des+Nations+Geneva" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong><a href="https://maps.google.com/?q=Cervezas+y+Taipas+Gen%C3%A8ve" target="_blank">Cervezas y Taipas</a></strong> — Auténtico bar de tapas español, sangría, excelentes críticas
-            <div class="meta">Rue de Carouge 53 · +41 22 320 20 21 · <a href="https://maps.google.com/?q=Cervezas+y+Taipas+Genève" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Jet d'Eau / Jardins du Lac</strong> — Icono de Ginebra, máximo turista, buena acústica natural <span class="meta">· Sin permiso para acústico · Mediodía-atardecer</span></li>
-          <li><strong>Place du Bourg-de-Four</strong> — Plaza más antigua, espacio cultural, cafeterías alrededor <span class="meta">· Tradición de actuaciones improvisadas</span></li>
-          <li><strong>Paseo del Lago (Quai Gustave-Ador)</strong> — Paseo escénico, bancos, espacio abierto <span class="meta">· Ambiente relajado</span></li>
-          <li><strong>Casco Antiguo (Vieille Ville)</strong> — Calles medievales adoquinadas, acústica natural excelente <span class="meta">· Junto a la Catedral de San Pedro</span></li>
-        </ul>
-
-        <h3>🌅 Terrazas con ambiente</h3>
-        <ul class="spot-list">
-          <li><strong>Café des Négociants</strong> — Terraza con vistas al Ródano, edificio histórico <span class="meta">· Rue du Puits-St-Pierre 10</span></li>
-          <li><strong>Les Brasseurs Genève</strong> — Cervecería con terraza grande, alta visibilidad <span class="meta">· Rue de la Maëstri 6</span></li>
-          <li><strong>Le Cerise sur le Pot</strong> — Café acogedor, terraza pequeña en el casco antiguo, ambiente artístico <span class="meta">· Rue de la Croix 3</span></li>
-        </ul>
-
-        <h3>🛌 Alojamiento económico (6 pers)</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>City Hostel Geneva</strong> — cocina compartida, junto estación 🏆
-            <div class="meta">Rue de Montbrillant 28 · ~400 CHF total (~67 CHF/pers) · <a href="https://www.cityhostel.ch/" target="_blank">🌐 Web</a> · <a href="https://maps.google.com/?q=City+Hostel+Geneva" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>HI Geneva Hostel</strong> — desayuno incluido, cocina
-            <div class="meta">Rue de Monthoux 44 · ~420 CHF total (~70 CHF/pers) · <a href="https://www.hihostels.com/hostel/geneva-hostel/" target="_blank">🌐 Web</a> · <a href="https://maps.google.com/?q=Rue+de+Monthoux+44+Geneva" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong>Airbnb (Paquis/Servette)</strong> — piso entero, cocina completa, más espacio
-            <div class="meta">Barrio cerca estación · ~380-450 CHF total (~63-75 CHF/pers) · <a href="https://www.airbnb.com/s/Geneva--Switzerland/homes?checkin=2026-07-18&checkout=2026-07-19&adults=6" target="_blank">🔍 Airbnb</a></div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ REGRESO MXP ════════════════════════════════ -->
-        <details class="city-card">
-          <summary class="city-header">
-            <span class="day-badge">Dom 19</span>
-            <span class="city-name">Ginebra → Milán (MXP)</span>
-            <span class="city-date">vuelta</span>
-            <span class="toggle-icon">▾</span>
-          </summary>
-          <div class="city-body">
-
-            <h3>🚗 Ruta</h3>
-            <ul class="spot-list">
-              <li>
-                <strong>Ginebra → MXP</strong> — ~3h 30min · ~340 km por autopista A1/E25
-                <div class="meta">Peaje aprox. 50-60 CHF (Suiza) + 40-50 € (Italia)</div>
-              </li>
-              <li>Salida temprano desde Ginebra para llegar a la hora del vuelo</li>
-            </ul>
-
-            <h3>🅿️ Parking MXP</h3>
-            <div class="parking-grid">
-              <div class="parking-item">
-                <div class="p-name">MXP Parking</div>
-                <div>Malpensa Airport</div>
-                <div class="p-cost">~€4-6/h · €25-35/día</div>
-                <a href="https://maps.google.com/?q=Malpensa+Airport+Parking" target="_blank">📍 Maps</a>
-              </div>
-              <div class="parking-item">
-                <div class="p-name">Parking Economy</div>
-                <div>MXP Terminal 1 (larga estancia)</div>
-                <div class="p-cost">~€15-20/día</div>
-                <a href="https://maps.google.com/?q=Malpensa+Economy+Parking" target="_blank">📍 Maps</a>
-              </div>
-            </div>
-          </div>
-        </details>
-
-    </div><!-- /content-f -->
-
-    <!-- ════════════════════════════════════ RUTA ALTERNATIVA ════════════════════════ -->
-    <div class="route-content" id="content-r">
-
-    <!-- ════════════════════════════════════ TURÍN ════════════════════════════════════ -->
-    <details class="city-card" open>
-      <summary class="city-header">
-        <span class="day-badge">Lun 13</span>
-        <span class="city-name">Turín</span>
-        <span class="city-date">1 noche ✨</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🅿️ Parking (centro)</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parcheggio Centro</div>
-            <div>Via Roma / Piazza Castello</div>
-            <div class="p-cost">~€2-3/h</div>
-            <a href="https://maps.google.com/?q=Turin+parking+via+roma" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parcheggio Porta Susa</div>
-            <div>Junto estación, económico</div>
-            <div class="p-cost">~€1.50-2.50/h</div>
-            <a href="https://maps.google.com/?q=Parcheggio+Porta+Susa+Torino" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🍽️ Restaurantes españoles</h3>
-        <ul class="spot-list">
-          <li>
-            <strong><a href="https://maps.google.com/?q=La+Paella+Torino" target="_blank">La Paella</a></strong> — Auténtica paella y tapas
-            <div class="meta">Via Garibaldi · <a href="https://maps.google.com/?q=La+Paella+Torino" target="_blank">📍 Maps</a></div>
-          </li>
-          <li>
-            <strong><a href="https://maps.google.com/?q=El+Rincon+Latino+Torino" target="_blank">El Rincón Latino</a></strong> — Cocina española y latina
-            <div class="meta">Via Po · <a href="https://maps.google.com/?q=El+Rincon+Latino+Torino" target="_blank">📍 Maps</a></div>
-          </li>
-        </ul>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Piazza Castello</strong> — Corazón de Turín, máxima afluencia <span class="meta">· Permiso requerido</span></li>
-          <li><strong>Via Roma (peatonal)</strong> — Conexión entre Piazza Castello y Piazza CLN <span class="meta">· Tarde-noche</span></li>
-          <li><strong>Piazza Vittorio Veneto</strong> — Gran plaza, Muraglia, ambiente nocturno <span class="meta">· Acústico solo</span></li>
-        </ul>
-
-        <h3>🛌 Alojamiento (6 pers)</h3>
-        <ul class="spot-list">
-          <li>
-            <strong>B&B / Hostel centro</strong> — opciones económicas en Piazza Castello
-            <div class="meta">~150-250 € total (~25-42 €/pers) · <a href="https://www.booking.com/searchresults.html?ss=Turin&checkin=2026-07-13&checkout=2026-07-14&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ GINEBRA (ruta alt) ═══════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Mar 14</span>
-        <span class="city-name">Ginebra</span>
-        <span class="city-date">1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🚗 Turín → Ginebra</h3>
-        <ul class="spot-list">
-          <li><strong>~3h 30min · 330 km</strong> por autopista A5 / E25 (peaje IT ~20€)</li>
-          <li>Salida temprano desde Turín, llegada a mediodía a Ginebra</li>
-        </ul>
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parking des Eaux-Vives</div>
-            <div>Quai de l'Île 10</div>
-            <div class="p-cost">~3-4 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parking+des+Eaux-Vives+Genève" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Parking Plainpalais</div>
-            <div>Plaine de Plainpalais</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=Parking+Plainpalais+Genève" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Jet d'Eau / Jardins du Lac</strong> — Icono, máximo turista <span class="meta">· Sin permiso acústico</span></li>
-          <li><strong>Place du Bourg-de-Four</strong> — Plaza más antigua, cafeterías <span class="meta">· Tradición actuaciones</span></li>
-        </ul>
-
-        <h3>🛌 City Hostel Geneva 🏆</h3>
-        <ul class="spot-list">
-          <li><div class="meta">Rue de Montbrillant 28 · ~400 CHF total (~67 CHF/pers) · <a href="https://www.cityhostel.ch/" target="_blank">🌐 Web</a></div></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ BASILEA (ruta alt) ════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Mié 15</span>
-        <span class="city-name">Basilea</span>
-        <span class="city-date">1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🚗 Ginebra → Neuchâtel → Basilea</h3>
-        <ul class="spot-list">
-          <li><strong>Neuchâtel (comida)</strong> — ~1h 15min desde Ginebra</li>
-          <li><strong>Basilea</strong> — ~1h 30min desde Neuchâtel</li>
-        </ul>
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parkgarage Elisabethen</div>
-            <div>Elisabethenanlage 13</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=Elisabethenanlage+13+Basel" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Spalentor</div>
-            <div>Spalentorweg 112</div>
-            <div class="p-cost">~5 CHF/día</div>
-          </div>
-        </div>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Marktplatz</strong> — Plaza peatonal, bulliciosa <span class="meta">· Sin permiso acústico</span></li>
-          <li><strong>Barfüsserplatz</strong> — Cafeterías, alta visibilidad</li>
-        </ul>
-
-        <h3>🛌 Alojamiento (6 pers)</h3>
-        <ul class="spot-list">
-          <li><strong>Hostel / Airbnb en Basilea</strong><div class="meta">~250-350 CHF total (~42-58 CHF/pers)</div></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ STUTTGART (ruta alt) ══════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Jue 16 – Vie 17</span>
-        <span class="city-name">Stuttgart</span>
-        <span class="city-date">2 noches ✨</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🚗 Basilea → Stuttgart</h3>
-        <ul class="spot-list">
-          <li><strong>~3h 30min · 340 km</strong> — autopista A5 (peaje DE ~25€)</li>
-          <li>Llegada jueves, viernes tarde + noche requisito ✅</li>
-        </ul>
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Parkhaus Schlossplatz</div>
-            <div class="p-cost">€2.50/h · €15/día</div>
-            <a href="https://goo.gl/maps/3Vfz5jJ9cEa7vNQv5" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item">
-            <div class="p-name">Tiefgarage Königstraße</div>
-            <div class="p-cost">€2/h · €12/día</div>
-            <a href="https://goo.gl/maps/9XbBkG6r2pJ2" target="_blank">📍 Maps</a>
-          </div>
-        </div>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Schlossplatz</strong> — Plaza central, excelente acústica <span class="meta">· Sin permiso acústico</span></li>
-          <li><strong>Königstraße (peatonal)</strong> — Calle comercial más larga de Europa</li>
-        </ul>
-
-        <h3>🛌 A&O Stuttgart City 🏆</h3>
-        <ul class="spot-list">
-          <li><div class="meta">Rosensteinstraße 14-16 · ~240-320 € total (2 noches, ~20-27 €/pers/noche) · <a href="https://www.booking.com/searchresults.html?ss=Stuttgart&checkin=2026-07-16&checkout=2026-07-18&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ LUGANO (ruta alt) ═════════════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Sáb 18</span>
-        <span class="city-name">Lugano</span>
-        <span class="city-date">1 noche</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-
-        <h3>🚗 Stuttgart → Zúrich (comida) → Lugano</h3>
-        <ul class="spot-list">
-          <li><strong>Stuttgart → Zúrich</strong> — ~3h · comida en Niederdorf</li>
-          <li><strong>Zúrich → Lugano</strong> — ~2h 30min por Gotthard</li>
-        </ul>
-
-        <h3>🅿️ Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item">
-            <div class="p-name">Park im Centrum</div>
-            <div class="p-cost">~3 CHF/h</div>
-            <a href="https://maps.google.com/?q=46.003678,8.952188" target="_blank">📍 Maps</a>
-          </div>
-          <div class="parking-item p-rail">
-            <div class="p-name">🚆 P+Rail Lugano Stazione</div>
-            <div class="p-cost">~5 CHF/día</div>
-          </div>
-        </div>
-
-        <h3>🎵 Sitios para tocar</h3>
-        <ul class="spot-list">
-          <li><strong>Piazza della Riforma</strong> — Principal, alta afluencia <span class="meta">· Sin permiso acústico</span></li>
-          <li><strong>Lungolago (Paseo del Lago)</strong> — Ambiente relajado, vistas <span class="meta">· Acceso libre</span></li>
-        </ul>
-
-        <h3>🛌 Youth Hostel Lugano Savosa 🏆</h3>
-        <ul class="spot-list">
-          <li><div class="meta">Via Cantonale 13 · ~210-270 CHF total (~35-45 CHF/pers) · <a href="https://www.booking.com/searchresults.html?ss=Lugano&checkin=2026-07-18&checkout=2026-07-19&group_adults=6&no_rooms=2" target="_blank">🔍 Booking</a></div></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- ════════════════════════════════════ REGRESO MXP (ruta alt) ═══════════════════ -->
-    <details class="city-card">
-      <summary class="city-header">
-        <span class="day-badge">Dom 19</span>
-        <span class="city-name">Lugano → Milán (MXP)</span>
-        <span class="city-date">vuelta</span>
-        <span class="toggle-icon">▾</span>
-      </summary>
-      <div class="city-body">
-        <h3>🚗 Lugano → MXP</h3>
-        <ul class="spot-list">
-          <li><strong>~1h · 80 km</strong> por autopista A2 / E35</li>
-          <li>Salida tranquila, llegar con tiempo al vuelo</li>
-        </ul>
-        <h3>🅿️ MXP Parking</h3>
-        <div class="parking-grid">
-          <div class="parking-item"><div class="p-name">MXP Parking</div><div class="p-cost">~€4-6/h · €25-35/día</div></div>
-          <div class="parking-item"><div class="p-name">Parking Economy</div><div class="p-cost">~€15-20/día</div></div>
-        </div>
-      </div>
-    </details>
-
-    </div><!-- /content-r -->
-
-        <!-- ════════════════════════════════════ RUTA REAL (EN VIVO) ════════════════════ -->
-        <div class="route-content" id="content-r2">
+      <!-- ════════════════════════════════════ RUTA REAL (EN VIVO) ════════════════════ -->
 
         <!-- ════════════════════════════════════ MILÁN ════════════════════════════════════ -->
-        <details class="city-card" open>
+        <details class="city-card">
           <summary class="city-header">
             <span class="day-badge">Lun 13</span>
             <span class="city-name">Milán</span>
@@ -1376,7 +492,7 @@
         <details class="city-card">
           <summary class="city-header">
             <span class="day-badge">Jue 16</span>
-            <span class="city-name">Ginebra · Neuchâtel · Basilea</span>
+            <span class="city-name">Friburgo · Stuttgart</span>
             <span class="city-date">1 noche</span>
             <span class="toggle-icon">▾</span>
           </summary>
@@ -1575,16 +691,55 @@
           </div>
         </details>
 
-        </div><!-- /content-r2 -->
-        </div><!-- /route-wrap -->
 
-    <!-- ════════════════════════════════════ PRESUPUESTO ═══════════════════════════════ -->
+    
+
+        </section>
+      </div>
+
+
+
+<!-- Password gate -->
+    <div class="password-gate" id="passwordGate">
+      <h3>🔒 Contenido privado</h3>
+      <p>Introduce la contraseña para ver enlaces y presupuesto</p>
+      <div>
+        <input type="password" id="passInput" placeholder="Contraseña" autocomplete="off" onkeydown="if(event.key==='Enter')unlockSection()" />
+        <button onclick="unlockSection()">Abrir</button>
+      </div>
+      <div class="error" id="passError">Contraseña incorrecta</div>
+          </div>
+
+          <!-- Links -->
+          <section class="protected-content">
+    <h2>🔗 Enlaces</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://tricount.com/tfptNnLukeGEaaifjs" target="_blank" rel="noopener">
+        <span class="icon">💰</span>
+        <span class="label">Tricount<small>Gastos compartidos</small></span>
+      </a>
+      <a class="link-card" href="https://drive.google.com/drive/folders/1ppmdoLrqbydqEswzAyvfpdouWF1sPQOn" target="_blank" rel="noopener">
+        <span class="icon">📁</span>
+        <span class="label">Google Drive<small>Repertorios</small></span>
+      </a>
+      <a class="link-card" href="https://open.spotify.com/playlist/7yFJ7Ukl7C8IiNHHzl4mkF" target="_blank" rel="noopener">
+        <span class="icon">🎵</span>
+        <span class="label">Spotify<small>Playlist de la gira</small></span>
+      </a>
+      <a class="link-card" href="https://www.google.com/maps/d/u/0/edit?mid=18qF7cy9WmVNPJk57MfML6bpwjsMuq6A&usp=sharing" target="_blank" rel="noopener">
+        <span class="icon">🗺️</span>
+        <span class="label">My Maps<small>Mapa personalizado</small></span>
+      </a>
+    </div>
+  </section>
+
+<!-- ════════════════════════════════════ PRESUPUESTO ═══════════════════════════════ -->
     <div class="budget-wrap protected-content">
       <h2>💰 Presupuesto estimado</h2>
       <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">Costes totales para 6 personas · 2 coches · 7 días (todo incluido)</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-              <!-- Forward -->
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;">
+              
               <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:18px;">
                 <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">🚀 Ruta Original</h3>
                 <table class="budget-table">
@@ -1605,7 +760,7 @@
                 </table>
               </div>
 
-              <!-- Reverse -->
+              
               <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:18px;">
                 <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">🔄 Ruta Alternativa</h3>
                 <table class="budget-table">
@@ -1739,9 +894,6 @@
                         </div>
 
                             </div><!-- /budget-wrap -->
-
-        </section>
-      </div>
 
 <script>
     function unlockSection() {
