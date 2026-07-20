@@ -689,7 +689,60 @@
 
       </div>
 
-      <hr style="border:none;border-top:1px solid var(--border);margin:28px 0;">
+            <!-- ════════════════════ VISUALIZACIONES ════════════════════ -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+
+              <!-- Donut por categoría -->
+              <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+                <h3 style="font-family:var(--font-display);font-size:16px;font-weight:400;margin-bottom:8px;">📊 Gastos por categoría</h3>
+                <p style="font-size:11px;color:var(--warm-grey);margin-bottom:12px;">2.895 € total</p>
+                <div style="display:flex;align-items:center;gap:16px;">
+                  <svg width="140" height="140" viewBox="0 0 120 120" style="flex-shrink:0;">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#EAE6E0" stroke-width="20"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#B8935A" stroke-width="20" stroke-dasharray="121.2 314.16" stroke-dashoffset="0" transform="rotate(-90 60 60)" style="opacity:0.9"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#8C8680" stroke-width="20" stroke-dasharray="79.2 314.16" stroke-dashoffset="-121.2" transform="rotate(-90 60 60)" style="opacity:0.85"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#D4B483" stroke-width="20" stroke-dasharray="43.3 314.16" stroke-dashoffset="-200.4" transform="rotate(-90 60 60)" style="opacity:0.8"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#4A7C59" stroke-width="20" stroke-dasharray="21.3 314.16" stroke-dashoffset="-243.7" transform="rotate(-90 60 60)" style="opacity:0.75"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#C77D43" stroke-width="20" stroke-dasharray="16.3 314.16" stroke-dashoffset="-265.0" transform="rotate(-90 60 60)" style="opacity:0.7"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#5B7B9A" stroke-width="20" stroke-dasharray="13.5 314.16" stroke-dashoffset="-281.3" transform="rotate(-90 60 60)" style="opacity:0.65"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#A0526A" stroke-width="20" stroke-dasharray="11.9 314.16" stroke-dashoffset="-294.8" transform="rotate(-90 60 60)" style="opacity:0.6"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#6B8E7A" stroke-width="20" stroke-dasharray="4.7 314.16" stroke-dashoffset="-306.7" transform="rotate(-90 60 60)" style="opacity:0.55"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="#9B8B7A" stroke-width="20" stroke-dasharray="2.8 314.16" stroke-dashoffset="-311.4" transform="rotate(-90 60 60)" style="opacity:0.5"/>
+                    <text x="60" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#1A1714">2.895 €</text>
+                    <text x="60" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#8C8680">total</text>
+                  </svg>
+                  <div style="font-size:11px;line-height:1.7;flex:1;">
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#B8935A;"></span>🚗 Coches <span style="color:var(--warm-grey);margin-left:auto;">1.116 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8C8680;"></span>✈️ Vuelos <span style="color:var(--warm-grey);margin-left:auto;">730 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#D4B483;"></span>🏨 Alojamiento <span style="color:var(--warm-grey);margin-left:auto;">398 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#4A7C59;"></span>⛽ Gasolina <span style="color:var(--warm-grey);margin-left:auto;">197 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#C77D43;"></span>🍽️ Comida <span style="color:var(--warm-grey);margin-left:auto;">150 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#5B7B9A;"></span>🛣️ Peajes <span style="color:var(--warm-grey);margin-left:auto;">123 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#A0526A;"></span>🔧 Extras <span style="color:var(--warm-grey);margin-left:auto;">111 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#6B8E7A;"></span>🚆 Transporte <span style="color:var(--warm-grey);margin-left:auto;">43 €</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#9B8B7A;"></span>🅿️ Parking <span style="color:var(--warm-grey);margin-left:auto;">27 €</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Barras por persona (neto final) -->
+              <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+                <h3 style="font-family:var(--font-display);font-size:16px;font-weight:400;margin-bottom:8px;">💶 Desembolso por persona</h3>
+                <p style="font-size:11px;color:var(--warm-grey);margin-bottom:12px;">Neto final tras Bizum + ajustes</p>
+                <div style="font-size:12px;line-height:2.2;">
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Disper</span><span style="display:inline-block;height:16px;width:9%;background:#B8935A;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>81 €</strong></div>
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Erick</span><span style="display:inline-block;height:16px;width:12%;background:#8C8680;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>108 €</strong></div>
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Hidalgo</span><span style="display:inline-block;height:16px;width:85%;background:#D4B483;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>742 €</strong></div>
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Jefe</span><span style="display:inline-block;height:16px;width:95%;background:#4A7C59;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>829 €</strong></div>
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Kks</span><span style="display:inline-block;height:20px;width:100%;background:#C77D43;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>876 €</strong></div>
+                  <div><span style="display:inline-block;width:52px;font-size:10px;color:var(--warm-grey);">Recluta</span><span style="display:inline-block;height:16px;width:0.3%;background:#5B7B9A;border-radius:3px;vertical-align:middle;margin-right:6px;"></span><strong>2 €</strong></div>
+                </div>
+                <p style="font-size:10px;color:var(--warm-grey);margin-top:8px;">Barra al 100% = 876 € (Kks). Recluta escala a 0,3%.</p>
+              </div>
+
+            </div>
+
+            <hr style="border:none;border-top:1px solid var(--border);margin:28px 0;">
 
       <!-- ════════════════════ DESEMBOLSO NETO POR PERSONA ════════════════════ -->
       <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;">
