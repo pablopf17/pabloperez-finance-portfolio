@@ -44,6 +44,14 @@
                   background: linear-gradient(var(--cream), transparent);
                   pointer-events: none;
                 }
+                .hero-cover-bottom::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0; left: 0; right: 0;
+                  height: 40%;
+                  background: linear-gradient(transparent, var(--cream));
+                  pointer-events: none;
+                }
         html { scroll-behavior: smooth; }
         body {
       background: var(--cream);
@@ -366,7 +374,7 @@
           <img src="cover.jpg" alt="Tuna Suiza 2026 — foto de grupo" style="height: 100vh;" />
         </div>
 
-            <div class="hero-cover" style="margin-top: 8px; max-height: none;">
+            <div class="hero-cover hero-cover-bottom" style="margin-top: 8px; max-height: none;">
                           <img src="media/cover2.jpg" alt="Tuna — viaje" style="height: auto; object-fit: contain;" />
                         </div>
 
