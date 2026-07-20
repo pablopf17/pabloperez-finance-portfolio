@@ -565,141 +565,179 @@
     </div>
   </section>
 
-<!-- ════════════════════════════════════ PRESUPUESTO ═══════════════════════════════ -->
+<!-- ════════════════════════════════════ GASTOS REALES (TRICOUNT) ═══════════════════════ -->
     <div class="budget-wrap protected-content">
-      <h2>💰 Presupuesto estimado</h2>
-      <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">Costes totales para 6 personas · 2 coches · 7 días (todo incluido)</p>
+      <h2>💰 Gastos reales</h2>
+      <p style="font-size:13px;color:var(--warm-grey);margin-bottom:16px;">Todos los movimientos registrados en Tricount · 7 personas · 2 coches · 7 días</p>
 
       <div style="display:grid;grid-template-columns:1fr;gap:12px;">
 
-                    <!-- Real -->
-              <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:18px;">
-                <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">🆕 Ruta Real <span style="font-size:11px;font-family:var(--font-body);font-weight:400;color:var(--warm-grey);">(gastos reales)</span></h3>
-                <table class="budget-table">
-                  <tr><th>Concepto</th><th>Real</th><th>Pte.</th></tr>
-                  <tr><td>✈️ Vuelos (2)</td><td>730,00 €</td><td>—</td></tr>
-                  <tr><td>🚗 Alquiler coches (2)</td><td>1.000,47 €</td><td>—</td></tr>
-                  <tr><td>🔧 Seguro Lancia</td><td>85,92 €</td><td>—</td></tr>
-                  <tr><td>🏨 Alojamiento (Milán + Turín + Basilea)</td><td>218,14 €</td><td>~840 €</td></tr>
-                                    <tr><td>🛣️ Peajes (6)</td><td>131,60 €</td><td>~188 €</td></tr>
-                                    <tr><td>🅿️ Parking</td><td>23,35 €</td><td>~123 €</td></tr>
-                                    <tr><td>🚆 Trenes (Malpensa + SBB + bus)</td><td>53,60 €</td><td>—</td></tr>
-                                    <tr><td>🍽️ Comida + desayunos</td><td>179,96 €</td><td>~1.160 €</td></tr>
-                                    <tr><td>🎸 Extras (cuerdas, moto)</td><td>24,92 €</td><td>—</td></tr>
-                                    <tr><td>⛽ Gasolina</td><td>110,00 €</td><td>~260 €</td></tr>
-                                    <tr style="font-weight:500;border-top:2px solid var(--border);"><td>💶 Subtotal</td><td><strong>2.572 €</strong></td><td><strong>~2.571 €</strong></td></tr>
-                                    <tr class="total"><td>💶 TOTAL EST.</td><td colspan="2"><strong>~5.143 €</strong></td></tr>
-                                    <tr><td style="font-size:11px;color:var(--warm-grey);border-top:none;padding-top:0;"><em>Por persona</em></td><td style="font-size:15px;font-weight:600;color:var(--accent);border-top:none;padding-top:0;" colspan="2">~857 €</td></tr>
-                </table>
-              </div>
+        <!-- 📦 GENERALES / PRE-VIAJE -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📦 Generales / Pre-viaje</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th><th>Fecha</th></tr>
+            <tr><td>✈️ Vuelos</td><td>426,00 €</td><td>Kks</td><td>29 jun</td></tr>
+            <tr><td>✈️ Vuelos</td><td>304,00 €</td><td>Jefe</td><td>29 jun</td></tr>
+            <tr><td>🎸 Cuerdas</td><td>13,00 €</td><td>Kks</td><td>10 jul</td></tr>
+            <tr><td>🚗 Coche Alquiler 2</td><td>77,50 €</td><td>Jefe</td><td>11 jul</td></tr>
+            <tr><td>🔧 Lancia Seguro</td><td>85,92 €</td><td>Jefe</td><td>11 jul</td></tr>
+            <tr><td>🏨 Alojamiento Milán 13/07</td><td>77,26 €</td><td>Kks</td><td>13 jul</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📦 Subtotal</td><td><strong>983,68 €</strong></td><td></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 LUN 13 — MILÁN -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Lun 13 — Milán</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>—</strong></td><td></td></tr>
+            <tr><td style="font-size:11px;color:var(--warm-grey);border-top:none;" colspan="3">Gastos de este día registrados en otras fechas por Tricount</td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 MAR 14 — TURÍN -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Mar 14 — Turín</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🛣️ Peaje</td><td>13,50 €</td><td>Jefe</td></tr>
+            <tr><td>🚗 Alquiler 2 Opel 🚙</td><td>486,97 €</td><td>Erick</td></tr>
+            <tr><td>🚗 Alquiler Coche Milán</td><td>436,00 €</td><td>Kks</td></tr>
+            <tr><td>🚆 Transporte+Peaje</td><td>7,40 €</td><td>Jefe</td></tr>
+            <tr><td>🅿️ Transporte+Parking</td><td>2,70 €</td><td>Kks</td></tr>
+            <tr><td>🅿️ Parking</td><td>4,11 €</td><td>Hidalgo</td></tr>
+            <tr><td>🅿️ Parking</td><td>6,52 €</td><td>Hidalgo</td></tr>
+            <tr><td>🅿️ Parking</td><td>3,41 €</td><td>Hidalgo</td></tr>
+            <tr><td>🏍️ Moto con Recluta</td><td>11,92 €</td><td>Kks</td></tr>
+            <tr><td>⛽ Gasolina</td><td>30,00 €</td><td>Disper</td></tr>
+            <tr><td>🍞 Desayuno y Bocatas</td><td>50,00 €</td><td>Disper</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>1.052,53 €</strong></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 MIÉ 15 — AOSTA/CHAMONIX/GINEBRA -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Mié 15 — Aosta · Chamonix · Ginebra</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🏨 Hotel Torino</td><td>81,51 €</td><td>Jefe</td></tr>
+            <tr><td>🛣️ Peaje</td><td>17,20 €</td><td>Jefe</td></tr>
+            <tr><td>🛣️ Peaje</td><td>9,20 €</td><td>Disper</td></tr>
+            <tr><td>🛣️ Peaje</td><td>17,20 €</td><td>Disper</td></tr>
+            <tr><td>🛣️ Peaje Mont Blanc</td><td>56,40 €</td><td>Disper</td></tr>
+            <tr><td>🍞 Desayuno y Bocatas</td><td>19,96 €</td><td>Disper</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>201,47 €</strong></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 JUE 16 — NEUCHÂTEL → BASILEA -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Jue 16 — Neuchâtel → Basilea</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🚆 Malpensa Express</td><td>10,00 €</td><td>Disper</td></tr>
+            <tr><td>🚌 Transporte Tren + Bus</td><td>14,40 €</td><td>Hidalgo</td></tr>
+            <tr><td>🅿️ Parking</td><td>1,61 €</td><td>Hidalgo</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>26,01 €</strong></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 VIE 17 — FRIBURGO/WELZHEIM -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Vie 17 — Friburgo · Welzheim</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🚌 Transporte Pardo</td><td>14,20 €</td><td>Hidalgo</td></tr>
+            <tr><td>⛽ Gasolina Coche 1</td><td>40,00 €</td><td>Jefe</td></tr>
+            <tr><td>🏨 Hotel Basilea</td><td>59,37 €</td><td>Jefe</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>113,57 €</strong></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 SÁB 18 — SENDEN/LIECHTENSTEIN/LINDAU/MILÁN -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Sáb 18 — Senden · Liechtenstein · Lindau · Milán</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🅿️ Parking</td><td>5,00 €</td><td>Disper</td></tr>
+            <tr><td>⛽ Gas</td><td>70,00 €</td><td>Disper</td></tr>
+            <tr><td>🍞 Desayuno Vlasys</td><td>80,00 €</td><td>Disper</td></tr>
+            <tr><td>🏨 Alojamiento Milán último día</td><td>180,00 €</td><td>Kks</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>335,00 €</strong></td><td></td></tr>
+          </table>
+        </div>
+
+        <!-- 📅 DOM 19 — MILÁN (VUELTA) -->
+        <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+          <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Dom 19 — Milán (vuelta)</h4>
+          <table class="budget-table">
+            <tr><th>Concepto</th><th>Importe</th><th>Pagó</th></tr>
+            <tr><td>🔄 Parche (recibido)</td><td style="color:var(--accent);">-1.388,00 €</td><td>Parche 2</td></tr>
+            <tr><td>⛽ Gas + Peaje</td><td>56,64 €</td><td>Jefe</td></tr>
+            <tr><td>🛣️ Peaje Último</td><td>2,40 €</td><td>Kks</td></tr>
+            <tr><td>🧥 Parkas</td><td>3,80 €</td><td>Hidalgo</td></tr>
+            <tr><td>🔄 Franco (recibido)</td><td style="color:var(--accent);">-6,50 €</td><td>Jefe</td></tr>
+            <tr><td>🚌 Tp Pardo</td><td>2,20 €</td><td>Recluta</td></tr>
+            <tr><td>🚌 Transporte</td><td>2,20 €</td><td>Hidalgo</td></tr>
+            <tr><td>🚗 Coche Alquiler 2 Opel 🚙</td><td>115,88 €</td><td>Jefe</td></tr>
+            <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>-1.211,38 €</strong></td><td></td></tr>
+          </table>
+          <p style="font-size:11px;color:var(--warm-grey);margin-top:6px;">El parche de -1.388 € y el franco de -6,50 € son ingresos/ajustes recibidos.</p>
+        </div>
+
       </div>
 
-      <p class="budget-note">
-        * Estimaciones orientativas. Combustible a ~1.80 €/L · Comida ~30 €/pers/día (desayuno+comida+cena).<br>
-                * Swiss Vignette 40 CHF/coche (válida 14 meses). · Túnel Mont Blanc ~50€ ida/coche.<br>
-                * Precios alojamiento en base a opciones económicas recomendadas. Pueden fluctuar según disponibilidad.
-      </p>
+      <hr style="border:none;border-top:1px solid var(--border);margin:28px 0;">
 
-            <hr style="border:none;border-top:1px solid var(--border);margin:28px 0;">
+      <!-- ════════════════════ CORRECCIÓN ════════════════════ -->
+      <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;">
+        <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">✏️ Corrección</h3>
+        <table class="budget-table">
+          <tr><th>Concepto</th><th>Importe</th><th>Pagador correcto</th><th>Pagador puesto antes</th></tr>
+          <tr><td>🚗 Coche Alquiler 2 Opel 🚙</td><td>486,97 €</td><td><strong>Erick</strong></td><td>Kks</td></tr>
+        </table>
+        <p style="font-size:11px;color:var(--warm-grey);margin-top:6px;">El otro gasto con el mismo concepto (115,88 €) sí fue pagado por Jefe.</p>
+      </div>
 
-                        <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">📊 Gastos reales por día</h3>
-                        <p style="font-size:11px;color:var(--warm-grey);margin-bottom:12px;">Registrados en Tricount · 2.287,48 € total</p>
+      <!-- ════════════════════ DESEMBOLSO NETO POR PERSONA ════════════════════ -->
+      <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;">
+        <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">💶 Desembolso neto por persona</h3>
 
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <table class="budget-table">
+          <tr><th>Persona</th><th>Neto registrado</th><th>Neto tras Bizum</th><th>Neto final</th></tr>
+          <tr><td>Disper (yo)</td><td>347,76 €</td><td>80,64 €</td><td>80,64 €</td></tr>
+          <tr><td>Erick</td><td>486,97 €</td><td>107,74 €</td><td>107,74 €</td></tr>
+          <tr><td>Hidalgo</td><td>50,25 €</td><td>741,60 €</td><td>741,60 €</td></tr>
+          <tr><td>Jefe</td><td>852,42 €</td><td>829,29 €</td><td>829,29 €</td></tr>
+          <tr><td>Kks</td><td>1.149,28 €</td><td>1.127,41 €</td><td><strong>876,01 €</strong></td></tr>
+          <tr><td>Parche 2</td><td>-1.388,00 €</td><td>-1.388,00 €</td><td>-1.388,00 €</td></tr>
+          <tr><td>Recluta</td><td>2,20 €</td><td>2,20 €</td><td>2,20 €</td></tr>
+        </table>
+        <p style="font-size:12px;color:var(--warm-grey);margin-top:8px;line-height:1.5;">
+          <strong>Bizum de Hidalgo:</strong> 21,87 € → Kks · 23,13 € → Jefe · 379,23 € → Erick · 267,12 € → Disper<br>
+          <strong>Kks recibe 251,40 € de la tuna</strong> (lo que debe pagar Recluta, asumido por la tuna). Kks baja de 1.127,41 € a 876,01 €.
+        </p>
+      </div>
 
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📦 Generales / Pre-viaje</h4>
-                            <table class="budget-table">
-                              <tr><th>Concepto</th><th>Importe</th></tr>
-                              <tr><td>✈️ Vuelos (2)</td><td>730,00 €</td></tr>
-                              <tr><td>🚗 Alquiler coche Milán</td><td>436,00 €</td></tr>
-                              <tr><td>🚗 Coche alquiler 2</td><td>77,50 €</td></tr>
-                              <tr><td>🚗 Alquiler 2 Opel</td><td>486,97 €</td></tr>
-                              <tr><td>🔧 Seguro Lancia</td><td>85,92 €</td></tr>
-                              <tr><td>🎸 Cuerdas</td><td>13,00 €</td></tr>
-                              <tr><td>🏍️ Moto con Recluta</td><td>11,92 €</td></tr>
-                              <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📦 Subtotal</td><td><strong>1.841,31 €</strong></td></tr>
-                            </table>
-                          </div>
+      <!-- ════════════════════ SALDOS FINALES ════════════════════ -->
+      <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
+        <h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px;">✅ Saldos finales</h3>
+        <table class="budget-table">
+          <tr><th>Persona</th><th>Saldo</th></tr>
+          <tr><td>Disper (yo)</td><td>0,00 €</td></tr>
+          <tr><td>Erick</td><td>0,00 €</td></tr>
+          <tr><td>Hidalgo</td><td>0,00 €</td></tr>
+          <tr><td>Jefe</td><td>0,00 €</td></tr>
+          <tr><td>Kks</td><td><strong>+251,40 €</strong> (recibe de la tuna)</td></tr>
+          <tr><td>Parche 2</td><td>0,00 €</td></tr>
+          <tr><td>Recluta</td><td><strong>-251,40 €</strong> (paga la tuna)</td></tr>
+        </table>
+        <p style="font-size:12px;color:var(--warm-grey);margin-top:8px;">Kks debe recibir 251,40 € y Recluta debe pagar 251,40 €. El saldo de Recluta al ser pardillo lo paga la tuna.</p>
+      </div>
 
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Lun 13 — Milán</h4>
-                            <table class="budget-table">
-                              <tr><th>Concepto</th><th>Importe</th></tr>
-                              <tr><td>🚆 Malpensa Express</td><td>10,00 €</td></tr>
-                              <tr><td>🏨 Alojamiento Milán</td><td>77,26 €</td></tr>
-                              <tr><td>🛒 Esselunga</td><td>19,96 €</td></tr>
-                              <tr><td>🅿️ Parking</td><td>3,41 €</td></tr>
-                              <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>110,63 €</strong></td></tr>
-                            </table>
-                          </div>
-
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Mar 14 — Turín</h4>
-                            <table class="budget-table">
-                              <tr><th>Concepto</th><th>Importe</th></tr>
-                              <tr><td>🏨 Hotel Torino</td><td>81,51 €</td></tr>
-                              <tr><td>🛣️ SATAP (peaje)</td><td>18,10 €</td></tr>
-                              <tr><td>🛣️ Peaje</td><td>13,50 €</td></tr>
-                              <tr><td>🅿️ Parking</td><td>4,11 €</td></tr>
-                              <tr><td>🅿️ Parking</td><td>6,52 €</td></tr>
-                              <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>123,74 €</strong></td></tr>
-                            </table>
-                          </div>
-
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Mié 15 — Aosta/Chamonix/Ginebra</h4>
-                            <table class="budget-table">
-                              <tr><th>Concepto</th><th>Importe</th></tr>
-                              <tr><td>🛣️ Peaje</td><td>17,20 €</td></tr>
-                              <tr><td>🛣️ Peaje</td><td>56,40 €</td></tr>
-                              <tr><td>🛣️ Peaje</td><td>9,20 €</td></tr>
-                              <tr><td>🚆 Tren SBB</td><td>15,00 €</td></tr>
-                              <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>97,80 €</strong></td></tr>
-                            </table>
-                          </div>
-
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Jue 16 — Neuchâtel → Basilea</h4>
-                                                        <table class="budget-table">
-                                                          <tr><th>Concepto</th><th>Importe</th></tr>
-                                                          <tr><td>🅿️ Transporte + parking</td><td>2,70 €</td></tr>
-                                                          <tr><td>🅿️ Transporte + peaje</td><td>7,40 €</td></tr>
-                                                          <tr><td>🚆 Transportes Recluta</td><td>6,70 €</td></tr>
-                                                          <tr><td>☕ Desayunos</td><td>80,00 €</td></tr>
-                                                          <tr><td>🅿️ Parking</td><td>5,00 €</td></tr>
-                                                          <tr><td>🏨 Hotel Basilea</td><td>59,37 €</td></tr>
-                                                          <tr><td>🚌 Transporte tren + bus</td><td>14,40 €</td></tr>
-                                                          <tr><td>🅿️ Parking</td><td>1,61 €</td></tr>
-                                                          <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>176,18 €</strong></td></tr>
-                                                        </table>
-                                                      </div>
-
-                                                      <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                                                        <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📅 Vie 17 — Friburgo/Welzheim</h4>
-                                                        <table class="budget-table">
-                                                          <tr><th>Concepto</th><th>Importe</th></tr>
-                                                          <tr><td>⛽ Gas</td><td>70,00 €</td></tr>
-                                                          <tr><td>☕ Desayuno Vladys</td><td>80,00 €</td></tr>
-                                                          <tr><td>🚌 Transporte Pardo</td><td>14,20 €</td></tr>
-                                                          <tr><td>⛽ Gasolina coche 1</td><td>40,00 €</td></tr>
-                                                          <tr style="font-weight:500;border-top:2px solid var(--accent);"><td>📅 Subtotal</td><td><strong>204,20 €</strong></td></tr>
-                                                        </table>
-                                                      </div>
-
-                          <div style="background:rgba(255,255,255,0.45);border:1px solid var(--border);border-radius:8px;padding:16px;">
-                            <h4 style="font-family:var(--font-display);font-size:15px;font-weight:400;margin-bottom:10px;">📊 Resumen vs. Presupuesto</h4>
-                            <table class="budget-table">
-                              <tr><th>Concepto</th><th>Estimado</th><th>Real</th></tr>
-                              <tr><td>💶 Total</td><td>~3.638 €</td><td><strong>2.631 €</strong></td></tr>
-                                                            <tr style="border-top:2px solid var(--accent);"><td>📉 Queda</td><td></td><td><strong>~1.007 €</strong></td></tr>
-                                                            <tr><td style="border-top:none;font-size:11px;color:var(--warm-grey);" colspan="3">Faltan: Milán (2ª), gasolina, túnel MB, comidas</td></tr>
-                            </table>
-                            <p style="font-size:11px;color:var(--warm-grey);margin-top:8px;">Por persona: <strong>~439 €</strong> gastados de ~857 € estimados</p>
-                          </div>
-                        </div>
-
-                            </div><!-- /budget-wrap -->
+    </div><!-- /budget-wrap -->
 
                                                         <!-- Lightbox -->
                                                         <div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
